@@ -1,0 +1,3 @@
+[submodule "Assets/Curveball Core"]
+	path = Assets/Curveball Core
+	url = git@github.com:curveballgames/curveball-core.git
