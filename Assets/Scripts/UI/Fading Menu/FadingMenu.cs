@@ -14,6 +14,14 @@ namespace LastStand
         public FadingMenuTextElement[] TextInstances;
         public Button[] Buttons;
 
+        private void Start()
+        {
+            if (IsFirstScreen)
+            {
+                MenuSystem.OpenMenu(this, true);
+            }
+        }
+
         public override void Open(bool instant)
         {
             DisableButtons();
