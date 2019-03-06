@@ -1,0 +1,23 @@
+{
+	"general-ui:back": "Back",
+
+	"mm-ui:newgame": "New Game",
+	"mm-ui:continue": "Continue",
+	"mm-ui:loadgame": "Load Game",
+	"mm-ui:settings": "Settings",
+	"mm-ui:exit": "Exit",
+
+	"settings-ui:resolution": "Resolution",
+	"settings-ui:vsync": "VSync",
+	"settings-ui:fullscreen": "Fullscreen",
+	"settings-ui:music": "Music",
+	"settings-ui:soundeffects": "Sound Effects",
+
+	"ng-ui:start": "Start",
+	"ng-ui:summer": "Summer",
+	"ng-ui:summer-description": "- Long days\n- Short nights\n- good weather\n- good crop growth",
+	"ng-ui:autumn": "Autumn",
+	"ng-ui:autumn-description": "- Standard days\n- Standard nights\n- variable weather\n- average crop growth",
+	"ng-ui:winter": "Winter",
+	"ng-ui:winter-description": "- Short days\n- Long nights\n- bad weather\n- weak crop growth"
+}
