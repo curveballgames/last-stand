@@ -1,0 +1,573 @@
+fileFormatVersion: 2
+guid: 396a26ad42cf6e745bffaea3a4ca926d
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Back Room
+    100002: Back Room Floor
+    100004: Back Room Walls
+    100006: Bathroom
+    100008: Bathroom Floor
+    100010: Bathroom Walls
+    100012: Exterior Walls
+    100014: Front Room
+    100016: Front Room Floor
+    100018: Front Room Walls
+    100020: Garage
+    100022: Garage Floor
+    100024: Garage Walls
+    100026: Hall
+    100028: Hall Floor
+    100030: Hall Walls
+    100032: Human Reference
+    100034: Kitchen
+    100036: Kitchen Floor
+    100038: Kitchen Walls
+    100040: //RootNode
+    100042: Wall Tops
+    100044: Exterior Walls.001
+    100046: Garage Door
+    100048: Garage Door Handle
+    100050: Steps
+    100052: Doorframe
+    100054: Doorframe.001
+    100056: Doorframe.002
+    100058: Doorframe.003
+    100060: Doorframe.004
+    100062: Back Doorframe
+    100064: Front Doorframe
+    100066: Glass
+    100068: H Strut
+    100070: V Strut
+    100072: Window Frame
+    100074: Window Frame.001
+    100076: Glass.001
+    100078: Glass.002
+    100080: Glass.003
+    100082: Glass.004
+    100084: Glass.005
+    100086: Glass.006
+    100088: H Strut.001
+    100090: H Strut.002
+    100092: H Strut.003
+    100094: H Strut.004
+    100096: H Strut.005
+    100098: H Strut.006
+    100100: V Strut.001
+    100102: V Strut.002
+    100104: V Strut.003
+    100106: V Strut.004
+    100108: V Strut.005
+    100110: V Strut.006
+    100112: Window Frame.002
+    100114: Window Frame.003
+    100116: Window Frame.004
+    100118: Window Frame.005
+    100120: Window Frame.006
+    100122: Window Frame.007
+    100124: Glass.007
+    100126: Window Frame.008
+    100128: Glass.008
+    100130: Front Room Arch
+    100132: Door
+    100134: Skirting
+    100136: Door.001
+    100138: Door.002
+    100140: Door.003
+    100142: Door.004
+    100144: Handle
+    100146: Handle.001
+    100148: Handle.002
+    100150: Handle.003
+    100152: Handle.004
+    100154: Latch
+    100156: Latch.001
+    100158: Latch.002
+    100160: Latch.003
+    100162: Latch.004
+    100164: Cylinder
+    100166: Front Door
+    100168: Glass.009
+    100170: Handle.005
+    100172: Latch.005
+    100174: Back Door
+    100176: Back Steps
+    100178: Cylinder.001
+    100180: Glass.010
+    100182: Handle.006
+    100184: Latch.006
+    100186: Outside
+    100188: Back Door Skirting
+    100190: Door Skirting
+    100192: Door Skirting.001
+    100194: Door Skirting.002
+    100196: Door Skirting.003
+    100198: Door Skirting.004
+    100200: Front Door Step
+    400000: Back Room
+    400002: Back Room Floor
+    400004: Back Room Walls
+    400006: Bathroom
+    400008: Bathroom Floor
+    400010: Bathroom Walls
+    400012: Exterior Walls
+    400014: Front Room
+    400016: Front Room Floor
+    400018: Front Room Walls
+    400020: Garage
+    400022: Garage Floor
+    400024: Garage Walls
+    400026: Hall
+    400028: Hall Floor
+    400030: Hall Walls
+    400032: Human Reference
+    400034: Kitchen
+    400036: Kitchen Floor
+    400038: Kitchen Walls
+    400040: //RootNode
+    400042: Wall Tops
+    400044: Exterior Walls.001
+    400046: Garage Door
+    400048: Garage Door Handle
+    400050: Steps
+    400052: Doorframe
+    400054: Doorframe.001
+    400056: Doorframe.002
+    400058: Doorframe.003
+    400060: Doorframe.004
+    400062: Back Doorframe
+    400064: Front Doorframe
+    400066: Glass
+    400068: H Strut
+    400070: V Strut
+    400072: Window Frame
+    400074: Window Frame.001
+    400076: Glass.001
+    400078: Glass.002
+    400080: Glass.003
+    400082: Glass.004
+    400084: Glass.005
+    400086: Glass.006
+    400088: H Strut.001
+    400090: H Strut.002
+    400092: H Strut.003
+    400094: H Strut.004
+    400096: H Strut.005
+    400098: H Strut.006
+    400100: V Strut.001
+    400102: V Strut.002
+    400104: V Strut.003
+    400106: V Strut.004
+    400108: V Strut.005
+    400110: V Strut.006
+    400112: Window Frame.002
+    400114: Window Frame.003
+    400116: Window Frame.004
+    400118: Window Frame.005
+    400120: Window Frame.006
+    400122: Window Frame.007
+    400124: Glass.007
+    400126: Window Frame.008
+    400128: Glass.008
+    400130: Front Room Arch
+    400132: Door
+    400134: Skirting
+    400136: Door.001
+    400138: Door.002
+    400140: Door.003
+    400142: Door.004
+    400144: Handle
+    400146: Handle.001
+    400148: Handle.002
+    400150: Handle.003
+    400152: Handle.004
+    400154: Latch
+    400156: Latch.001
+    400158: Latch.002
+    400160: Latch.003
+    400162: Latch.004
+    400164: Cylinder
+    400166: Front Door
+    400168: Glass.009
+    400170: Handle.005
+    400172: Latch.005
+    400174: Back Door
+    400176: Back Steps
+    400178: Cylinder.001
+    400180: Glass.010
+    400182: Handle.006
+    400184: Latch.006
+    400186: Outside
+    400188: Back Door Skirting
+    400190: Door Skirting
+    400192: Door Skirting.001
+    400194: Door Skirting.002
+    400196: Door Skirting.003
+    400198: Door Skirting.004
+    400200: Front Door Step
+    2100000: No Name
+    2300000: Back Room Floor
+    2300002: Back Room Walls
+    2300004: Bathroom Floor
+    2300006: Bathroom Walls
+    2300008: Exterior Walls
+    2300010: Front Room Floor
+    2300012: Front Room Walls
+    2300014: Garage Floor
+    2300016: Garage Walls
+    2300018: Hall Floor
+    2300020: Hall Walls
+    2300022: Human Reference
+    2300024: Kitchen Floor
+    2300026: Kitchen Walls
+    2300028: Wall Tops
+    2300030: Exterior Walls.001
+    2300032: Garage Door
+    2300034: Garage Door Handle
+    2300036: Steps
+    2300038: Doorframe
+    2300040: Doorframe.001
+    2300042: Doorframe.002
+    2300044: Doorframe.003
+    2300046: Doorframe.004
+    2300048: Back Doorframe
+    2300050: Front Doorframe
+    2300052: Glass
+    2300054: H Strut
+    2300056: V Strut
+    2300058: Window Frame
+    2300060: Window Frame.001
+    2300062: Glass.001
+    2300064: Glass.002
+    2300066: Glass.003
+    2300068: Glass.004
+    2300070: Glass.005
+    2300072: Glass.006
+    2300074: H Strut.001
+    2300076: H Strut.002
+    2300078: H Strut.003
+    2300080: H Strut.004
+    2300082: H Strut.005
+    2300084: H Strut.006
+    2300086: V Strut.001
+    2300088: V Strut.002
+    2300090: V Strut.003
+    2300092: V Strut.004
+    2300094: V Strut.005
+    2300096: V Strut.006
+    2300098: Window Frame.002
+    2300100: Window Frame.003
+    2300102: Window Frame.004
+    2300104: Window Frame.005
+    2300106: Window Frame.006
+    2300108: Window Frame.007
+    2300110: Glass.007
+    2300112: Window Frame.008
+    2300114: Glass.008
+    2300116: Front Room Arch
+    2300118: Door
+    2300120: Skirting
+    2300122: Door.001
+    2300124: Door.002
+    2300126: Door.003
+    2300128: Door.004
+    2300130: Handle
+    2300132: Handle.001
+    2300134: Handle.002
+    2300136: Handle.003
+    2300138: Handle.004
+    2300140: Latch
+    2300142: Latch.001
+    2300144: Latch.002
+    2300146: Latch.003
+    2300148: Latch.004
+    2300150: Cylinder
+    2300152: Front Door
+    2300154: Glass.009
+    2300156: Handle.005
+    2300158: Latch.005
+    2300160: Back Door
+    2300162: Back Steps
+    2300164: Cylinder.001
+    2300166: Glass.010
+    2300168: Handle.006
+    2300170: Latch.006
+    2300172: Back Door Skirting
+    2300174: Door Skirting
+    2300176: Door Skirting.001
+    2300178: Door Skirting.002
+    2300180: Door Skirting.003
+    2300182: Door Skirting.004
+    2300184: Front Door Step
+    3300000: Back Room Floor
+    3300002: Back Room Walls
+    3300004: Bathroom Floor
+    3300006: Bathroom Walls
+    3300008: Exterior Walls
+    3300010: Front Room Floor
+    3300012: Front Room Walls
+    3300014: Garage Floor
+    3300016: Garage Walls
+    3300018: Hall Floor
+    3300020: Hall Walls
+    3300022: Human Reference
+    3300024: Kitchen Floor
+    3300026: Kitchen Walls
+    3300028: Wall Tops
+    3300030: Exterior Walls.001
+    3300032: Garage Door
+    3300034: Garage Door Handle
+    3300036: Steps
+    3300038: Doorframe
+    3300040: Doorframe.001
+    3300042: Doorframe.002
+    3300044: Doorframe.003
+    3300046: Doorframe.004
+    3300048: Back Doorframe
+    3300050: Front Doorframe
+    3300052: Glass
+    3300054: H Strut
+    3300056: V Strut
+    3300058: Window Frame
+    3300060: Window Frame.001
+    3300062: Glass.001
+    3300064: Glass.002
+    3300066: Glass.003
+    3300068: Glass.004
+    3300070: Glass.005
+    3300072: Glass.006
+    3300074: H Strut.001
+    3300076: H Strut.002
+    3300078: H Strut.003
+    3300080: H Strut.004
+    3300082: H Strut.005
+    3300084: H Strut.006
+    3300086: V Strut.001
+    3300088: V Strut.002
+    3300090: V Strut.003
+    3300092: V Strut.004
+    3300094: V Strut.005
+    3300096: V Strut.006
+    3300098: Window Frame.002
+    3300100: Window Frame.003
+    3300102: Window Frame.004
+    3300104: Window Frame.005
+    3300106: Window Frame.006
+    3300108: Window Frame.007
+    3300110: Glass.007
+    3300112: Window Frame.008
+    3300114: Glass.008
+    3300116: Front Room Arch
+    3300118: Door
+    3300120: Skirting
+    3300122: Door.001
+    3300124: Door.002
+    3300126: Door.003
+    3300128: Door.004
+    3300130: Handle
+    3300132: Handle.001
+    3300134: Handle.002
+    3300136: Handle.003
+    3300138: Handle.004
+    3300140: Latch
+    3300142: Latch.001
+    3300144: Latch.002
+    3300146: Latch.003
+    3300148: Latch.004
+    3300150: Cylinder
+    3300152: Front Door
+    3300154: Glass.009
+    3300156: Handle.005
+    3300158: Latch.005
+    3300160: Back Door
+    3300162: Back Steps
+    3300164: Cylinder.001
+    3300166: Glass.010
+    3300168: Handle.006
+    3300170: Latch.006
+    3300172: Back Door Skirting
+    3300174: Door Skirting
+    3300176: Door Skirting.001
+    3300178: Door Skirting.002
+    3300180: Door Skirting.003
+    3300182: Door Skirting.004
+    3300184: Front Door Step
+    4300000: Wall Tops
+    4300002: Garage Floor
+    4300004: Garage Walls
+    4300006: Front Room Floor
+    4300008: Front Room Walls
+    4300010: Back Room Floor
+    4300012: Back Room Walls
+    4300014: Bathroom Floor
+    4300016: Bathroom Walls
+    4300018: Kitchen Floor
+    4300020: Kitchen Walls
+    4300022: Hall Floor
+    4300024: Hall Walls
+    4300026: Human Reference
+    4300028: Exterior Walls
+    4300030: Exterior Walls.001
+    4300032: Garage Door
+    4300034: Garage Door Handle
+    4300036: Steps
+    4300038: Doorframe
+    4300040: Doorframe.001
+    4300042: Doorframe.002
+    4300044: Doorframe.004
+    4300046: Doorframe.003
+    4300048: Back Doorframe
+    4300050: Front Doorframe
+    4300052: Window Frame.001
+    4300054: Window Frame
+    4300056: Glass
+    4300058: V Strut
+    4300060: H Strut
+    4300062: Window Frame.003
+    4300064: Glass.002
+    4300066: V Strut.002
+    4300068: H Strut.002
+    4300070: Window Frame.004
+    4300072: H Strut.003
+    4300074: V Strut.003
+    4300076: Glass.003
+    4300078: Window Frame.005
+    4300080: Glass.004
+    4300082: V Strut.004
+    4300084: H Strut.004
+    4300086: Window Frame.002
+    4300088: H Strut.001
+    4300090: V Strut.001
+    4300092: Glass.001
+    4300094: Window Frame.006
+    4300096: H Strut.005
+    4300098: V Strut.005
+    4300100: Glass.005
+    4300102: Window Frame.007
+    4300104: Glass.006
+    4300106: V Strut.006
+    4300108: H Strut.006
+    4300110: Window Frame.008
+    4300112: Glass.007
+    4300114: Glass.008
+    4300116: Front Room Arch
+    4300118: Skirting
+    4300120: Door
+    4300122: Door.004
+    4300124: Latch.004
+    4300126: Handle.004
+    4300128: Latch
+    4300130: Handle
+    4300132: Door.001
+    4300134: Handle.001
+    4300136: Latch.001
+    4300138: Door.003
+    4300140: Handle.003
+    4300142: Latch.003
+    4300144: Door.002
+    4300146: Latch.002
+    4300148: Handle.002
+    4300150: Front Door
+    4300152: Cylinder
+    4300154: Handle.005
+    4300156: Latch.005
+    4300158: Glass.009
+    4300160: Back Steps
+    4300162: Back Door
+    4300164: Glass.010
+    4300166: Latch.006
+    4300168: Handle.006
+    4300170: Cylinder.001
+    4300172: Door Skirting.004
+    4300174: Door Skirting
+    4300176: Door Skirting.001
+    4300178: Door Skirting.003
+    4300180: Back Door Skirting
+    4300182: Door Skirting.002
+    4300184: Front Door Step
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
