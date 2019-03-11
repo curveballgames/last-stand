@@ -104,6 +104,39 @@ ModelImporter:
     100196: Door Skirting.003
     100198: Door Skirting.004
     100200: Front Door Step
+    100202: Bannister Front Bars
+    100204: Bannister Front Top
+    100206: Bannister Side Bars
+    100208: Bannister Side Top
+    100210: Decking
+    100212: Pillar
+    100214: Pillar.001
+    100216: Pillar.002
+    100218: Porch
+    100220: Decking Box
+    100222: Steps Side
+    100224: Steps Top
+    100226: Doorbell Button
+    100228: Doorbell Frame
+    100230: Sun
+    100232: Window Boarding
+    100234: Window Boarding.001
+    100236: Window Boarding.002
+    100238: Window Boarding.003
+    100240: Window Boarding.004
+    100242: Window Boarding.005
+    100244: Window Boarding.006
+    100246: Boarding
+    100248: Boarding.001
+    100250: Garage Overhang
+    100252: Driveway
+    100254: Front Path
+    100256: Grass
+    100258: Grass.001
+    100260: Electric Box
+    100262: Wire
+    100264: First Floor Roof
+    100266: Side Path
     400000: Back Room
     400002: Back Room Floor
     400004: Back Room Walls
@@ -205,6 +238,39 @@ ModelImporter:
     400196: Door Skirting.003
     400198: Door Skirting.004
     400200: Front Door Step
+    400202: Bannister Front Bars
+    400204: Bannister Front Top
+    400206: Bannister Side Bars
+    400208: Bannister Side Top
+    400210: Decking
+    400212: Pillar
+    400214: Pillar.001
+    400216: Pillar.002
+    400218: Porch
+    400220: Decking Box
+    400222: Steps Side
+    400224: Steps Top
+    400226: Doorbell Button
+    400228: Doorbell Frame
+    400230: Sun
+    400232: Window Boarding
+    400234: Window Boarding.001
+    400236: Window Boarding.002
+    400238: Window Boarding.003
+    400240: Window Boarding.004
+    400242: Window Boarding.005
+    400244: Window Boarding.006
+    400246: Boarding
+    400248: Boarding.001
+    400250: Garage Overhang
+    400252: Driveway
+    400254: Front Path
+    400256: Grass
+    400258: Grass.001
+    400260: Electric Box
+    400262: Wire
+    400264: First Floor Roof
+    400266: Side Path
     2100000: No Name
     2300000: Back Room Floor
     2300002: Back Room Walls
@@ -299,6 +365,37 @@ ModelImporter:
     2300180: Door Skirting.003
     2300182: Door Skirting.004
     2300184: Front Door Step
+    2300186: Bannister Front Bars
+    2300188: Bannister Front Top
+    2300190: Bannister Side Bars
+    2300192: Bannister Side Top
+    2300194: Decking
+    2300196: Pillar
+    2300198: Pillar.001
+    2300200: Pillar.002
+    2300202: Decking Box
+    2300204: Steps Side
+    2300206: Steps Top
+    2300208: Doorbell Button
+    2300210: Doorbell Frame
+    2300212: Window Boarding
+    2300214: Window Boarding.001
+    2300216: Window Boarding.002
+    2300218: Window Boarding.003
+    2300220: Window Boarding.004
+    2300222: Window Boarding.005
+    2300224: Window Boarding.006
+    2300226: Boarding
+    2300228: Boarding.001
+    2300230: Garage Overhang
+    2300232: Driveway
+    2300234: Front Path
+    2300236: Grass
+    2300238: Grass.001
+    2300240: Electric Box
+    2300242: Wire
+    2300244: First Floor Roof
+    2300246: Side Path
     3300000: Back Room Floor
     3300002: Back Room Walls
     3300004: Bathroom Floor
@@ -392,6 +489,37 @@ ModelImporter:
     3300180: Door Skirting.003
     3300182: Door Skirting.004
     3300184: Front Door Step
+    3300186: Bannister Front Bars
+    3300188: Bannister Front Top
+    3300190: Bannister Side Bars
+    3300192: Bannister Side Top
+    3300194: Decking
+    3300196: Pillar
+    3300198: Pillar.001
+    3300200: Pillar.002
+    3300202: Decking Box
+    3300204: Steps Side
+    3300206: Steps Top
+    3300208: Doorbell Button
+    3300210: Doorbell Frame
+    3300212: Window Boarding
+    3300214: Window Boarding.001
+    3300216: Window Boarding.002
+    3300218: Window Boarding.003
+    3300220: Window Boarding.004
+    3300222: Window Boarding.005
+    3300224: Window Boarding.006
+    3300226: Boarding
+    3300228: Boarding.001
+    3300230: Garage Overhang
+    3300232: Driveway
+    3300234: Front Path
+    3300236: Grass
+    3300238: Grass.001
+    3300240: Electric Box
+    3300242: Wire
+    3300244: First Floor Roof
+    3300246: Side Path
     4300000: Wall Tops
     4300002: Garage Floor
     4300004: Garage Walls
@@ -485,6 +613,39 @@ ModelImporter:
     4300180: Back Door Skirting
     4300182: Door Skirting.002
     4300184: Front Door Step
+    4300186: Bannister Side Bars
+    4300188: Bannister Front Bars
+    4300190: Bannister Side Top
+    4300192: Bannister Front Top
+    4300194: Pillar.001
+    4300196: Pillar.002
+    4300198: Pillar
+    4300200: Decking
+    4300202: Decking Box
+    4300204: Steps Side
+    4300206: Steps Top
+    4300208: Doorbell Frame
+    4300210: Doorbell Button
+    4300212: Window Boarding
+    4300214: Window Boarding.006
+    4300216: Window Boarding.005
+    4300218: Window Boarding.004
+    4300220: Window Boarding.003
+    4300222: Window Boarding.002
+    4300224: Window Boarding.001
+    4300226: Boarding.001
+    4300228: Boarding
+    4300230: Garage Overhang
+    4300232: Driveway
+    4300234: Front Path
+    4300236: Grass.001
+    4300238: Grass
+    4300240: Electric Box
+    4300242: Wire
+    4300244: First Floor Roof
+    4300246: Side Path
+    10800000: Sun
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -520,10 +681,10 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1

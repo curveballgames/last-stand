@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: 3efeeb8a788c23a46831dbf68f485eb7
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Crossbeam Tops
+    100002: Crossbeams
+    100004: Feet
+    100006: Ladder Legs
+    100008: Ladder Struts
+    100010: Ladder Support
+    100012: Legs
+    100014: //RootNode
+    100016: Top
+    100018: Top H Struts
+    100020: Barrier Posts
+    100022: Barrier Supports
+    100024: Barriers
+    400000: Crossbeam Tops
+    400002: Crossbeams
+    400004: Feet
+    400006: Ladder Legs
+    400008: Ladder Struts
+    400010: Ladder Support
+    400012: Legs
+    400014: //RootNode
+    400016: Top
+    400018: Top H Struts
+    400020: Barrier Posts
+    400022: Barrier Supports
+    400024: Barriers
+    2100000: No Name
+    2300000: Crossbeam Tops
+    2300002: Crossbeams
+    2300004: Feet
+    2300006: Ladder Legs
+    2300008: Ladder Struts
+    2300010: Ladder Support
+    2300012: Legs
+    2300014: Top
+    2300016: Top H Struts
+    2300018: Barrier Posts
+    2300020: Barrier Supports
+    2300022: Barriers
+    3300000: Crossbeam Tops
+    3300002: Crossbeams
+    3300004: Feet
+    3300006: Ladder Legs
+    3300008: Ladder Struts
+    3300010: Ladder Support
+    3300012: Legs
+    3300014: Top
+    3300016: Top H Struts
+    3300018: Barrier Posts
+    3300020: Barrier Supports
+    3300022: Barriers
+    4300000: Ladder Support
+    4300002: Ladder Legs
+    4300004: Ladder Struts
+    4300006: Crossbeam Tops
+    4300008: Crossbeams
+    4300010: Top H Struts
+    4300012: Top
+    4300014: Legs
+    4300016: Feet
+    4300018: Barrier Supports
+    4300020: Barriers
+    4300022: Barrier Posts
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
