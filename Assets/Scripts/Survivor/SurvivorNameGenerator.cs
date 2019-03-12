@@ -14,7 +14,7 @@ namespace LastStand
 
         private static SystemLanguage defaultLanguage;
 
-        static SurvivorNameGenerator()
+        public static void Initialise()
         {
             defaultLanguage = SystemLanguage.English;
 

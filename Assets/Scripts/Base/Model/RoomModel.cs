@@ -1,5 +1,4 @@
 ﻿using Curveball;
-using UnityEngine;
 
 namespace LastStand
 {
@@ -10,6 +9,12 @@ namespace LastStand
         public RoomType RoomType;
         public bool IsBuilt;
         public bool IsOutside;
-        public Vector3 Center;
+
+        public void CopyFrom(RoomModel other)
+        {
+            BuildProgress = other.BuildProgress;
+            RoomType = other.RoomType;
+            IsBuilt = other.IsBuilt;
+        }
     }
 }

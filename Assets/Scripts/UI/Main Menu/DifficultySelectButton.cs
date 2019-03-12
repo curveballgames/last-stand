@@ -16,7 +16,7 @@ namespace LastStand
 
         private void OnClick()
         {
-            Curveball.EventSystem.Publish(new NewGameEvent(DifficultyLevel));
+            Curveball.EventSystem.Publish(new StartNewGameFadeEvent(DifficultyLevel));
         }
     }
 }
