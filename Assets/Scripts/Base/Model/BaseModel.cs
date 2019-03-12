@@ -1,4 +1,5 @@
 ﻿using Curveball;
+using UnityEngine;
 
 namespace LastStand
 {
@@ -11,6 +12,8 @@ namespace LastStand
         public int MinMaterialsNeeded;
         public RoomModel[] Rooms;
         public OutdoorEntityModel[] OutdoorEntities;
+        public Vector3 Center;
+        public Vector2 Bounds;
 
         public void CopyFrom(BaseModel other)
         {

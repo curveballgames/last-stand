@@ -717,6 +717,8 @@ MonoBehaviour:
   - {fileID: 6375070166313905393}
   - {fileID: 6375070166382805457}
   - {fileID: 6375070167138427256}
+  Center: {x: 0, y: 0, z: 0}
+  Bounds: {x: 10, y: 15}
 --- !u!114 &6375070167169160528
 MonoBehaviour:
   m_ObjectHideFlags: 0
