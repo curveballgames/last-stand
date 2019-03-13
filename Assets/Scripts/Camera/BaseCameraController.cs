@@ -7,55 +7,71 @@ namespace LastStand
     public class BaseCameraController : CBGGameObject
     {
         public Transform Anchor;
-
-        public Vector3 CameraOffset;
-        public float MinZoomHeight;
-        public float MaxZoomHeight;
         public float MoveSpeed;
 
         [Space]
-        public float ZoomSpeed;
-        public float ZoomLerpSpeed;
-        private float zoomTo;
+        public float RotateSpeed;
+        public float TrackballRotateSpeed;
+        public float RotationLerpSpeed;
 
         [Space]
-        public float RotationLerpTime;
-        public Ease RotationEase;
-        private float rotateTo;
-        private float currentRotation;
-        private Tweener rotationTweener;
+        public float MinZoomRadius;
+        public float MaxZoomRadius;
+        public float ZoomSpeed;
+
+        private float zoomRadius;
+        private float zoomLerp;
+
+        private Vector3 targetPos;
+
+        private float yawLerp;
+        private float yaw;
+
+        private const float MIN_PITCH = 25f;
+        private const float MAX_PITCH = 85f;
+        private float pitchLerp;
+        private float pitch;
 
         private void OnEnable()
         {
             Anchor.position = BaseModel.CurrentBase.Center;
-            transform.localPosition = CameraOffset;
-            transform.LookAt(Anchor);
-            zoomTo = transform.localPosition.y;
-            rotateTo = currentRotation = Anchor.rotation.eulerAngles.y;
+
+            yaw = yawLerp = 180f;
+            pitch = pitchLerp = Mathf.Lerp(MIN_PITCH, MAX_PITCH, 0.5f);
+            zoomRadius = zoomLerp = Mathf.Lerp(MinZoomRadius, MaxZoomRadius, 0.5f);
+
+            UpdateLocalPosition(true);
         }
 
-        private void OnDisable()
+        private void LateUpdate()
         {
-            if (rotationTweener == null)
-            {
-                rotationTweener.Kill();
-                rotationTweener = null;
-            }
-        }
-
-        private void Update()
-        {
-            UpdateRotation();
-            UpdateBaseCameraPosition();
             UpdateCameraZoom();
+            UpdateCameraRotation();
+            UpdateLocalPosition(false);
+            UpdateCameraPosition();
         }
 
-        void UpdateBaseCameraPosition()
+        private void UpdateLocalPosition(bool immediate)
+        {
+            transform.localPosition = Vector3.zero;
+            transform.forward = Vector3.forward;
+            transform.Rotate(pitchLerp, yawLerp, 0f);
+
+            transform.localPosition -= transform.forward * zoomLerp;
+            transform.LookAt(Anchor.position);
+        }
+
+        void UpdateCameraPosition()
         {
             Vector3 moveVector = transform.position;
 
-            Vector3 forwardVector = Anchor.forward;
-            Vector3 rightVector = Anchor.right;
+            Vector3 forwardVector = transform.forward;
+            forwardVector.y = 0f;
+            forwardVector.Normalize();
+
+            Vector3 rightVector = transform.right;
+            rightVector.y = 0f;
+            rightVector.Normalize();
 
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
@@ -91,29 +107,31 @@ namespace LastStand
 
         void UpdateCameraZoom()
         {
-            Vector3 localPosition = transform.localPosition;
+            float zoomAmount = Input.GetAxis("Zoom") * ZoomSpeed * Time.deltaTime;
+            zoomRadius = Mathf.Clamp(zoomRadius + zoomAmount, MinZoomRadius, MaxZoomRadius);
 
-            float zoomAmount = Input.GetAxis("Zoom") * ZoomSpeed;
-            zoomTo = Mathf.Clamp(zoomTo + zoomAmount, MinZoomHeight, MaxZoomHeight);
-            localPosition.y = Mathf.Lerp(localPosition.y, zoomTo, Time.deltaTime * ZoomLerpSpeed);
-
-            transform.localPosition = localPosition;
+            zoomLerp = Mathf.Lerp(zoomLerp, zoomRadius, Time.deltaTime * RotationLerpSpeed);
         }
 
-        void UpdateRotation()
+        void UpdateCameraRotation()
         {
-            if (Input.GetButtonDown("Rotate Camera"))
+            if (Input.GetButton("Trackball Button"))
             {
-                rotateTo += Input.GetAxis("Rotate Camera") * -90f;
-                rotationTweener = DOTween.To(() => { return currentRotation; }, (float v) => {
-                    currentRotation = v;
-                    Anchor.eulerAngles = new Vector3(0f, currentRotation, 0f);
-                }, rotateTo, RotationLerpTime);
+                float speedMod = Time.deltaTime * TrackballRotateSpeed;
 
-                rotationTweener.SetEase(RotationEase);
-                rotationTweener.OnComplete(() => { rotationTweener = null; });
+                yaw += Input.GetAxis("Trackball Yaw") * speedMod;
+                pitch += Input.GetAxis("Trackball Pitch") * speedMod;
+                pitch = Mathf.Clamp(pitch, MIN_PITCH, MAX_PITCH);
             }
-            
+            else
+            {
+                float rotation = Input.GetAxis("Rotate Camera") * Time.deltaTime * RotateSpeed;
+                yaw -= rotation;
+            }
+
+            float lerpSpeed = Time.deltaTime * RotationLerpSpeed;
+            yawLerp = Mathf.Lerp(yawLerp, yaw, lerpSpeed);
+            pitchLerp = Mathf.Lerp(pitchLerp, pitch, lerpSpeed);
         }
     }
 }
