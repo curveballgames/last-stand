@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using Curveball;
 using DG.Tweening;
+using UnityEngine.Events;
 
 namespace LastStand
 {
@@ -38,7 +39,7 @@ namespace LastStand
             FadeToTransparent();
         }
 
-        void FadeToOpaque(TweenCallback onCompleteCallback = null)
+        void FadeToOpaque(UnityAction onCompleteCallback = null)
         {
             FadeImage.color = fromColor;
             FadeImage.enabled = true;
@@ -47,7 +48,9 @@ namespace LastStand
 
             if (onCompleteCallback != null)
             {
-                t.OnComplete(onCompleteCallback);
+                t.OnComplete(() => {
+                    Timer.CreateTimer(gameObject, 0.1f, onCompleteCallback);
+                });
             }
         }
 

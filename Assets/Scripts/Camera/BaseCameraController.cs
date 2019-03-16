@@ -58,21 +58,10 @@ namespace LastStand
             transform.Rotate(pitchLerp, yawLerp, 0f);
 
             transform.localPosition -= transform.forward * zoomLerp;
-            transform.LookAt(Anchor.position);
         }
 
         void UpdateCameraPosition()
         {
-            Vector3 moveVector = transform.position;
-
-            Vector3 forwardVector = transform.forward;
-            forwardVector.y = 0f;
-            forwardVector.Normalize();
-
-            Vector3 rightVector = transform.right;
-            rightVector.y = 0f;
-            rightVector.Normalize();
-
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
             float horizontalMagnitude = Mathf.Abs(horizontal);
@@ -89,6 +78,14 @@ namespace LastStand
             {
                 magnitudeVector.Normalize();
             }
+
+            Vector3 forwardVector = transform.forward;
+            forwardVector.y = 0f;
+            forwardVector.Normalize();
+
+            Vector3 rightVector = transform.right;
+            rightVector.y = 0f;
+            rightVector.Normalize();
 
             horizontal = Mathf.Clamp(horizontal, -magnitudeVector.x, magnitudeVector.x);
             vertical = Mathf.Clamp(vertical, -magnitudeVector.y, magnitudeVector.y) * -1f;
@@ -107,8 +104,11 @@ namespace LastStand
 
         void UpdateCameraZoom()
         {
-            float zoomAmount = Input.GetAxis("Zoom") * ZoomSpeed * Time.deltaTime;
-            zoomRadius = Mathf.Clamp(zoomRadius + zoomAmount, MinZoomRadius, MaxZoomRadius);
+            if (!Mathf.Approximately(Input.GetAxis("Zoom"), 0f))
+            {
+                float zoomAmount = Input.GetAxis("Zoom") * ZoomSpeed * Time.deltaTime;
+                zoomRadius = Mathf.Clamp(zoomRadius + zoomAmount, MinZoomRadius, MaxZoomRadius);
+            }
 
             zoomLerp = Mathf.Lerp(zoomLerp, zoomRadius, Time.deltaTime * RotationLerpSpeed);
         }
@@ -123,7 +123,7 @@ namespace LastStand
                 pitch += Input.GetAxis("Trackball Pitch") * speedMod;
                 pitch = Mathf.Clamp(pitch, MIN_PITCH, MAX_PITCH);
             }
-            else
+            else if (Input.GetButton("Rotate Camera"))
             {
                 float rotation = Input.GetAxis("Rotate Camera") * Time.deltaTime * RotateSpeed;
                 yaw -= rotation;

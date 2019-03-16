@@ -6,6 +6,7 @@ namespace LastStand
     public class UIManager : CBGGameObject
     {
         public GameObject MainMenuRoot;
+        public GameObject BaseHUD;
 
         private void Awake()
         {
@@ -21,6 +22,7 @@ namespace LastStand
         private void OnNewGame(NewGameEvent e)
         {
             MainMenuRoot.SetActive(false);
+            BaseHUD.SetActive(true);
         }
     }
 }
