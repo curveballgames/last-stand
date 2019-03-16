@@ -19,5 +19,7 @@
 	"ng-ui:autumn": "Autumn",
 	"ng-ui:autumn-description": "- Standard days\n- Standard nights\n- variable weather\n- average crop growth",
 	"ng-ui:winter": "Winter",
-	"ng-ui:winter-description": "- Short days\n- Long nights\n- bad weather\n- weak crop growth"
+	"ng-ui:winter-description": "- Short days\n- Long nights\n- bad weather\n- weak crop growth",
+
+	"base-ui:traits": "Traits"
 }

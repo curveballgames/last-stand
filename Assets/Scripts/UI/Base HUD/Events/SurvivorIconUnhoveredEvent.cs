@@ -2,13 +2,13 @@
 
 namespace LastStand
 {
-    public class SurvivorIconUnhoveredEvent : IEvent
+    public struct SurvivorIconUnhoveredEvent : IEvent
     {
-        public SurvivorModel Model;
+        public BaseSurvivorAssignIcon Icon;
 
-        public SurvivorIconUnhoveredEvent(SurvivorModel model)
+        public SurvivorIconUnhoveredEvent(BaseSurvivorAssignIcon icon)
         {
-            Model = model;
+            Icon = icon;
         }
     }
 }

@@ -17,11 +17,6 @@ namespace LastStand
 
         private bool dragging;
 
-        private void Awake()
-        {
-            // subscribe
-        }
-
         private void LateUpdate()
         {
             if (dragging)
@@ -41,17 +36,17 @@ namespace LastStand
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            Curveball.EventSystem.Publish(new SurvivorIconHoveredEvent(Model));
+            Curveball.EventSystem.Publish(new SurvivorIconHoveredEvent(this));
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            Curveball.EventSystem.Publish(new SurvivorIconUnhoveredEvent(Model));
+            Curveball.EventSystem.Publish(new SurvivorIconUnhoveredEvent(this));
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            Curveball.EventSystem.Publish(new SurvivorIconClickedEvent(Model));
+            Curveball.EventSystem.Publish(new SurvivorIconClickedEvent(this));
         }
 
         public void OnDrag(PointerEventData eventData)
