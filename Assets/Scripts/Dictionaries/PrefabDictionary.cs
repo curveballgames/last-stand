@@ -5,18 +5,21 @@ namespace LastStand
 {
     public class PrefabDictionary : CBGGameObject
     {
-        private static PrefabDictionary singleton;
+        public static PrefabDictionary Singleton;
 
         public BaseModel[] Bases;
 
+        public RoomBuildButton RoomBuildButtonPrefab;
+        public BaseSurvivorAssignIcon SurvivorIconPrefab;
+
         private void Awake()
         {
-            singleton = this;
+            Singleton = this;
         }
 
         public static BaseModel GetBaseWithName(string name)
         {
-            foreach (BaseModel model in singleton.Bases)
+            foreach (BaseModel model in Singleton.Bases)
             {
                 if (model.Name == name)
                 {

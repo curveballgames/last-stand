@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Curveball;
@@ -16,12 +14,15 @@ namespace LastStand
         public SurvivorModel Model { get; set; }
 
         private bool dragging;
+        private RoomHoverEvent roomHoverEvent = new RoomHoverEvent();
 
         private void LateUpdate()
         {
             if (dragging)
             {
                 Draggable.position = Input.mousePosition;
+                roomHoverEvent.Room = BaseRaycaster.CastForRooms();
+                Curveball.EventSystem.Publish(roomHoverEvent);
             }
             else
             {
@@ -49,8 +50,7 @@ namespace LastStand
             Curveball.EventSystem.Publish(new SurvivorIconClickedEvent(this));
         }
 
-        public void OnDrag(PointerEventData eventData)
-        { }
+        public void OnDrag(PointerEventData eventData) { }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
@@ -65,7 +65,19 @@ namespace LastStand
             if (!Input.GetMouseButton(0))
             {
                 dragging = false;
+
+                if (roomHoverEvent.Room != null)
+                {
+                    DropOnRoom();
+                    roomHoverEvent.Room = null;
+                    Curveball.EventSystem.Publish(roomHoverEvent);
+                }
             }
+        }
+
+        void DropOnRoom()
+        {
+
         }
     }
 }

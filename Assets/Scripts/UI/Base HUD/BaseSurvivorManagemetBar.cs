@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Curveball;
 
@@ -8,7 +7,6 @@ namespace LastStand
     public class BaseSurvivorManagemetBar : CBGUIComponent
     {
         public Transform IconParent;
-        public BaseSurvivorAssignIcon SurvivorIconPrefab;
 
         private static List<BaseSurvivorAssignIcon> createdIcons = new List<BaseSurvivorAssignIcon>();
 
@@ -38,7 +36,7 @@ namespace LastStand
 
         void CreateNewSurvivorIcon()
         {
-            GameObject newIcon = Instantiate(SurvivorIconPrefab.gameObject, IconParent);
+            GameObject newIcon = Instantiate(PrefabDictionary.Singleton.SurvivorIconPrefab.gameObject, IconParent);
             createdIcons.Add(newIcon.GetComponent<BaseSurvivorAssignIcon>());
             newIcon.SetActive(false);
         }

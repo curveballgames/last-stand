@@ -1,7 +1,9 @@
 ﻿using Curveball;
+using UnityEngine;
 
 namespace LastStand
 {
+    [RequireComponent(typeof(BoxCollider))]
     public class RoomModel : CBGGameObject
     {
         public int AssignmentSlots;
