@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using Curveball;
-using DG.Tweening;
 
 namespace LastStand
 {
@@ -18,6 +17,8 @@ namespace LastStand
         public float MinZoomRadius;
         public float MaxZoomRadius;
         public float ZoomSpeed;
+        private Timer dragDelayTimer;
+        private const float DRAG_DELAY = 0.1f;
 
         private float zoomRadius;
         private float zoomLerp;
@@ -34,6 +35,11 @@ namespace LastStand
 
         private void OnEnable()
         {
+            if (dragDelayTimer == null)
+            {
+                dragDelayTimer = Timer.CreateTimer(gameObject, DRAG_DELAY, null, null, false, false);
+            }
+
             Anchor.position = BaseModel.CurrentBase.Center;
 
             yaw = yawLerp = 180f;
@@ -117,11 +123,19 @@ namespace LastStand
         {
             if (Input.GetButton("Trackball Button"))
             {
-                float speedMod = Time.deltaTime * TrackballRotateSpeed;
+                if (Input.GetButtonDown("Trackball Button"))
+                {
+                    dragDelayTimer.StartTimer(true);
+                }
 
-                yaw += Input.GetAxis("Trackball Yaw") * speedMod;
-                pitch += Input.GetAxis("Trackball Pitch") * speedMod;
-                pitch = Mathf.Clamp(pitch, MIN_PITCH, MAX_PITCH);
+                if (!dragDelayTimer.IsTiming)
+                {
+                    float speedMod = Time.deltaTime * TrackballRotateSpeed;
+
+                    yaw += Input.GetAxis("Trackball Yaw") * speedMod;
+                    pitch += Input.GetAxis("Trackball Pitch") * speedMod;
+                    pitch = Mathf.Clamp(pitch, MIN_PITCH, MAX_PITCH);
+                }
             }
             else if (Input.GetButton("Rotate Camera"))
             {

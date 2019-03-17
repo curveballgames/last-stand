@@ -19,6 +19,8 @@ namespace LastStand
 
             EventSystem.Subscribe<StartNewGameFadeEvent>(OnNewGameFadeStart, this);
             EventSystem.Subscribe<NewGameEvent>(OnNewGame, this);
+
+            BaseHUD.SetActive(false);
         }
 
         private void OnNewGameFadeStart(StartNewGameFadeEvent e)

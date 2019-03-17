@@ -6,7 +6,7 @@ namespace LastStand
 {
     public class RoomBuildButton : CBGUIComponent
     {
-        private static readonly Vector3 WORLD_OFFSET = Vector3.up;
+        private static readonly Vector3 WORLD_OFFSET = Vector3.up * 2f;
 
         public Button BuildButton;
         public RoomView LinkedRoom { get; set; }
@@ -23,7 +23,7 @@ namespace LastStand
 
         void OnClick()
         {
-
+            EventSystem.Publish(new BuildButtonPressedEvent(LinkedRoom.LinkedModel));
         }
     }
 }

@@ -70,7 +70,7 @@ namespace LastStand
 
         void ConfigureForRoomUnderConstruction()
         {
-
+            buildButton.SetActive(false);
         }
     }
 }

@@ -21,5 +21,12 @@
 	"ng-ui:winter": "Winter",
 	"ng-ui:winter-description": "- Short days\n- Long nights\n- bad weather\n- weak crop growth",
 
-	"base-ui:traits": "Traits"
+	"base-ui:traits": "Traits",
+	"base-ui:construction": "Construction",
+
+	"room-name:empty": "Empty",
+	"room-name:bedroom": "Bedroom",
+	
+	"room-description:empty": "An empty room. Has no use.",
+	"room-description:bedroom": "A room for people to sleep in."
 }
