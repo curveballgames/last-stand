@@ -1,5 +1,6 @@
 {
 	"general-ui:back": "Back",
+	"general-ui:day": "DAY",
 
 	"mm-ui:newgame": "New Game",
 	"mm-ui:continue": "Continue",

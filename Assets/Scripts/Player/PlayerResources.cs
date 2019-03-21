@@ -29,12 +29,14 @@ namespace LastStand
         void OnConstructionStarted(StartRoomConstructionEvent e)
         {
             buildingMaterials -= RoomTypeDictionary.Costs[e.TypeToBuild];
+            EventSystem.Publish(new PlayerResourcesUpdatedEvent());
         }
 
         void OnNewGame(NewGameEvent e)
         {
             buildingMaterials = STARTING_MATERIALS;
             food = STARTING_FOOD;
+            EventSystem.Publish(new PlayerResourcesUpdatedEvent());
         }
     }
 }

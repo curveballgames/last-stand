@@ -26,8 +26,6 @@ namespace LastStand
             model.StrengthSkill = Random.Range(0, GENERIC_SURVIVOR_STAT_VARIANCE + 1);
             model.ShootingSkill = Random.Range(0, GENERIC_SURVIVOR_STAT_VARIANCE + 1);
             model.Name = SurvivorNameGenerator.GenerateName(model.IsMale);
-
-            SurvivorAvatarGenerator.GenerateHeadAvatarForModel(model);
         }
 
         private const int HEROIC_SURVIVOR_STAT_MIN = 10;
@@ -42,8 +40,6 @@ namespace LastStand
             model.StrengthSkill = Random.Range(HEROIC_SURVIVOR_STAT_MIN, HEROIC_SURVIVOR_STAT_MAX + 1);
             model.ShootingSkill = Random.Range(HEROIC_SURVIVOR_STAT_MIN, HEROIC_SURVIVOR_STAT_MAX + 1);
             model.Name = SurvivorNameGenerator.GenerateName(model.IsMale);
-
-            SurvivorAvatarGenerator.GenerateHeadAvatarForModel(model);
         }
     }
 }
