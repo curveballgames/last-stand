@@ -8,9 +8,18 @@ namespace LastStand
     {
         public GameObject SurvivorIconRoot;
         public Image AssignmentColorImage;
+        public Button UnassignButton;
+
+        private SurvivorModel LinkedSurvivor;
+
+        private void Awake()
+        {
+            UnassignButton.onClick.AddListener(OnUnassignClick);
+        }
 
         public void ConfigureForSurvivor(SurvivorModel s, bool roomIsBuilt)
         {
+            LinkedSurvivor = s;
             SurvivorIconRoot.SetActive(s != null);
 
             if (s != null)
@@ -20,6 +29,16 @@ namespace LastStand
             else
             {
                 AssignmentColorImage.color = SurvivorAvatarGenerator.GetColorForRoom(null);
+            }
+
+            UnassignButton.gameObject.SetActive(s != null);
+        }
+
+        void OnUnassignClick()
+        {
+            if (LinkedSurvivor != null)
+            {
+                LinkedSurvivor.AssignRoom(null);
             }
         }
     }

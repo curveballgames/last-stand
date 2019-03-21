@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Curveball;
+﻿using Curveball;
 
 namespace LastStand
 {
@@ -11,14 +8,19 @@ namespace LastStand
 
         private RoomBuildButton buildButton;
         private RoomAssignmentSlots assignmentSlots;
+        private RoomBuildProgressBar buildProgressBar;
 
         private void Awake()
         {
             EventSystem.Subscribe<RoomModelUpdatedEvent>(OnRoomModelUpdated, this);
 
             buildButton = Instantiate(PrefabDictionary.Singleton.RoomBuildButtonPrefab, UIManager.Singleton.BuildButtonParent);
+
             assignmentSlots = Instantiate(PrefabDictionary.Singleton.RoomAssignmentSlotsPrefab, UIManager.Singleton.RoomAssignmentSlotsParent);
             assignmentSlots.SetLinkedRoom(this);
+
+            buildProgressBar = Instantiate(PrefabDictionary.Singleton.RoomBuildBarPrefab, UIManager.Singleton.RoomProgressBarParent);
+            buildProgressBar.OffsetParent = assignmentSlots.RectTransform;
 
             UpdateView();
         }
@@ -55,6 +57,7 @@ namespace LastStand
         void ConfigureForBuiltRoom()
         {
             buildButton.SetActive(false);
+            buildProgressBar.SetActive(false);
             assignmentSlots.UpdateView(true);
             assignmentSlots.SetActive(true);
         }
@@ -63,6 +66,7 @@ namespace LastStand
         {
             buildButton.LinkedRoom = this;
             buildButton.SetActive(true);
+            buildProgressBar.SetActive(false);
             assignmentSlots.SetActive(false);
         }
 
@@ -71,6 +75,8 @@ namespace LastStand
             buildButton.SetActive(false);
             assignmentSlots.UpdateView(false);
             assignmentSlots.SetActive(true);
+            buildProgressBar.SetActive(true);
+            buildProgressBar.UpdateView(LinkedModel);
         }
     }
 }

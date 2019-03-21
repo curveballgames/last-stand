@@ -13,6 +13,7 @@ namespace LastStand
         public BaseSurvivorAssignIcon SurvivorIconPrefab;
         public RoomAssignmentSlot RoomAssignmentSlotPrefab;
         public RoomAssignmentSlots RoomAssignmentSlotsPrefab;
+        public RoomBuildProgressBar RoomBuildBarPrefab;
 
         private void Awake()
         {

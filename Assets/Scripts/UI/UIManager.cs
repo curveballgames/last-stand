@@ -12,6 +12,7 @@ namespace LastStand
 
         public Transform BuildButtonParent;
         public Transform RoomAssignmentSlotsParent;
+        public Transform RoomProgressBarParent;
 
         private void Awake()
         {

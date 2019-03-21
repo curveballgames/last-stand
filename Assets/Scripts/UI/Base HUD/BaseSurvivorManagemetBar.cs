@@ -10,6 +10,11 @@ namespace LastStand
 
         private static List<BaseSurvivorAssignIcon> createdIcons = new List<BaseSurvivorAssignIcon>();
 
+        private void Awake()
+        {
+            EventSystem.Subscribe<SurvivorAssignmentUpdatedEvent>(OnSurvivorAssignmentUpdated, this);
+        }
+
         private void OnEnable()
         {
             for (int i = 0; i < SurvivorModel.AllModels.Count; i++)
@@ -39,6 +44,18 @@ namespace LastStand
             GameObject newIcon = Instantiate(PrefabDictionary.Singleton.SurvivorIconPrefab.gameObject, IconParent);
             createdIcons.Add(newIcon.GetComponent<BaseSurvivorAssignIcon>());
             newIcon.SetActive(false);
+        }
+
+        void OnSurvivorAssignmentUpdated(SurvivorAssignmentUpdatedEvent e)
+        {
+            foreach (BaseSurvivorAssignIcon icon in createdIcons)
+            {
+                if (icon.gameObject.activeSelf && icon.Model == e.SurvivorModel)
+                {
+                    icon.UpdateView();
+                    return;
+                }
+            }
         }
     }
 }

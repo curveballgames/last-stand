@@ -20,5 +20,11 @@ namespace LastStand
             { RoomType.Empty, "room-description:empty" },
             { RoomType.Bedroom, "room-description:bedroom" }
         };
+
+        public static Dictionary<RoomType, int> RoomBuildStages = new Dictionary<RoomType, int>
+        {
+            { RoomType.Empty, 0 },
+            { RoomType.Bedroom, 3 }
+        };
     }
 }
