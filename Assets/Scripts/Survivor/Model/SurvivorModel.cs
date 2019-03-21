@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace LastStand
 {
@@ -26,6 +27,11 @@ namespace LastStand
         public int StrengthSkill;
         public int ShootingSkill;
 
+        public bool IsMale;
+        public int SkinTone;
+        public int HairStyle;
+        public int HairColour;
+
         public static void Initialise()
         {
             AllModels = new List<SurvivorModel>();
@@ -43,14 +49,26 @@ namespace LastStand
         public SurvivorModel()
         {
             Name = string.Empty;
+            IsMale = true;
             Health = DEFAULT_HEALTH;
             Tiredness = 0;
             Hunger = 0;
             ShootingSkill = 0;
             FitnessSkill = 0;
             StrengthSkill = 0;
+            SkinTone = 0;
+            HairStyle = 0;
+            HairColour = 0;
 
             AllModels.Add(this);
+        }
+
+        public void RandomiseValues()
+        {
+            IsMale = Random.value > 0.5f;
+            SkinTone = Random.Range(0, SurvivorAvatarGenerator.NumSkinTones);
+            HairStyle = Random.Range(0, IsMale ? SurvivorAvatarGenerator.NumMaleHairstyles : SurvivorAvatarGenerator.NumFemaleHairstyles);
+            HairColour = Random.Range(0, SurvivorAvatarGenerator.NumHairColours);
         }
 
         public int GetLevel(int skillAmount)

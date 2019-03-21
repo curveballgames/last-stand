@@ -3111,6 +3111,7 @@ GameObject:
   - component: {fileID: 523950704}
   - component: {fileID: 523950703}
   - component: {fileID: 523950705}
+  - component: {fileID: 523950706}
   m_Layer: 0
   m_Name: Globals
   m_TagString: Untagged
@@ -3200,6 +3201,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingMaterials: 0
   food: 0
+--- !u!114 &523950706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523950699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bfc08f9812a7bd4e964401289f6316e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkinMaterials:
+  - {fileID: 2100000, guid: ba3e5f45cb463464c91a11210749b792, type: 2}
+  - {fileID: 2100000, guid: ba53584af82c6df41abd9d6f15f54805, type: 2}
+  - {fileID: 2100000, guid: 6365224d90eb11d43be5f956245e376d, type: 2}
+  - {fileID: 2100000, guid: d59e7ec951ce2e14681e37b9f184cd39, type: 2}
+  - {fileID: 2100000, guid: af26a960b911e5a4894452408e3b8b14, type: 2}
+  HairMaterials:
+  - {fileID: 2100000, guid: 32c8eb7e05d7d7c48a493f9d2a8f4991, type: 2}
+  - {fileID: 2100000, guid: 7380b41048c8dda45b83f5e87b8ba3f8, type: 2}
+  - {fileID: 2100000, guid: a2daa833e23139b40937238ce0d1e61b, type: 2}
+  - {fileID: 2100000, guid: fa5fa381139c248498217c0a80a25869, type: 2}
+  - {fileID: 2100000, guid: 9593b824f8ac7ee499d71839f9f4d3f6, type: 2}
+  - {fileID: 2100000, guid: d4fd6dcb86076f348949eab25381db0c, type: 2}
+  - {fileID: 2100000, guid: e3831d45921ba9742a3bd21e58dd4b4f, type: 2}
+  - {fileID: 2100000, guid: 1f298c0b3192ced4cb74d489938288e8, type: 2}
+  - {fileID: 2100000, guid: 153a67d468b72da4ba6a0cb4c40a9fa3, type: 2}
+  MaleHairPrefabs:
+  - {fileID: 6198478599019779724, guid: 9d9063a2f8b326f43b3308df3d0dcc55, type: 3}
+  FemaleHairPrefabs:
+  - {fileID: 7923051008905602680, guid: 099b5f97900fd4b4d80090e996f82c57, type: 3}
+  SurvivorHeadPrefab: {fileID: 5395822989572073164, guid: e9fb7aa629f3ff0479794bea602e5a98,
+    type: 3}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0

@@ -94,7 +94,7 @@ namespace LastStand
             rightVector.Normalize();
 
             horizontal = Mathf.Clamp(horizontal, -magnitudeVector.x, magnitudeVector.x);
-            vertical = Mathf.Clamp(vertical, -magnitudeVector.y, magnitudeVector.y) * -1f;
+            vertical = Mathf.Clamp(vertical, -magnitudeVector.y, magnitudeVector.y);
 
             Vector3 moveTo = Anchor.position + (forwardVector * vertical) + (rightVector * horizontal);
 
