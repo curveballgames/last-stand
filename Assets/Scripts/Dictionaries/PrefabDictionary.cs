@@ -11,6 +11,8 @@ namespace LastStand
 
         public RoomBuildButton RoomBuildButtonPrefab;
         public BaseSurvivorAssignIcon SurvivorIconPrefab;
+        public RoomAssignmentSlot RoomAssignmentSlotPrefab;
+        public RoomAssignmentSlots RoomAssignmentSlotsPrefab;
 
         private void Awake()
         {

@@ -32,7 +32,7 @@ namespace LastStand
 
         public void UpdateView()
         {
-
+            AssignmentColorImage.color = SurvivorAvatarGenerator.GetColorForRoom(Model.AssignedRoom);
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -77,7 +77,11 @@ namespace LastStand
 
         void DropOnRoom()
         {
-
+            if (roomHoverEvent.Room != null && roomHoverEvent.Room.RoomType != RoomType.Empty && !roomHoverEvent.Room.IsFull())
+            {
+                Model.AssignRoom(roomHoverEvent.Room);
+                UpdateView();
+            }
         }
     }
 }

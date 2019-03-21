@@ -14,10 +14,10 @@ namespace LastStand
 
         private void OnNewGame(NewGameEvent e)
         {
+            BaseModel.CurrentBase = PrefabDictionary.GetBaseWithName(STARTING_BASE_NAME);
+
             SurvivorModel.Initialise();
             SurvivorGenerator.GenerateInitialSurvivors();
-
-            BaseModel.CurrentBase = PrefabDictionary.GetBaseWithName(STARTING_BASE_NAME);
 
             EventSystem.Publish(new ModelsInitialisedEvent());
         }

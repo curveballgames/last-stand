@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Curveball;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace LastStand
@@ -31,6 +32,9 @@ namespace LastStand
         public int SkinTone;
         public int HairStyle;
         public int HairColour;
+
+        public RoomModel AssignedRoom { get; private set; }
+        public int? AssignedRoomGUID;
 
         public static void Initialise()
         {
@@ -69,6 +73,17 @@ namespace LastStand
             SkinTone = Random.Range(0, SurvivorAvatarGenerator.NumSkinTones);
             HairStyle = Random.Range(0, IsMale ? SurvivorAvatarGenerator.NumMaleHairstyles : SurvivorAvatarGenerator.NumFemaleHairstyles);
             HairColour = Random.Range(0, SurvivorAvatarGenerator.NumHairColours);
+        }
+
+        public void AssignRoom(RoomModel model)
+        {
+            AssignedRoom = model;
+
+            if (model == null)
+                AssignedRoomGUID = null;
+            else AssignedRoomGUID = model.GetInstanceID();
+
+            EventSystem.Publish(new SurvivorAssignmentUpdatedEvent(this, model, model != null));
         }
 
         public int GetLevel(int skillAmount)

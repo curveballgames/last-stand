@@ -10,10 +10,15 @@ namespace LastStand
         public RoomModel LinkedModel;
 
         private RoomBuildButton buildButton;
+        private RoomAssignmentSlots assignmentSlots;
 
         private void Awake()
         {
             EventSystem.Subscribe<RoomModelUpdatedEvent>(OnRoomModelUpdated, this);
+
+            buildButton = Instantiate(PrefabDictionary.Singleton.RoomBuildButtonPrefab, UIManager.Singleton.BuildButtonParent);
+            assignmentSlots = Instantiate(PrefabDictionary.Singleton.RoomAssignmentSlotsPrefab, UIManager.Singleton.RoomAssignmentSlotsParent);
+            assignmentSlots.SetLinkedRoom(this);
 
             UpdateView();
         }
@@ -28,11 +33,6 @@ namespace LastStand
             if (e.Room != LinkedModel)
                 return;
 
-            UpdateView();
-        }
-
-        void OnModelsInitialised(ModelsInitialisedEvent e)
-        {
             UpdateView();
         }
 
@@ -54,23 +54,23 @@ namespace LastStand
 
         void ConfigureForBuiltRoom()
         {
-
+            buildButton.SetActive(false);
+            assignmentSlots.UpdateView(true);
+            assignmentSlots.SetActive(true);
         }
 
         void ConfigureForEmptyRoom()
         {
-            if (buildButton == null)
-            {
-                buildButton = Instantiate(PrefabDictionary.Singleton.RoomBuildButtonPrefab, UIManager.Singleton.BuildButtonParent);
-            }
-
             buildButton.LinkedRoom = this;
             buildButton.SetActive(true);
+            assignmentSlots.SetActive(false);
         }
 
         void ConfigureForRoomUnderConstruction()
         {
             buildButton.SetActive(false);
+            assignmentSlots.UpdateView(false);
+            assignmentSlots.SetActive(true);
         }
     }
 }

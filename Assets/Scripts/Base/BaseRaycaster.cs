@@ -12,7 +12,7 @@ namespace LastStand
         {
             if (!roomLayermask.HasValue)
             {
-                roomLayermask = LayerMask.NameToLayer("Room");
+                roomLayermask = Utilities.GetLayerMaskForAllExcept("Room");
             }
 
             if (Utilities.RaycastMousePosition(out hitInfo, roomLayermask.Value))

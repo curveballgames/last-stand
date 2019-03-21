@@ -17,6 +17,9 @@ namespace LastStand
         public GameObject[] MaleHairPrefabs;
         public GameObject[] FemaleHairPrefabs;
         public GameObject SurvivorHeadPrefab;
+        public Color UnassignedColor;
+        public Color BuilderColor;
+        public RoomAssignmentColor[] AssignmentColors;
 
         private void Awake()
         {
@@ -35,6 +38,42 @@ namespace LastStand
             hairInstance.GetComponent<Renderer>().material = Singleton.HairMaterials[model.HairColour];
 
             return root;
+        }
+
+        public static Color GetColorForRoom(RoomModel room)
+        {
+            if (room == null)
+                return Singleton.UnassignedColor;
+
+            if (!room.IsBuilt)
+                return Singleton.BuilderColor;
+
+            foreach (RoomAssignmentColor rac in Singleton.AssignmentColors)
+            {
+                if (rac.RoomType == room.RoomType)
+                {
+                    return rac.Color;
+                }
+            }
+
+            return Singleton.UnassignedColor;
+        }
+
+        public static Color GetUnassignedColor()
+        {
+            return Singleton.UnassignedColor;
+        }
+
+        public static Color GetBuilderColor()
+        {
+            return Singleton.BuilderColor;
+        }
+
+        [System.Serializable]
+        public class RoomAssignmentColor
+        {
+            public RoomType RoomType;
+            public Color Color;
         }
     }
 }

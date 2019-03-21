@@ -11,7 +11,7 @@ namespace LastStand
         public GameObject BaseHUD;
 
         public Transform BuildButtonParent;
-        public Transform SurvivorIconParent;
+        public Transform RoomAssignmentSlotsParent;
 
         private void Awake()
         {
