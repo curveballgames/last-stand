@@ -12,9 +12,9 @@ namespace LastStand
         private static readonly string RECLAIM_CONFIRM_LOCALISATION_KEY = "base-ui:reclaim-button";
         private static readonly string RECLAIM_CANCEL_LOCALISATION_KEY = "general-ui:cancel";
 
-        public GameObject Root;
         public TextMeshProUGUI Title;
         public TextMeshProUGUI Description;
+        public CanvasGroupFader Fader;
 
         public Button ReclaimButton;
         public RoomAssignmentSlot[] AssignmentSlots;
@@ -26,7 +26,6 @@ namespace LastStand
             ReclaimButton.onClick.AddListener(OnReclaimClick);
             EventSystem.Subscribe<RoomHoverEvent>(OnRoomHovered, this);
             EventSystem.Subscribe<RoomSelectEvent>(OnRoomSelectionChanged, this);
-            Root.SetActive(false);
         }
 
         void OnRoomHovered(RoomHoverEvent e)
@@ -41,7 +40,7 @@ namespace LastStand
                 ConfigureForModel(RoomSelectionManager.SelectedRoom);
             }
 
-            Root.SetActive(linkedModel != null);
+            UpdateVisibility();
         }
 
         void OnRoomSelectionChanged(RoomSelectEvent e)
@@ -53,7 +52,7 @@ namespace LastStand
                 ConfigureForModel(BaseRaycaster.GetHoveredRoom());
             }
 
-            Root.SetActive(linkedModel != null);
+            UpdateVisibility();
         }
 
         void ConfigureForModel(RoomModel model)
@@ -107,6 +106,18 @@ namespace LastStand
 
             linkedModel.CancelConstruction();
             ConfigureForModel(linkedModel);
+        }
+
+        void UpdateVisibility()
+        {
+            if (linkedModel == null)
+            {
+                Fader.FadeOut();
+            }
+            else
+            {
+                Fader.FadeIn();
+            }
         }
     }
 }

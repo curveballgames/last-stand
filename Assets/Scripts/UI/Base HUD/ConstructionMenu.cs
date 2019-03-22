@@ -7,6 +7,7 @@ namespace LastStand
     {
         public GameObject BuildMenu;
         public RoomBuildInfoPanel InfoPanel;
+        public CanvasGroupFader Fader;
 
         public RoomBuildSelectButton[] SelectButtons;
 
@@ -69,16 +70,14 @@ namespace LastStand
 
         void Open()
         {
-            BuildMenu.SetActive(true);
-            InfoPanel.SetActive(false);
+            Fader.FadeIn();
             HideInfoPanel();
             hoveredButton = null;
         }
 
         void Close()
         {
-            BuildMenu.SetActive(false);
-            InfoPanel.SetActive(false);
+            Fader.FadeOut();
             HideInfoPanel();
             hoveredButton = null;
         }

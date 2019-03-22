@@ -9,7 +9,7 @@ namespace LastStand
 {
     public class SurvivorInfoPanel : CBGGameObject
     {
-        public GameObject PanelParent;
+        public CanvasGroupFader Fader;
         public TextMeshProUGUI SurvivorName;
         public SurvivorStatBar ShootingBar;
         public SurvivorStatBar FitnessBar;
@@ -21,11 +21,6 @@ namespace LastStand
         {
             EventSystem.Subscribe<SurvivorIconHoveredEvent>(OnSurvivorIconHovered, this);
             EventSystem.Subscribe<SurvivorIconUnhoveredEvent>(OnSurvivorIconUnhovered, this);
-
-            if (PanelParent.activeSelf)
-            {
-                PanelParent.SetActive(false);
-            }
         }
 
         void OnSurvivorIconHovered(SurvivorIconHoveredEvent e)
@@ -54,12 +49,12 @@ namespace LastStand
             FitnessBar.ConfigureForModel(model, model.FitnessSkill);
             StrengthBar.ConfigureForModel(model, model.StrengthSkill);
 
-            PanelParent.gameObject.SetActive(true);
+            Fader.FadeIn();
         }
 
         void Hide(bool immediate)
         {
-            PanelParent.SetActive(false);
+            Fader.FadeOut();
         }
     }
 }
