@@ -10,7 +10,7 @@ namespace LastStand
         private static readonly string CONFIRM_LOCALISATION_KEY = "build-ui:confirm-cancel";
         private static readonly string CANCEL_LOCALISATION_KEY = "build-ui:cancel-cancel";
 
-        private static readonly Vector3 OFFSET = new Vector3(0f, -40f, 0f);
+        private static readonly Vector3 OFFSET = new Vector3(0f, 0f, 0f);
 
         public Color FilledColor;
         public Color UnfilledColor;
@@ -29,7 +29,7 @@ namespace LastStand
 
         private void LateUpdate()
         {
-            RectTransform.position = OffsetParent.position + OFFSET;
+            RectTransform.position = OffsetParent.position + (Vector3.down * OffsetParent.rect.height) + OFFSET;
         }
 
         public void UpdateView(RoomModel model)

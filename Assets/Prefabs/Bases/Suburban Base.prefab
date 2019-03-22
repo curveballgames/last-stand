@@ -50,6 +50,7 @@ MonoBehaviour:
   RoomType: 3
   IsBuilt: 1
   IsOutside: 0
+  Reclaimable: 0
 --- !u!114 &8563321364910969233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,11 +277,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46792ec7d4612504892146f9c124c735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssignmentSlots: 3
+  AssignmentSlots: 2
   BuildProgress: 1
   RoomType: 1
   IsBuilt: 1
   IsOutside: 0
+  Reclaimable: 1
 --- !u!114 &914259676042410635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +546,7 @@ MonoBehaviour:
   RoomType: 0
   IsBuilt: 0
   IsOutside: 1
+  Reclaimable: 1
 --- !u!114 &2782073447797954850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,6 +683,7 @@ MonoBehaviour:
   RoomType: 0
   IsBuilt: 0
   IsOutside: 0
+  Reclaimable: 1
 --- !u!114 &7062468430425531743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1171,6 +1175,7 @@ MonoBehaviour:
   RoomType: 2
   IsBuilt: 1
   IsOutside: 1
+  Reclaimable: 0
 --- !u!114 &873108911070183728
 MonoBehaviour:
   m_ObjectHideFlags: 0

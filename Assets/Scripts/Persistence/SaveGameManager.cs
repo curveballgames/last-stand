@@ -36,7 +36,7 @@ namespace LastStand
                     string json = File.ReadAllText(basePath + i);
                     MetadataEntries[i] = SaveGameMetadata.FromJSON(json);
                 }
-                catch (System.Exception e) { }
+                catch (System.Exception) { }
             }
         }
 
@@ -60,7 +60,7 @@ namespace LastStand
                 File.WriteAllText(SAVE_FILE_DIRECTORY + METADATA_FILE_PREFIX + saveFileIndex, metadata.ToJSON());
                 File.WriteAllText(SAVE_FILE_DIRECTORY + SAVE_FILE_PREFIX + saveFileIndex, saveData.ToJSON());
             }
-            catch (System.Exception e)
+            catch (System.Exception)
             {
                 Debug.Log("An error occured while saving the game");
                 return false;
@@ -78,7 +78,7 @@ namespace LastStand
                 string json = File.ReadAllText(SAVE_FILE_DIRECTORY + SAVE_FILE_PREFIX + saveFileIndex);
                 saveGame = SaveGameData.FromJSON(json);
             }
-            catch (System.Exception e)
+            catch (System.Exception)
             {
                 Debug.Log("Could not save game");
                 return;

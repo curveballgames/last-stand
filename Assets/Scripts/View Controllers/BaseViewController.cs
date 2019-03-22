@@ -5,6 +5,7 @@ namespace LastStand
 {
     public class BaseViewController : CBGGameObject
     {
+        public Transform BaseRoot;
         private GameObject baseGameObject;
 
         private void Awake()
@@ -19,7 +20,7 @@ namespace LastStand
             BaseModel currentBase = BaseModel.CurrentBase;
 
             GameObject basePrefab = PrefabDictionary.GetBaseWithName(currentBase.Name).gameObject;
-            baseGameObject = Instantiate(basePrefab);
+            baseGameObject = Instantiate(basePrefab, BaseRoot);
 
             baseGameObject.GetComponent<BaseModel>().CopyFrom(currentBase);
             BaseModel.CurrentBase = baseGameObject.GetComponent<BaseModel>();

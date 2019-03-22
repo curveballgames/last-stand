@@ -14,15 +14,13 @@ namespace LastStand
         public SurvivorModel Model { get; set; }
 
         private bool dragging;
-        private RoomHoverEvent roomHoverEvent = new RoomHoverEvent();
 
         private void LateUpdate()
         {
             if (dragging)
             {
                 Draggable.position = Input.mousePosition;
-                roomHoverEvent.Room = BaseRaycaster.CastForRooms();
-                Curveball.EventSystem.Publish(roomHoverEvent);
+                BaseRaycaster.CastForRooms();
             }
             else
             {
@@ -66,21 +64,17 @@ namespace LastStand
             if (!Input.GetMouseButton(0))
             {
                 dragging = false;
-
-                if (roomHoverEvent.Room != null)
-                {
-                    DropOnRoom();
-                    roomHoverEvent.Room = null;
-                    Curveball.EventSystem.Publish(roomHoverEvent);
-                }
+                DropOnRoom();
             }
         }
 
         void DropOnRoom()
         {
-            if (roomHoverEvent.Room != null && roomHoverEvent.Room.RoomType != RoomType.Empty && !roomHoverEvent.Room.IsFull())
+            RoomModel hoveredRoom = BaseRaycaster.GetHoveredRoom();
+
+            if (hoveredRoom != null && hoveredRoom.RoomType != RoomType.Empty && !hoveredRoom.IsFull())
             {
-                Model.AssignRoom(roomHoverEvent.Room);
+                Model.AssignRoom(hoveredRoom);
                 UpdateView();
             }
         }

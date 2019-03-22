@@ -12,6 +12,7 @@ namespace LastStand
         public RoomType RoomType;
         public bool IsBuilt;
         public bool IsOutside;
+        public bool Reclaimable;
 
         public HashSet<SurvivorModel> AssignedSurvivors { get => assignedSurvivors; }
         private HashSet<SurvivorModel> assignedSurvivors;
@@ -64,10 +65,9 @@ namespace LastStand
 
         public void CancelConstruction()
         {
-            if (IsBuilt || RoomType == RoomType.Empty)
+            if (RoomType == RoomType.Empty)
                 return;
-
-            BuildProgress = 0;
+            
 
             HashSet<SurvivorModel> assignmentClone = new HashSet<SurvivorModel>(assignedSurvivors);
 
@@ -78,7 +78,9 @@ namespace LastStand
 
             EventSystem.Publish(new RoomConstructionCancelledEvent(this));
 
+            IsBuilt = false;
             RoomType = RoomType.Empty;
+            BuildProgress = 0;
             EventSystem.Publish(new RoomModelUpdatedEvent(this));
         }
     }

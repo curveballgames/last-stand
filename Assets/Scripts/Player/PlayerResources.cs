@@ -5,6 +5,8 @@ namespace LastStand
 {
     public class PlayerResources : CBGGameObject
     {
+        private const float MATERIAL_REFUND_MULTIPLIER = 0.75f;
+
         private const int STARTING_MATERIALS = 6;
         private const int STARTING_FOOD = 5;
 
@@ -42,7 +44,15 @@ namespace LastStand
 
         void OnConstructionCancelled(RoomConstructionCancelledEvent e)
         {
-            buildingMaterials += RoomTypeDictionary.Costs[e.Model.RoomType];
+            if (e.Model.IsBuilt)
+            {
+                buildingMaterials += Mathf.CeilToInt(RoomTypeDictionary.Costs[e.Model.RoomType] * MATERIAL_REFUND_MULTIPLIER);
+            }
+            else
+            {
+                buildingMaterials += RoomTypeDictionary.Costs[e.Model.RoomType];
+            }
+
             EventSystem.Publish(new PlayerResourcesUpdatedEvent());
         }
     }
