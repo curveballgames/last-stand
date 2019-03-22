@@ -42,7 +42,8 @@ namespace LastStand
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            Curveball.EventSystem.Publish(new SurvivorIconUnhoveredEvent(this));
+            if (!dragging)
+                Curveball.EventSystem.Publish(new SurvivorIconUnhoveredEvent(this));
         }
 
         public void OnPointerClick(PointerEventData eventData)

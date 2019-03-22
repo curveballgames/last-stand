@@ -70,6 +70,7 @@ Material:
     - _SmoothnessTextureChannel: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _TextureContrast: 0.15
     - _TileSize: 1.025
     - _UVSec: 0
     - _ZWrite: 1

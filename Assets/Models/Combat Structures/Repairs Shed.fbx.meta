@@ -1,0 +1,301 @@
+fileFormatVersion: 2
+guid: 8de1a676bc77b7c409c3415e78615c6b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Back Panels
+    100002: Feet
+    100004: Floor
+    100006: Human Reference
+    100008: Pillars
+    100010: //RootNode
+    100012: Side Bottom Struts
+    100014: Side Upper Struts
+    100016: Top Bar
+    100018: Roof
+    100020: Hooks
+    100022: Rack
+    100024: Saw Blade
+    100026: Saw Blade.001
+    100028: Saw Handle
+    100030: Saw Handle.001
+    100032: Cube.000
+    100034: Cube.001
+    100036: Cube.002
+    100038: Mallet 1
+    100040: Mallet Head
+    100042: Saw 1
+    100044: Saw 2
+    100046: Screwdriver 1
+    100048: Screwdriver 2
+    100050: Screwdriver 3
+    100052: Screwdriver Panel
+    100054: Body
+    100056: Clamp 1
+    100058: Clamp 2
+    100060: Clamp Axle
+    100062: Clamp Base
+    100064: Clamp Handle
+    100066: Clamp Handle Axis
+    100068: Clamp Tunnel
+    100070: Legs
+    100072: Mallet
+    100074: Mallet Head.001
+    100076: Panelling
+    100078: Saw
+    100080: Saw Blade.002
+    100082: Top
+    100084: Workbench
+    400000: Back Panels
+    400002: Feet
+    400004: Floor
+    400006: Human Reference
+    400008: Pillars
+    400010: //RootNode
+    400012: Side Bottom Struts
+    400014: Side Upper Struts
+    400016: Top Bar
+    400018: Roof
+    400020: Hooks
+    400022: Rack
+    400024: Saw Blade
+    400026: Saw Blade.001
+    400028: Saw Handle
+    400030: Saw Handle.001
+    400032: Cube.000
+    400034: Cube.001
+    400036: Cube.002
+    400038: Mallet 1
+    400040: Mallet Head
+    400042: Saw 1
+    400044: Saw 2
+    400046: Screwdriver 1
+    400048: Screwdriver 2
+    400050: Screwdriver 3
+    400052: Screwdriver Panel
+    400054: Body
+    400056: Clamp 1
+    400058: Clamp 2
+    400060: Clamp Axle
+    400062: Clamp Base
+    400064: Clamp Handle
+    400066: Clamp Handle Axis
+    400068: Clamp Tunnel
+    400070: Legs
+    400072: Mallet
+    400074: Mallet Head.001
+    400076: Panelling
+    400078: Saw
+    400080: Saw Blade.002
+    400082: Top
+    400084: Workbench
+    2100000: No Name
+    2300000: Back Panels
+    2300002: Feet
+    2300004: Floor
+    2300006: Human Reference
+    2300008: Pillars
+    2300010: Side Bottom Struts
+    2300012: Side Upper Struts
+    2300014: Top Bar
+    2300016: Roof
+    2300018: Hooks
+    2300020: Rack
+    2300022: Saw Blade
+    2300024: Saw Blade.001
+    2300026: Saw Handle
+    2300028: Saw Handle.001
+    2300030: Cube.000
+    2300032: Cube.001
+    2300034: Cube.002
+    2300036: Mallet 1
+    2300038: Mallet Head
+    2300040: Saw 1
+    2300042: Saw 2
+    2300044: Screwdriver 1
+    2300046: Screwdriver 2
+    2300048: Screwdriver 3
+    2300050: Screwdriver Panel
+    2300052: Body
+    2300054: Clamp 1
+    2300056: Clamp 2
+    2300058: Clamp Axle
+    2300060: Clamp Base
+    2300062: Clamp Handle
+    2300064: Clamp Handle Axis
+    2300066: Clamp Tunnel
+    2300068: Legs
+    2300070: Mallet
+    2300072: Mallet Head.001
+    2300074: Panelling
+    2300076: Saw
+    2300078: Saw Blade.002
+    2300080: Top
+    3300000: Back Panels
+    3300002: Feet
+    3300004: Floor
+    3300006: Human Reference
+    3300008: Pillars
+    3300010: Side Bottom Struts
+    3300012: Side Upper Struts
+    3300014: Top Bar
+    3300016: Roof
+    3300018: Hooks
+    3300020: Rack
+    3300022: Saw Blade
+    3300024: Saw Blade.001
+    3300026: Saw Handle
+    3300028: Saw Handle.001
+    3300030: Cube.000
+    3300032: Cube.001
+    3300034: Cube.002
+    3300036: Mallet 1
+    3300038: Mallet Head
+    3300040: Saw 1
+    3300042: Saw 2
+    3300044: Screwdriver 1
+    3300046: Screwdriver 2
+    3300048: Screwdriver 3
+    3300050: Screwdriver Panel
+    3300052: Body
+    3300054: Clamp 1
+    3300056: Clamp 2
+    3300058: Clamp Axle
+    3300060: Clamp Base
+    3300062: Clamp Handle
+    3300064: Clamp Handle Axis
+    3300066: Clamp Tunnel
+    3300068: Legs
+    3300070: Mallet
+    3300072: Mallet Head.001
+    3300074: Panelling
+    3300076: Saw
+    3300078: Saw Blade.002
+    3300080: Top
+    4300000: Feet
+    4300002: Top Bar
+    4300004: Back Panels
+    4300006: Side Upper Struts
+    4300008: Side Bottom Struts
+    4300010: Floor
+    4300012: Pillars
+    4300014: Human Reference
+    4300016: Roof
+    4300018: Saw Handle.001
+    4300020: Saw Blade.001
+    4300022: Saw Handle
+    4300024: Saw Blade
+    4300026: Rack
+    4300028: Hooks
+    4300030: Screwdriver 3
+    4300032: Cube.002
+    4300034: Screwdriver 2
+    4300036: Cube.000
+    4300038: Screwdriver Panel
+    4300040: Screwdriver 1
+    4300042: Cube.001
+    4300044: Mallet 1
+    4300046: Mallet Head
+    4300048: Saw 2
+    4300050: Saw 1
+    4300052: Clamp Base
+    4300054: Clamp 2
+    4300056: Clamp Tunnel
+    4300058: Clamp 1
+    4300060: Clamp Handle Axis
+    4300062: Clamp Handle
+    4300064: Clamp Axle
+    4300066: Panelling
+    4300068: Legs
+    4300070: Top
+    4300072: Body
+    4300074: Mallet
+    4300076: Mallet Head.001
+    4300078: Saw
+    4300080: Saw Blade.002
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

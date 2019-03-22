@@ -7,6 +7,7 @@
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
 		_TileSize ("Tile Size", Vector) = (1.0, 1.0, 0.0 )
 		_Offset ("Offset", Vector) = ( 0.0, 0.0, 0.0 )
+		_TextureContrast ("Texture Contrast", Range(0, 1)) = 0
     }
     SubShader
     {
@@ -27,6 +28,7 @@
         };
 
         half _Glossiness;
+		half _TextureContrast;
         fixed4 _Color;
 		fixed3 _TileSize;
 		fixed3 _Offset;
@@ -39,7 +41,7 @@
 			float2 plane = float2(IN.worldPos.x * _TileSize.x, IN.worldPos.z * _TileSize.y);
 			float2 offset = float2(_Offset.x, _Offset.y);
 
-            fixed4 c = tex2D (_MainTex, plane + offset) * _Color;
+            fixed4 c = clamp(tex2D (_MainTex, plane + offset) + _TextureContrast, 0, 1) * _Color;
             o.Albedo = c.rgb;
             o.Smoothness = _Glossiness;
             o.Alpha = c.a;

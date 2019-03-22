@@ -1,12 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Curveball;
-
-namespace LastStand
+﻿namespace LastStand
 {
     public enum RoomType
     {
-        Empty, Bedroom
+        Empty, Bedroom, Repairs, Scavenger
     }
 }
