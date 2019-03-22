@@ -24,6 +24,7 @@ namespace LastStand
 
             EventSystem.Subscribe<StartRoomConstructionEvent>(OnConstructionStarted, this);
             EventSystem.Subscribe<NewGameEvent>(OnNewGame, this);
+            EventSystem.Subscribe<RoomConstructionCancelledEvent>(OnConstructionCancelled, this);
         }
 
         void OnConstructionStarted(StartRoomConstructionEvent e)
@@ -36,6 +37,12 @@ namespace LastStand
         {
             buildingMaterials = STARTING_MATERIALS;
             food = STARTING_FOOD;
+            EventSystem.Publish(new PlayerResourcesUpdatedEvent());
+        }
+
+        void OnConstructionCancelled(RoomConstructionCancelledEvent e)
+        {
+            buildingMaterials += RoomTypeDictionary.Costs[e.Model.RoomType];
             EventSystem.Publish(new PlayerResourcesUpdatedEvent());
         }
     }

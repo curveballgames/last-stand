@@ -61,5 +61,25 @@ namespace LastStand
         {
             return AssignedSurvivors.Count == AssignmentSlots;
         }
+
+        public void CancelConstruction()
+        {
+            if (IsBuilt || RoomType == RoomType.Empty)
+                return;
+
+            BuildProgress = 0;
+
+            HashSet<SurvivorModel> assignmentClone = new HashSet<SurvivorModel>(assignedSurvivors);
+
+            foreach (SurvivorModel model in assignmentClone)
+            {
+                model.AssignRoom(null);
+            }
+
+            EventSystem.Publish(new RoomConstructionCancelledEvent(this));
+
+            RoomType = RoomType.Empty;
+            EventSystem.Publish(new RoomModelUpdatedEvent(this));
+        }
     }
 }

@@ -29,5 +29,9 @@
 	"room-name:bedroom": "Bedroom",
 	
 	"room-description:empty": "An empty room. Has no use.",
-	"room-description:bedroom": "A room for people to sleep in."
+	"room-description:bedroom": "A room for people to sleep in.",
+
+	"build-ui:cancel-construction-content": "If you cancel construction, all build progress will be lost, and all building materials will be refunded.",
+	"build-ui:confirm-cancel": "Cancel Construction",
+	"build-ui:cancel-cancel": "Continue Building"
 }
