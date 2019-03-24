@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Curveball;
+using UnityEngine.Rendering.PostProcessing;
 
 namespace LastStand
 {
@@ -17,6 +18,10 @@ namespace LastStand
         public float MinZoomRadius;
         public float MaxZoomRadius;
         public float ZoomSpeed;
+
+        [Space]
+        public PostProcessProfile PostProcessingBehaviour;
+
         private Timer dragDelayTimer;
         private const float DRAG_DELAY = 0.1f;
 
@@ -117,6 +122,7 @@ namespace LastStand
             }
 
             zoomLerp = Mathf.Lerp(zoomLerp, zoomRadius, Time.deltaTime * RotationLerpSpeed);
+            PostProcessingBehaviour.GetSetting<DepthOfField>().focusDistance.value = zoomLerp;
         }
 
         void UpdateCameraRotation()

@@ -105,27 +105,26 @@ namespace LastStand
         {
             if (selected)
             {
-                EnableOutline(1);
+                EnableOutline(2);
             }
             else if (highlighted)
             {
-                EnableOutline(0);
+                EnableOutline(1);
             }
             else
             {
-                DisableOutline();
+                EnableOutline(0);
             }
         }
 
         void DisableOutline()
         {
-            Outline.enabled = false;
+            Outline.color = 0;
         }
 
         void EnableOutline(int color)
         {
             Outline.color = color;
-            Outline.enabled = true;
         }
     }
 }
