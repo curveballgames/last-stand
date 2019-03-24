@@ -11,6 +11,7 @@ namespace LastStand
         private void Awake()
         {
             EventSystem.Subscribe<ModelsInitialisedEvent>(OnModelsInitialised, this);
+            EventSystem.Subscribe<ShowDayOverviewEvent>(OnShowDayOverview, this);
         }
 
         void OnModelsInitialised(ModelsInitialisedEvent e)
@@ -25,7 +26,15 @@ namespace LastStand
             baseGameObject.GetComponent<BaseModel>().CopyFrom(currentBase);
             BaseModel.CurrentBase = baseGameObject.GetComponent<BaseModel>();
 
-            EventSystem.Publish(new ViewInitialisedEvent());
+            Timer.CreateTimer(gameObject, 0.1f, () =>
+            {
+                EventSystem.Publish(new ViewInitialisedEvent());
+            });
+        }
+
+        void OnShowDayOverview(ShowDayOverviewEvent e)
+        {
+            BaseRoot.gameObject.SetActive(e.Type == DayOverviewType.Base);
         }
 
         void DestroyView()

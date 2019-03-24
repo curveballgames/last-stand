@@ -20,6 +20,7 @@ namespace LastStand
 
             EventSystem.Subscribe<StartNewGameFadeEvent>(OnNewGameFadeStart, this);
             EventSystem.Subscribe<NewGameEvent>(OnNewGame, this);
+            EventSystem.Subscribe<ShowDayOverviewEvent>(OnShowDayOverview, this);
 
             BaseHUD.SetActive(false);
         }
@@ -33,6 +34,19 @@ namespace LastStand
         {
             MainMenuRoot.SetActive(false);
             BaseHUD.SetActive(true);
+        }
+
+        void OnShowDayOverview(ShowDayOverviewEvent e)
+        {
+            if (e.Type == DayOverviewType.Base)
+            {
+
+                BaseHUD.SetActive(true);
+            }
+            else
+            {
+                BaseHUD.SetActive(false);
+            }
         }
     }
 }

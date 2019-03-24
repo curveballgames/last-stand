@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using Curveball;
+using UnityEngine.UI;
 
 namespace LastStand
 {
@@ -14,10 +15,12 @@ namespace LastStand
         public TextMeshProUGUI PopulationText;
         public TextMeshProUGUI FoodText;
         public TextMeshProUGUI BuildingMaterialsText;
+        public Button ToCityButton;
 
         private void Awake()
         {
             EventSystem.Subscribe<PlayerResourcesUpdatedEvent>(OnResourcesUpdated, this);
+            ToCityButton.onClick.AddListener(OnToCityClick);
         }
 
         private void OnEnable()
@@ -37,6 +40,11 @@ namespace LastStand
             PopulationText.text = string.Format(POPULATION_STRING_FORMAT, SurvivorModel.AllModels.Count, "TODO");
             FoodText.text = PlayerResources.Singleton.Food.ToString();
             BuildingMaterialsText.text = PlayerResources.Singleton.BuildingMaterials.ToString();
+        }
+
+        void OnToCityClick()
+        {
+            EventSystem.Publish(new SwitchDayOverviewEvent(DayOverviewType.City));
         }
     }
 }

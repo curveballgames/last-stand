@@ -8,7 +8,7 @@ namespace LastStand
 {
     public class ScreenFadeController : CBGUIComponent
     {
-        private const float FADE_TIME = 0.5f;
+        private const float FADE_TIME = 0.35f;
 
         public Image FadeImage;
 
@@ -22,6 +22,8 @@ namespace LastStand
 
             EventSystem.Subscribe<StartNewGameFadeEvent>(OnNewGameFadeStart, this);
             EventSystem.Subscribe<ViewInitialisedEvent>(OnViewInitialised, this);
+            EventSystem.Subscribe<SwitchDayOverviewEvent>(OnSwitchDayOverview, this);
+            EventSystem.Subscribe<ShowDayOverviewEvent>(OnShowDayOverview, this);
 
             Hide();
         }
@@ -35,6 +37,19 @@ namespace LastStand
         }
 
         void OnViewInitialised(ViewInitialisedEvent e)
+        {
+            FadeToTransparent();
+        }
+
+        void OnSwitchDayOverview(SwitchDayOverviewEvent e)
+        {
+            FadeToOpaque(() =>
+            {
+                EventSystem.Publish(new ShowDayOverviewEvent(e.Type));
+            });
+        }
+
+        void OnShowDayOverview(ShowDayOverviewEvent e)
         {
             FadeToTransparent();
         }

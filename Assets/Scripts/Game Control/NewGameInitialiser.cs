@@ -15,11 +15,12 @@ namespace LastStand
         private void OnNewGame(NewGameEvent e)
         {
             BaseModel.CurrentBase = PrefabDictionary.GetBaseWithName(STARTING_BASE_NAME);
+            CityModel.CurrentCity = PrefabDictionary.GetRandomStartCity();
 
             SurvivorModel.Initialise();
             SurvivorGenerator.GenerateInitialSurvivors();
 
-            EventSystem.Publish(new ModelsInitialisedEvent());
+            EventSystem.Publish(new ModelsInitialisedEvent(false));
         }
     }
 }

@@ -21,21 +21,31 @@ namespace LastStand
             if (StartFadedOut)
             {
                 Group.alpha = 0f;
+                ToggleInteractability(false);
             }
             else
             {
                 Group.alpha = 1f;
+                ToggleInteractability(true);
             }
         }
 
         public void FadeIn()
         {
+            ToggleInteractability(true);
             Group.DOFade(1f, FADE_TIME);
         }
 
         public void FadeOut()
         {
+            ToggleInteractability(false);
             Group.DOFade(0f, FADE_TIME);
+        }
+
+        void ToggleInteractability(bool interactable)
+        {
+            Group.interactable = interactable;
+            Group.blocksRaycasts = interactable;
         }
     }
 }

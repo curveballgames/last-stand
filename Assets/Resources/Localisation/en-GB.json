@@ -27,6 +27,7 @@
 	"base-ui:construction": "Construction",
 	"base-ui:reclaim-button": "Reclaim",
 	"base-ui:reclaim-built-content": "Reclaiming this room will deconstruct it into an empty room, returning 75% of the material cost.",
+	"base-ui:to-city": "To City",
 
 	"room-name:empty": "Empty",
 	"room-name:bedroom": "Bedroom",
