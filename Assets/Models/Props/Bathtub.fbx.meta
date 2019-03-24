@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: 409e88a96834e8d4683e39554163e6af
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Blackout
+    100004: Blackout.001
+    100006: Center
+    100008: Center.001
+    100010: Plug Hole
+    100012: Plug Hole.001
+    100014: Spokes
+    100016: Spokes.001
+    100018: Tap Base
+    100020: Tap Control
+    100022: Tap Tube
+    100024: Tap Tube.001
+    100026: Bathmat
+    100028: Bathtub
+    400000: //RootNode
+    400002: Blackout
+    400004: Blackout.001
+    400006: Center
+    400008: Center.001
+    400010: Plug Hole
+    400012: Plug Hole.001
+    400014: Spokes
+    400016: Spokes.001
+    400018: Tap Base
+    400020: Tap Control
+    400022: Tap Tube
+    400024: Tap Tube.001
+    400026: Bathmat
+    400028: Bathtub
+    2300000: //RootNode
+    2300002: Blackout
+    2300004: Blackout.001
+    2300006: Center
+    2300008: Center.001
+    2300010: Plug Hole
+    2300012: Plug Hole.001
+    2300014: Spokes
+    2300016: Spokes.001
+    2300018: Tap Base
+    2300020: Tap Control
+    2300022: Tap Tube
+    2300024: Tap Tube.001
+    2300026: Bathmat
+    2300028: Bathtub
+    3300000: //RootNode
+    3300002: Blackout
+    3300004: Blackout.001
+    3300006: Center
+    3300008: Center.001
+    3300010: Plug Hole
+    3300012: Plug Hole.001
+    3300014: Spokes
+    3300016: Spokes.001
+    3300018: Tap Base
+    3300020: Tap Control
+    3300022: Tap Tube
+    3300024: Tap Tube.001
+    3300026: Bathmat
+    3300028: Bathtub
+    4300000: Bathtub
+    4300002: Plug Hole
+    4300004: Blackout
+    4300006: Center
+    4300008: Spokes
+    4300010: Plug Hole.001
+    4300012: Spokes.001
+    4300014: Center.001
+    4300016: Blackout.001
+    4300018: Tap Base
+    4300020: Tap Control
+    4300022: Tap Tube
+    4300024: Tap Tube.001
+    4300026: Bathmat
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
