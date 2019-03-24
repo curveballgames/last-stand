@@ -1,4 +1,5 @@
-﻿using Curveball;
+﻿using cakeslice;
+using Curveball;
 
 namespace LastStand
 {
@@ -9,10 +10,15 @@ namespace LastStand
         private RoomBuildButton buildButton;
         private RoomAssignmentSlots assignmentSlots;
         private RoomBuildProgressBar buildProgressBar;
+        public Outline Outline;
+
+        private bool highlighted, selected;
 
         private void Awake()
         {
             EventSystem.Subscribe<RoomModelUpdatedEvent>(OnRoomModelUpdated, this);
+            EventSystem.Subscribe<RoomHoverEvent>(OnRoomHovered, this);
+            EventSystem.Subscribe<RoomSelectEvent>(OnRoomSelected, this);
 
             buildButton = Instantiate(PrefabDictionary.Singleton.RoomBuildButtonPrefab, UIManager.Singleton.BuildButtonParent);
 
@@ -28,6 +34,8 @@ namespace LastStand
         private void OnDestroy()
         {
             EventSystem.Unsubscribe<RoomModelUpdatedEvent>(OnRoomModelUpdated, this);
+            EventSystem.Unsubscribe<RoomHoverEvent>(OnRoomHovered, this);
+            EventSystem.Unsubscribe<RoomSelectEvent>(OnRoomSelected, this);
         }
 
         void OnRoomModelUpdated(RoomModelUpdatedEvent e)
@@ -36,6 +44,18 @@ namespace LastStand
                 return;
 
             UpdateView();
+        }
+
+        void OnRoomHovered(RoomHoverEvent e)
+        {
+            highlighted = e.Room == LinkedModel;
+            UpdateOutline();
+        }
+
+        void OnRoomSelected(RoomSelectEvent e)
+        {
+            selected = e.Model == LinkedModel;
+            UpdateOutline();
         }
 
         void UpdateView()
@@ -52,6 +72,8 @@ namespace LastStand
             {
                 ConfigureForRoomUnderConstruction();
             }
+
+            UpdateOutline();
         }
 
         void ConfigureForBuiltRoom()
@@ -77,6 +99,33 @@ namespace LastStand
             assignmentSlots.SetActive(true);
             buildProgressBar.SetActive(true);
             buildProgressBar.UpdateView(LinkedModel);
+        }
+
+        void UpdateOutline()
+        {
+            if (selected)
+            {
+                EnableOutline(1);
+            }
+            else if (highlighted)
+            {
+                EnableOutline(0);
+            }
+            else
+            {
+                DisableOutline();
+            }
+        }
+
+        void DisableOutline()
+        {
+            Outline.enabled = false;
+        }
+
+        void EnableOutline(int color)
+        {
+            Outline.color = color;
+            Outline.enabled = true;
         }
     }
 }
