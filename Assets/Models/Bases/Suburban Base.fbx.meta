@@ -169,6 +169,10 @@ ModelImporter:
     100326: Foot.001
     100328: Radiator
     100330: Top Bar
+    100332: Curb
+    100334: Grass Padding
+    100336: Road
+    100338: Sidewalk
     400000: Back Room
     400002: Back Room Floor
     400004: Back Room Walls
@@ -335,6 +339,10 @@ ModelImporter:
     400326: Foot.001
     400328: Radiator
     400330: Top Bar
+    400332: Curb
+    400334: Grass Padding
+    400336: Road
+    400338: Sidewalk
     2100000: No Name
     2300000: Back Room Floor
     2300002: Back Room Walls
@@ -492,6 +500,10 @@ ModelImporter:
     2300306: Foot.001
     2300308: Radiator
     2300310: Top Bar
+    2300312: Curb
+    2300314: Grass Padding
+    2300316: Road
+    2300318: Sidewalk
     3300000: Back Room Floor
     3300002: Back Room Walls
     3300004: Bathroom Floor
@@ -648,6 +660,10 @@ ModelImporter:
     3300306: Foot.001
     3300308: Radiator
     3300310: Top Bar
+    3300312: Curb
+    3300314: Grass Padding
+    3300316: Road
+    3300318: Sidewalk
     4300000: Wall Tops
     4300002: Garage Floor
     4300004: Garage Walls
@@ -804,6 +820,10 @@ ModelImporter:
     4300306: Foot
     4300308: Bottom Bar
     4300310: Top Bar
+    4300312: Curb
+    4300314: Road
+    4300316: Sidewalk
+    4300318: Grass Padding
     10800000: Sun
     2186277476908879412: ImportLogs
   externalObjects: {}

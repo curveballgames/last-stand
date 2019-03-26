@@ -16,6 +16,7 @@ namespace LastStand
         public TextMeshProUGUI FoodText;
         public TextMeshProUGUI BuildingMaterialsText;
         public Button ToCityButton;
+        public DayOverviewType SwitchToType;
 
         private void Awake()
         {
@@ -44,7 +45,7 @@ namespace LastStand
 
         void OnToCityClick()
         {
-            EventSystem.Publish(new SwitchDayOverviewEvent(DayOverviewType.City));
+            EventSystem.Publish(new SwitchDayOverviewEvent(SwitchToType));
         }
     }
 }

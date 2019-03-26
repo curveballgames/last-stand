@@ -76,6 +76,30 @@ namespace LastStand
             generationSteps = other.generationSteps;
         }
 
+        public int GetFoodRemaining()
+        {
+            int food = 0;
+
+            for (int i = StagesExplored; i < generationSteps.Length; i++)
+            {
+                food += generationSteps[i].Food;
+            }
+
+            return food;
+        }
+
+        public int GetBuildingMaterialsRemaining()
+        {
+            int materials = 0;
+
+            for (int i = StagesExplored; i < generationSteps.Length; i++)
+            {
+                materials += generationSteps[i].BuildingMaterials;
+            }
+
+            return materials;
+        }
+
         public struct ResourceGenerationStep
         {
             public int Food;

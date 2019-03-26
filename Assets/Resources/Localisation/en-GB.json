@@ -41,5 +41,13 @@
 
 	"build-ui:cancel-construction-content": "If you cancel construction, all build progress will be lost, and all building materials will be refunded.",
 	"build-ui:confirm-cancel": "Cancel Construction",
-	"build-ui:cancel-cancel": "Continue Building"
+	"build-ui:cancel-cancel": "Continue Building",
+
+	"city-ui:danger": "Danger",
+	"city-ui:danger-none": "None",
+	"city-ui:danger-low": "Low",
+	"city-ui:danger-medium": "Risky",
+	"city-ui:danger-high": "Dangerous",
+	"city-ui:amount-explored": "Amount Explored",
+	"city-ui:to-base": "To Base"
 }

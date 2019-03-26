@@ -9,6 +9,7 @@ namespace LastStand
 
         public GameObject MainMenuRoot;
         public GameObject BaseHUD;
+        public GameObject CityHUD;
 
         public Transform BuildButtonParent;
         public Transform RoomAssignmentSlotsParent;
@@ -23,6 +24,7 @@ namespace LastStand
             EventSystem.Subscribe<ShowDayOverviewEvent>(OnShowDayOverview, this);
 
             BaseHUD.SetActive(false);
+            CityHUD.SetActive(false);
         }
 
         private void OnNewGameFadeStart(StartNewGameFadeEvent e)
@@ -33,6 +35,7 @@ namespace LastStand
         private void OnNewGame(NewGameEvent e)
         {
             MainMenuRoot.SetActive(false);
+            CityHUD.SetActive(false);
             BaseHUD.SetActive(true);
         }
 
@@ -42,10 +45,12 @@ namespace LastStand
             {
 
                 BaseHUD.SetActive(true);
+                CityHUD.SetActive(false);
             }
             else
             {
                 BaseHUD.SetActive(false);
+                CityHUD.SetActive(true);
             }
         }
     }
