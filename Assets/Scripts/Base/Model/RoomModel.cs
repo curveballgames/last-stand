@@ -15,12 +15,10 @@ namespace LastStand
         public bool Reclaimable;
 
         public HashSet<SurvivorModel> AssignedSurvivors { get => assignedSurvivors; }
-        private HashSet<SurvivorModel> assignedSurvivors;
+        private HashSet<SurvivorModel> assignedSurvivors = new HashSet<SurvivorModel>();
 
         private void Awake()
         {
-            assignedSurvivors = new HashSet<SurvivorModel>();
-
             EventSystem.Subscribe<StartRoomConstructionEvent>(OnConstructionStarted, this);
             EventSystem.Subscribe<SurvivorAssignmentUpdatedEvent>(OnSurvivorAssignmentUpdated, this);
         }

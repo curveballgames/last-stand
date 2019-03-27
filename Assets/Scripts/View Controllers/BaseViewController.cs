@@ -26,6 +26,8 @@ namespace LastStand
             baseGameObject.GetComponent<BaseModel>().CopyFrom(currentBase);
             BaseModel.CurrentBase = baseGameObject.GetComponent<BaseModel>();
 
+            ScavengerTeamController.CreateScavengerTeamsForCurrentBase();
+
             Timer.CreateTimer(gameObject, 0.1f, () =>
             {
                 EventSystem.Publish(new ViewInitialisedEvent());

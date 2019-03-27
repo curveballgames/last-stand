@@ -1769,6 +1769,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169521078}
   m_CullTransparentMesh: 0
+--- !u!84 &181633492
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 1289
+  m_Height: 636
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 7
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &204314350
 GameObject:
   m_ObjectHideFlags: 0
@@ -3045,38 +3077,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: mm-ui:exit
   TextInstance: {fileID: 294978107}
---- !u!84 &297674856
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 1289
-  m_Height: 636
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 7
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &305894491
 GameObject:
   m_ObjectHideFlags: 0
@@ -5407,6 +5407,7 @@ MonoBehaviour:
     type: 3}
   RoomBuildBarPrefab: {fileID: 1271121360654502843, guid: 37d50f36e047c0d478f45d8384618ea6,
     type: 3}
+  ScavengerTeamAssignmentIconPrefab: {fileID: 0}
 --- !u!114 &523950704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5688,8 +5689,8 @@ MonoBehaviour:
   sourceCamera: {fileID: 534669904}
   outlineCamera: {fileID: 1205082523}
   outlineShaderMaterial: {fileID: 0}
-  renderTexture: {fileID: 1758724739}
-  extraRenderTexture: {fileID: 297674856}
+  renderTexture: {fileID: 1473870797}
+  extraRenderTexture: {fileID: 181633492}
 --- !u!1 &540708680
 GameObject:
   m_ObjectHideFlags: 0
@@ -10074,6 +10075,7 @@ GameObject:
   - component: {fileID: 901295593}
   - component: {fileID: 901295592}
   - component: {fileID: 901295591}
+  - component: {fileID: 901295595}
   m_Layer: 5
   m_Name: Scavenging Team Icons
   m_TagString: Untagged
@@ -10174,6 +10176,19 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!114 &901295595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901295589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777010bf353e85049a7ee4edf5a57b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IconParent: {fileID: 901295590}
 --- !u!1 &907554753
 GameObject:
   m_ObjectHideFlags: 0
@@ -13489,7 +13504,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 1758724739}
+  m_TargetTexture: {fileID: 1473870797}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -13884,6 +13899,7 @@ GameObject:
   - component: {fileID: 1283525401}
   - component: {fileID: 1283525403}
   - component: {fileID: 1283525404}
+  - component: {fileID: 1283525405}
   m_Layer: 0
   m_Name: Player Base Root
   m_TagString: Untagged
@@ -13940,6 +13956,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b796916033509d4c893974b9ca20482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1283525405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283525400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1935ffc7434aad346995dae0a69fa505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1289278335
@@ -15771,6 +15799,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428113023}
   m_CullTransparentMesh: 0
+--- !u!84 &1473870797
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 1289
+  m_Height: 636
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 7
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1476609073
 GameObject:
   m_ObjectHideFlags: 0
@@ -18437,38 +18497,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746555443}
   m_CullTransparentMesh: 0
---- !u!84 &1758724739
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 1289
-  m_Height: 636
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 7
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1783154318
 GameObject:
   m_ObjectHideFlags: 0

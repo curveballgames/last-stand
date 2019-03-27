@@ -7,7 +7,7 @@ namespace LastStand
 {
     public class BaseSurvivorAssignIcon : CBGGameObject, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
     {
-        private const float LERP_SPEED = 12f;
+        private const float LERP_SPEED = 10000f;
 
         public RectTransform Draggable;
         public Image AssignmentColorImage;
