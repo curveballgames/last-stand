@@ -14,6 +14,7 @@ namespace LastStand
         public Transform BuildButtonParent;
         public Transform RoomAssignmentSlotsParent;
         public Transform RoomProgressBarParent;
+        public Transform ScavengerTeamPointers;
 
         private void Awake()
         {

@@ -15,9 +15,17 @@ namespace LastStand
 
         public RectTransform Draggable;
         public Image AssignmentColorImage;
+        public RawImage Headshots;
         public ScavengerTeamModel Model { get; set; }
 
         private bool dragging;
+        private ScavengerTeamPointer pointer;
+
+        private void Awake()
+        {
+            pointer = Instantiate(PrefabDictionary.Singleton.ScavengerTeamAssignmentPointerPrefab.gameObject, UIManager.Singleton.ScavengerTeamPointers).GetComponent<ScavengerTeamPointer>();
+            pointer.SetActive(false);
+        }
 
         private void LateUpdate()
         {
@@ -35,6 +43,8 @@ namespace LastStand
         public void UpdateView()
         {
             UpdateColor();
+            RecreateHeadshots();
+            UpdatePointer();
         }
 
         void UpdateColor()
@@ -53,6 +63,16 @@ namespace LastStand
                 {
                     AssignmentColorImage.color = AssignedColor;
                 }
+            }
+        }
+
+        void UpdatePointer()
+        {
+            if (Model.HasMembersAssigned() && Model.AssignedBuilding != null)
+            {
+                pointer.BuildingToTrack = Model.AssignedBuilding;
+                pointer.SetHeadshotTexture(Headshots.texture as RenderTexture);
+                pointer.SetActive(true);
             }
         }
 
@@ -94,6 +114,22 @@ namespace LastStand
             {
                 Model.AssignToBuilding(hoveredBuilding);
                 UpdateView();
+            }
+        }
+
+        void RecreateHeadshots()
+        {
+            if (Model.HasMembersAssigned())
+            {
+                Headshots.texture = AvatarRenderCamera.RenderScavengerTeam(Model);
+            }
+            else
+            {
+                if (Headshots.texture != null)
+                {
+                    (Headshots.texture as RenderTexture).Release();
+                    Headshots.texture = null;
+                }
             }
         }
     }

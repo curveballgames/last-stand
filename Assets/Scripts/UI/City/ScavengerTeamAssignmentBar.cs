@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Curveball;
 
@@ -13,7 +12,7 @@ namespace LastStand
 
         private void Awake()
         {
-            EventSystem.Subscribe<SurvivorAssignmentUpdatedEvent>(OnSurvivorAssignmentUpdated, this);
+            EventSystem.Subscribe<RoomModelUpdatedEvent>(OnRoomModelUpdated, this);
             EventSystem.Subscribe<ScavengerTeamAssignedEvent>(OnScavengerTeamAssigned, this);
         }
 
@@ -22,8 +21,11 @@ namespace LastStand
             UpdateScavengerIcons();
         }
 
-        void OnSurvivorAssignmentUpdated(SurvivorAssignmentUpdatedEvent e)
+        void OnRoomModelUpdated(RoomModelUpdatedEvent e)
         {
+            if (e.Room == null || e.Room.RoomType != RoomType.Scavenger)
+                return;
+
             UpdateScavengerIcons();
         }
 
@@ -39,7 +41,7 @@ namespace LastStand
 
             for (int i = 0; i < ScavengerTeamController.ScavengerTeams.Count; i++)
             {
-                if (createdIcons.Count < SurvivorModel.AllModels.Count)
+                if (createdIcons.Count < ScavengerTeamController.ScavengerTeams.Count)
                 {
                     CreateIcon();
                 }

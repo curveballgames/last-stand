@@ -6,7 +6,13 @@ namespace LastStand
 {
     public class AvatarRenderCamera : CBGGameObject
     {
-        private static readonly Vector3 HEAD_OFFSET = new Vector3(0f, -0.25f, 2.75f);
+        private static readonly Vector3 HEADSHOT_OFFSET = new Vector3(0f, -0.25f, 3f);
+
+        private static readonly Vector3[] HEAD_OFFSETS = new Vector3[] {
+            new Vector3(0f, -0.5f, 3.5f),
+            new Vector3(1.6f, -0.25f, 4.25f),
+            new Vector3(-1.6f, -0.25f, 4.25f)
+        };
         private const int HEADSHOT_IMAGE_SIZE = 120;
 
         private static AvatarRenderCamera Singleton;
@@ -49,7 +55,7 @@ namespace LastStand
 
             GameObject head = SurvivorAvatarGenerator.GenerateHeadAvatarForModel(model);
             head.transform.SetParent(Singleton.RenderCam.transform);
-            head.transform.localPosition = HEAD_OFFSET;
+            head.transform.localPosition = HEADSHOT_OFFSET;
             head.transform.Rotate(0f, 180f, 0f);
 
             Singleton.Light.enabled = true;
@@ -60,6 +66,42 @@ namespace LastStand
             DestroyImmediate(head);
 
             headshots.Add(model.Name, texture);
+            return texture;
+        }
+
+        public static RenderTexture RenderScavengerTeam(ScavengerTeamModel model)
+        {
+            RenderTexture texture = new RenderTexture(HEADSHOT_IMAGE_SIZE, HEADSHOT_IMAGE_SIZE, 16);
+            Singleton.RenderCam.targetTexture = texture;
+
+            List<GameObject> heads = new List<GameObject>();
+            int count = 0;
+
+            foreach (SurvivorModel survivor in model.LinkedRoom.AssignedSurvivors)
+            {
+                GameObject head = SurvivorAvatarGenerator.GenerateHeadAvatarForModel(survivor);
+                head.transform.SetParent(Singleton.RenderCam.transform);
+                head.transform.localPosition = HEAD_OFFSETS[count];
+                head.transform.Rotate(0f, 180f, 0f);
+
+                heads.Add(head);
+
+                count++;
+
+                if (count >= HEAD_OFFSETS.Length)
+                    break;
+            }
+
+            Singleton.Light.enabled = true;
+            Singleton.RenderCam.Render();
+            Singleton.RenderCam.targetTexture = null;
+            Singleton.Light.enabled = false;
+
+            foreach (GameObject head in heads)
+            {
+                DestroyImmediate(head);
+            }
+
             return texture;
         }
     }

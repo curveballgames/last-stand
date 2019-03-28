@@ -18,6 +18,7 @@ namespace LastStand
         public RoomAssignmentSlots RoomAssignmentSlotsPrefab;
         public RoomBuildProgressBar RoomBuildBarPrefab;
         public ScavengerTeamAssignmentIcon ScavengerTeamAssignmentIconPrefab;
+        public ScavengerTeamPointer ScavengerTeamAssignmentPointerPrefab;
 
         private static Dictionary<CityBuildingType, List<CityBuildingModel>> cityBuildingsByType;
 
