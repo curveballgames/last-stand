@@ -26,6 +26,7 @@ namespace LastStand
 
                 BaseSurvivorAssignIcon icon = createdIcons[i];
                 icon.Model = SurvivorModel.AllModels[i];
+                icon.CreateHeadshot();
                 icon.UpdateView();
                 icon.SetActive(true);
             }

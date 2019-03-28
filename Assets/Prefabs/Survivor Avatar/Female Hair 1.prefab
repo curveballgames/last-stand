@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7923051008905312856}
   - component: {fileID: 7923051008906607224}
   - component: {fileID: 7923051008907606200}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Female Hair 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

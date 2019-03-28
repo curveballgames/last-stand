@@ -9,6 +9,7 @@ namespace LastStand
         public GameObject SurvivorIconRoot;
         public Image AssignmentColorImage;
         public Button UnassignButton;
+        public RawImage Headshot;
 
         private SurvivorModel LinkedSurvivor;
 
@@ -25,10 +26,12 @@ namespace LastStand
             if (s != null)
             {
                 AssignmentColorImage.color = SurvivorAvatarGenerator.GetColorForRoom(s.AssignedRoom);
+                Headshot.texture = AvatarRenderCamera.RenderHeadshot(LinkedSurvivor);
             }
             else
             {
                 AssignmentColorImage.color = SurvivorAvatarGenerator.GetColorForRoom(null);
+                Headshot.texture = null;
             }
 
             UnassignButton.gameObject.SetActive(s != null);

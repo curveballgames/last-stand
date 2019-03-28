@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ec3424a96377e9142a034aa3e7653f2e
+guid: bddaf9caaceb96146a2c0423658ddfde
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -45,8 +45,8 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
-  spriteBorder: {x: 265, y: 1, z: 265, w: 1}
+  spritePixelsToUnits: 1024
+  spriteBorder: {x: 575, y: 0, z: 575, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1

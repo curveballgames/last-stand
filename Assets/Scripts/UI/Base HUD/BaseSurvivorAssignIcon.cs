@@ -11,9 +11,11 @@ namespace LastStand
 
         public RectTransform Draggable;
         public Image AssignmentColorImage;
+        public RawImage SurvivorHeadshot;
         public SurvivorModel Model { get; set; }
 
         private bool dragging;
+        private RenderTexture headTexture;
 
         private void LateUpdate()
         {
@@ -77,6 +79,11 @@ namespace LastStand
                 Model.AssignRoom(hoveredRoom);
                 UpdateView();
             }
+        }
+
+        public void CreateHeadshot()
+        {
+            SurvivorHeadshot.texture = AvatarRenderCamera.RenderHeadshot(Model);
         }
     }
 }

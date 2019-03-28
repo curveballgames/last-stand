@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
-  m_Name: Post Processing
+  m_Name: Main Post Processing
   m_EditorClassIdentifier: 
   settings:
   - {fileID: 114297806481156658}
@@ -128,7 +128,7 @@ MonoBehaviour:
     value: 1
   focusDistance:
     overrideState: 1
-    value: 13.868178
+    value: 14
   aperture:
     overrideState: 1
     value: 5.6
@@ -203,7 +203,7 @@ MonoBehaviour:
     value: 0
   saturation:
     overrideState: 0
-    value: -25
+    value: -34
   brightness:
     overrideState: 0
     value: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
     value: -1
   contrast:
     overrideState: 0
-    value: 0
+    value: -14
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
@@ -242,10 +242,10 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0.36998972}
+    value: {x: 1, y: 1, z: 1, w: -0.4596067}
   gamma:
     overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    value: {x: 1, y: 1, z: 1, w: 0.49327347}
   gain:
     overrideState: 0
     value: {x: 1, y: 1, z: 1, w: -0.9660844}
