@@ -1,0 +1,228 @@
+fileFormatVersion: 2
+guid: 89b3cfcb0a4e21d408ad981f42949748
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Door Awning
+    100002: Door Posts
+    100004: Front
+    100006: Front Roof
+    100008: Roof
+    100010: //RootNode
+    100012: Walls
+    100014: Front Roof Border
+    100016: Front.001
+    100018: Main Building
+    100020: Roof Border
+    100022: Text
+    100024: Awning
+    100026: Awning.001
+    100028: Back Door
+    100030: Cargo Door
+    100032: Door
+    100034: Door.001
+    100036: Handle
+    100038: Sides.001
+    100040: Fill Left
+    100042: Fill Right
+    100044: Windows
+    100046: Block
+    100048: Door.002
+    100050: Handle.001
+    100052: Roof Access
+    100054: Door Border
+    100056: Fill
+    100058: Parking Lot
+    100060: Pavement
+    400000: Door Awning
+    400002: Door Posts
+    400004: Front
+    400006: Front Roof
+    400008: Roof
+    400010: //RootNode
+    400012: Walls
+    400014: Front Roof Border
+    400016: Front.001
+    400018: Main Building
+    400020: Roof Border
+    400022: Text
+    400024: Awning
+    400026: Awning.001
+    400028: Back Door
+    400030: Cargo Door
+    400032: Door
+    400034: Door.001
+    400036: Handle
+    400038: Sides.001
+    400040: Fill Left
+    400042: Fill Right
+    400044: Windows
+    400046: Block
+    400048: Door.002
+    400050: Handle.001
+    400052: Roof Access
+    400054: Door Border
+    400056: Fill
+    400058: Parking Lot
+    400060: Pavement
+    2300000: Door Awning
+    2300002: Door Posts
+    2300004: Front
+    2300006: Front Roof
+    2300008: Roof
+    2300010: Walls
+    2300012: Front Roof Border
+    2300014: Roof Border
+    2300016: Text
+    2300018: Awning
+    2300020: Awning.001
+    2300022: Door
+    2300024: Door.001
+    2300026: Handle
+    2300028: Sides.001
+    2300030: Fill Left
+    2300032: Fill Right
+    2300034: Windows
+    2300036: Block
+    2300038: Door.002
+    2300040: Handle.001
+    2300042: Door Border
+    2300044: Fill
+    2300046: Parking Lot
+    2300048: Pavement
+    3300000: Door Awning
+    3300002: Door Posts
+    3300004: Front
+    3300006: Front Roof
+    3300008: Roof
+    3300010: Walls
+    3300012: Front Roof Border
+    3300014: Roof Border
+    3300016: Text
+    3300018: Awning
+    3300020: Awning.001
+    3300022: Door
+    3300024: Door.001
+    3300026: Handle
+    3300028: Sides.001
+    3300030: Fill Left
+    3300032: Fill Right
+    3300034: Windows
+    3300036: Block
+    3300038: Door.002
+    3300040: Handle.001
+    3300042: Door Border
+    3300044: Fill
+    3300046: Parking Lot
+    3300048: Pavement
+    4300000: Door Posts
+    4300002: Door Awning
+    4300004: Front Roof
+    4300006: Roof
+    4300008: Front
+    4300010: Walls
+    4300012: Roof Border
+    4300014: Front Roof Border
+    4300016: Text
+    4300018: Awning.001
+    4300020: Sides.001
+    4300022: Door.001
+    4300024: Handle
+    4300026: Door
+    4300028: Awning
+    4300030: Windows
+    4300032: Fill Right
+    4300034: Fill Left
+    4300036: Block
+    4300038: Door.002
+    4300040: Handle.001
+    4300042: Fill
+    4300044: Door Border
+    4300046: Pavement
+    4300048: Parking Lot
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

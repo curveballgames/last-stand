@@ -4,10 +4,12 @@ using UnityEngine.Rendering.PostProcessing;
 
 namespace LastStand
 {
-    public class BaseCameraController : CBGGameObject
+    public class TrackballCameraController : CBGGameObject
     {
         public Transform Anchor;
         public float MoveSpeed;
+        public Vector3 BoundsCenter;
+        public Vector2 Bounds;
 
         [Space]
         public float RotateSpeed;
@@ -18,6 +20,12 @@ namespace LastStand
         public float MinZoomRadius;
         public float MaxZoomRadius;
         public float ZoomSpeed;
+
+        [Space]
+        [Range(5f, 85f)]
+        public float MinPitch = 25f;
+        [Range(5f, 85f)]
+        public float MaxPitch = 85f;
 
         [Space]
         public PostProcessProfile PostProcessingBehaviour;
@@ -33,8 +41,6 @@ namespace LastStand
         private float yawLerp;
         private float yaw;
 
-        private const float MIN_PITCH = 25f;
-        private const float MAX_PITCH = 85f;
         private float pitchLerp;
         private float pitch;
 
@@ -48,7 +54,7 @@ namespace LastStand
             Anchor.position = BaseModel.CurrentBase.Center;
 
             yaw = yawLerp = 180f;
-            pitch = pitchLerp = Mathf.Lerp(MIN_PITCH, MAX_PITCH, 0.5f);
+            pitch = pitchLerp = Mathf.Lerp(MinPitch, MaxPitch, 0.5f);
             zoomRadius = zoomLerp = Mathf.Lerp(MinZoomRadius, MaxZoomRadius, 0.5f);
 
             UpdateLocalPosition(true);
@@ -103,11 +109,8 @@ namespace LastStand
 
             Vector3 moveTo = Anchor.position + (forwardVector * vertical) + (rightVector * horizontal);
 
-            Vector3 baseCenter = BaseModel.CurrentBase.Center;
-            Vector2 baseBounds = BaseModel.CurrentBase.Bounds;
-
-            moveTo.x = Mathf.Clamp(moveTo.x, baseCenter.x - baseBounds.x, baseCenter.x + baseBounds.x);
-            moveTo.z = Mathf.Clamp(moveTo.z, baseCenter.z - baseBounds.y, baseCenter.z + baseBounds.y);
+            moveTo.x = Mathf.Clamp(moveTo.x, BoundsCenter.x - Bounds.x, BoundsCenter.x + Bounds.x);
+            moveTo.z = Mathf.Clamp(moveTo.z, BoundsCenter.z - Bounds.y, BoundsCenter.z + Bounds.y);
             moveTo.y = 0f;
 
             Anchor.position = Vector3.Lerp(Anchor.position, moveTo, Time.deltaTime * MoveSpeed);
@@ -140,7 +143,7 @@ namespace LastStand
 
                     yaw += Input.GetAxis("Trackball Yaw") * speedMod;
                     pitch += Input.GetAxis("Trackball Pitch") * speedMod;
-                    pitch = Mathf.Clamp(pitch, MIN_PITCH, MAX_PITCH);
+                    pitch = Mathf.Clamp(pitch, MinPitch, MaxPitch);
                 }
             }
             else if (Input.GetButton("Rotate Camera"))

@@ -1,0 +1,158 @@
+fileFormatVersion: 2
+guid: 68ad66066989f91489d1ecb19c2ee83c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Box
+    100002: Connector
+    100004: Green Light
+    100006: Head Front
+    100008: Head White
+    100010: Light Shades
+    100012: Orange Light
+    100014: Pole
+    100016: Red Light
+    100018: //RootNode
+    100020: Cross Box Back
+    100022: Cross Box Button
+    100024: Cross Box Front
+    100026: Cross Box Glass
+    400000: Box
+    400002: Connector
+    400004: Green Light
+    400006: Head Front
+    400008: Head White
+    400010: Light Shades
+    400012: Orange Light
+    400014: Pole
+    400016: Red Light
+    400018: //RootNode
+    400020: Cross Box Back
+    400022: Cross Box Button
+    400024: Cross Box Front
+    400026: Cross Box Glass
+    2300000: Box
+    2300002: Connector
+    2300004: Green Light
+    2300006: Head Front
+    2300008: Head White
+    2300010: Light Shades
+    2300012: Orange Light
+    2300014: Pole
+    2300016: Red Light
+    2300018: Cross Box Back
+    2300020: Cross Box Button
+    2300022: Cross Box Front
+    2300024: Cross Box Glass
+    3300000: Box
+    3300002: Connector
+    3300004: Green Light
+    3300006: Head Front
+    3300008: Head White
+    3300010: Light Shades
+    3300012: Orange Light
+    3300014: Pole
+    3300016: Red Light
+    3300018: Cross Box Back
+    3300020: Cross Box Button
+    3300022: Cross Box Front
+    3300024: Cross Box Glass
+    4300000: Orange Light
+    4300002: Red Light
+    4300004: Light Shades
+    4300006: Green Light
+    4300008: Head Front
+    4300010: Head White
+    4300012: Connector
+    4300014: Box
+    4300016: Pole
+    4300018: Cross Box Back
+    4300020: Cross Box Button
+    4300022: Cross Box Glass
+    4300024: Cross Box Front
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

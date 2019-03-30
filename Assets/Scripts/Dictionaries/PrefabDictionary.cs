@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Curveball;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 namespace LastStand
 {
@@ -19,6 +20,7 @@ namespace LastStand
         public RoomBuildProgressBar RoomBuildBarPrefab;
         public ScavengerTeamAssignmentIcon ScavengerTeamAssignmentIconPrefab;
         public ScavengerTeamPointer ScavengerTeamAssignmentPointerPrefab;
+        public Image ProgressBarFillPiece;
 
         private static Dictionary<CityBuildingType, List<CityBuildingModel>> cityBuildingsByType;
 
