@@ -34,6 +34,9 @@ ModelImporter:
     100056: Fill
     100058: Parking Lot
     100060: Pavement
+    100062: Grass
+    100064: Rear Concrete
+    100066: Walls.001
     400000: Door Awning
     400002: Door Posts
     400004: Front
@@ -65,6 +68,9 @@ ModelImporter:
     400056: Fill
     400058: Parking Lot
     400060: Pavement
+    400062: Grass
+    400064: Rear Concrete
+    400066: Walls.001
     2300000: Door Awning
     2300002: Door Posts
     2300004: Front
@@ -90,6 +96,9 @@ ModelImporter:
     2300044: Fill
     2300046: Parking Lot
     2300048: Pavement
+    2300050: Grass
+    2300052: Rear Concrete
+    2300054: Walls.001
     3300000: Door Awning
     3300002: Door Posts
     3300004: Front
@@ -115,6 +124,9 @@ ModelImporter:
     3300044: Fill
     3300046: Parking Lot
     3300048: Pavement
+    3300050: Grass
+    3300052: Rear Concrete
+    3300054: Walls.001
     4300000: Door Posts
     4300002: Door Awning
     4300004: Front Roof
@@ -140,6 +152,9 @@ ModelImporter:
     4300044: Door Border
     4300046: Pavement
     4300048: Parking Lot
+    4300050: Rear Concrete
+    4300052: Grass
+    4300054: Walls.001
   externalObjects: {}
   materials:
     importMaterials: 0

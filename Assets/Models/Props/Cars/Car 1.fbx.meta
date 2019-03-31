@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: ffd75d7d7c9980644bacd7b15d3fa731
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Body
+    100002: //RootNode
+    100004: Cylinder.001
+    100006: Wheels Inner
+    100008: Windows
+    100010: Front Indicators
+    100012: Front Lights
+    100014: Rear Indicators
+    100016: Rear Lights
+    100018: Tyres
+    100020: Wheels
+    100022: Front Bumper
+    100024: Rear Bumper
+    100026: Grille
+    100028: Grille Blackout
+    100030: Handles
+    100032: Mirror Inner
+    100034: Mirrors
+    100036: Boot Handle
+    400000: Body
+    400002: //RootNode
+    400004: Cylinder.001
+    400006: Wheels Inner
+    400008: Windows
+    400010: Front Indicators
+    400012: Front Lights
+    400014: Rear Indicators
+    400016: Rear Lights
+    400018: Tyres
+    400020: Wheels
+    400022: Front Bumper
+    400024: Rear Bumper
+    400026: Grille
+    400028: Grille Blackout
+    400030: Handles
+    400032: Mirror Inner
+    400034: Mirrors
+    400036: Boot Handle
+    2300000: Body
+    2300002: Cylinder.001
+    2300004: Wheels Inner
+    2300006: Windows
+    2300008: Front Indicators
+    2300010: Front Lights
+    2300012: Rear Indicators
+    2300014: Rear Lights
+    2300016: Tyres
+    2300018: Wheels
+    2300020: Front Bumper
+    2300022: Rear Bumper
+    2300024: Grille
+    2300026: Grille Blackout
+    2300028: Handles
+    2300030: Mirror Inner
+    2300032: Mirrors
+    2300034: Boot Handle
+    3300000: Body
+    3300002: Cylinder.001
+    3300004: Wheels Inner
+    3300006: Windows
+    3300008: Front Indicators
+    3300010: Front Lights
+    3300012: Rear Indicators
+    3300014: Rear Lights
+    3300016: Tyres
+    3300018: Wheels
+    3300020: Front Bumper
+    3300022: Rear Bumper
+    3300024: Grille
+    3300026: Grille Blackout
+    3300028: Handles
+    3300030: Mirror Inner
+    3300032: Mirrors
+    3300034: Boot Handle
+    4300000: Windows
+    4300002: Wheels Inner
+    4300004: Cylinder.001
+    4300006: Body
+    4300008: Rear Lights
+    4300010: Rear Indicators
+    4300012: Front Indicators
+    4300014: Front Lights
+    4300016: Wheels
+    4300018: Tyres
+    4300020: Rear Bumper
+    4300022: Front Bumper
+    4300024: Grille Blackout
+    4300026: Grille
+    4300028: Handles
+    4300030: Mirror Inner
+    4300032: Mirrors
+    4300034: Boot Handle
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.8
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
