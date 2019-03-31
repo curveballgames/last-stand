@@ -47,5 +47,11 @@ namespace LastStand
             Group.interactable = interactable;
             Group.blocksRaycasts = interactable;
         }
+
+        public void ForceShow()
+        {
+            Group.alpha = 1f;
+            ToggleInteractability(true);
+        }
     }
 }

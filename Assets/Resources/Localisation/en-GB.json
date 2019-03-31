@@ -2,6 +2,7 @@
 	"general-ui:back": "Back",
 	"general-ui:day": "DAY",
 	"general-ui:cancel": "Cancel",
+	"general-ui:confirm": "Confirm",
 
 	"mm-ui:newgame": "New Game",
 	"mm-ui:continue": "Continue",
@@ -28,6 +29,7 @@
 	"base-ui:reclaim-button": "Reclaim",
 	"base-ui:reclaim-built-content": "Reclaiming this room will deconstruct it into an empty room, returning 75% of the material cost.",
 	"base-ui:to-city": "To City",
+	"base-ui:confirm-assignment": "Confirm Assignment",
 
 	"room-name:empty": "Empty",
 	"room-name:bedroom": "Bedroom",
@@ -49,5 +51,17 @@
 	"city-ui:danger-medium": "Risky",
 	"city-ui:danger-high": "Dangerous",
 	"city-ui:amount-explored": "Amount Explored",
-	"city-ui:to-base": "To Base"
+	"city-ui:to-base": "To Base",
+
+	"report-ui:unassigned-text": "{0}{1}\nIdle survivors will rest and recover tiredness if not assigned.\n\nConfirm assignment?",
+	"report-ui:survivors-unassigned-text": "<color=#ff0000ff>One or more survivors are not assigned to rooms</color>\n",
+	"report-ui:scavengers-unassigned-text": "<color=#ff0000ff>One or more scavenger teams are not assigned to city buildings</color>\n",
+	"report-ui:morning-title": "Morning Report",
+	"report-ui:afternoon-title": "Afternoon Report",
+	"report-ui:morning-confirm": "Continue to afternoon",
+	"report-ui:afternoon-confirm": "Continue to evening",
+	"report-ui:survivors-label": "Survivors",
+	"report-ui:scavengers-label": "Scout Teams",
+	"report-ui:construction-label": "Construction",
+	"report-ui:nothing-to-report": "Nothing to report"
 }

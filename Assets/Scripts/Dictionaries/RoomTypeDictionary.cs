@@ -30,5 +30,13 @@ namespace LastStand
             { RoomType.Empty, 0 },
             { RoomType.Bedroom, 3 }
         };
+
+        public static Dictionary<RoomType, RoomStatModifiers> StatModifiers = new Dictionary<RoomType, RoomStatModifiers>
+        {
+            { RoomType.Empty, new RoomStatModifiers(-1, 0, 0, 0) },
+            { RoomType.Bedroom, new RoomStatModifiers(-5, 0, 0, 0) },
+            { RoomType.Scavenger, new RoomStatModifiers(2, 1, 1, 1) },
+            { RoomType.Repairs, new RoomStatModifiers(2, 0, 1, 1) }
+        };
     }
 }

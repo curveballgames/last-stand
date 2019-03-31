@@ -21,6 +21,7 @@ namespace LastStand
         public ScavengerTeamAssignmentIcon ScavengerTeamAssignmentIconPrefab;
         public ScavengerTeamPointer ScavengerTeamAssignmentPointerPrefab;
         public Image ProgressBarFillPiece;
+        public SurvivorReportPanel SurvivorReportPanelPrefab;
 
         private static Dictionary<CityBuildingType, List<CityBuildingModel>> cityBuildingsByType;
 

@@ -16,12 +16,14 @@ namespace LastStand
         public TextMeshProUGUI FoodText;
         public TextMeshProUGUI BuildingMaterialsText;
         public Button ToCityButton;
+        public Button ConfirmAssignmentButton;
         public DayOverviewType SwitchToType;
 
         private void Awake()
         {
             EventSystem.Subscribe<PlayerResourcesUpdatedEvent>(OnResourcesUpdated, this);
             ToCityButton.onClick.AddListener(OnToCityClick);
+            ConfirmAssignmentButton.onClick.AddListener(OnConfirmClick);
         }
 
         private void OnEnable()
@@ -46,6 +48,11 @@ namespace LastStand
         void OnToCityClick()
         {
             EventSystem.Publish(new SwitchDayOverviewEvent(SwitchToType));
+        }
+
+        void OnConfirmClick()
+        {
+            EventSystem.Publish(new ConfirmAssignmentEvent());
         }
     }
 }

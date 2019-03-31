@@ -7,13 +7,15 @@ namespace LastStand
     [System.Serializable]
     public class SurvivorModel
     {
-        public static readonly int[] SKILL_LEVEL_POINTS_REQUIRED = { 5, 10, 15, 20, 25 };
-        private static int[] SKILL_LEVEL_POINT_CUMULATIVE_TOTALS;
-
+        public const int MAX_TIREDNESS = 5;
+        public const int MAX_HUNGER = 5;
         public const int DEFAULT_HEALTH = 3;
-        public const int MAX_SKILL_STAT = 100;
 
+        public static readonly int[] SKILL_LEVEL_POINTS_REQUIRED = { 5, 10, 15, 20, 25 };
         public static List<SurvivorModel> AllModels { get; protected set; }
+        public static int MAX_SKILL_LEVEL { get => SKILL_LEVEL_POINTS_REQUIRED[SKILL_LEVEL_POINTS_REQUIRED.Length - 1]; }
+
+        private static int[] SKILL_LEVEL_POINT_CUMULATIVE_TOTALS;
 
         static SurvivorModel()
         {
@@ -22,11 +24,17 @@ namespace LastStand
 
         public string Name;
         public int Health;
+        public int HealthChange { get; private set; }
         public int Tiredness;
+        public int TirednessChange { get; private set; }
         public int Hunger;
+        public int HungerChange { get; private set; }
         public int FitnessSkill;
+        public int FitnessChange { get; private set; }
         public int StrengthSkill;
+        public int StrengthChange { get; private set; }
         public int ShootingSkill;
+        public int ShootingChange { get; private set; }
 
         public bool IsMale;
         public int SkinTone;
@@ -121,6 +129,40 @@ namespace LastStand
             }
 
             return 0;
+        }
+
+        public void CarryOutAssignment()
+        {
+            RoomType currentAssignmentType = RoomType.Empty;
+
+            // need to check if the scavenger team is assigned to a building, otherwise survivor is idle
+            if (AssignedRoom != null && AssignedRoom.RoomType == RoomType.Scavenger)
+            {
+                foreach (ScavengerTeamModel model in ScavengerTeamController.ScavengerTeams)
+                {
+                    if (model.LinkedRoom == AssignedRoom && model.AssignedBuilding != null)
+                    {
+                        currentAssignmentType = RoomType.Scavenger;
+                    }
+                }
+            }
+            else if (AssignedRoom != null)
+            {
+                currentAssignmentType = AssignedRoom.RoomType;
+            }
+
+            RoomStatModifiers statMods = RoomTypeDictionary.StatModifiers[currentAssignmentType];
+
+            // TODO: clamp if at max values
+            TirednessChange = statMods.TirednessChange;
+            FitnessChange = statMods.FitnessChange;
+            ShootingChange = statMods.ShootingChange;
+            StrengthChange = statMods.StrengthChange;
+
+            Tiredness = Mathf.Clamp(Tiredness + Tiredness, 0, MAX_TIREDNESS);
+            FitnessSkill = Mathf.Clamp(FitnessSkill + FitnessChange, 0, MAX_SKILL_LEVEL);
+            StrengthSkill = Mathf.Clamp(StrengthSkill + StrengthChange, 0, MAX_SKILL_LEVEL);
+            ShootingSkill = Mathf.Clamp(ShootingSkill + ShootingChange, 0, MAX_SKILL_LEVEL);
         }
     }
 }
