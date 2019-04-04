@@ -9,6 +9,9 @@ namespace LastStand
 {
     public class DayReportUIController : CBGUIComponent
     {
+        private static readonly string TITLE_LOCALISATION_KEY = "report-ui:title-";
+        private static readonly string ADVANCE_LOCALISATION_KEY = "report-ui:advance-";
+
         public CanvasGroupFader CanvasFader;
         public TextMeshProUGUI Title;
         public Transform SurvivorPanelParent;
@@ -47,8 +50,8 @@ namespace LastStand
                 SurvivorPanels[counter].SetActive(false);
             }
 
-            ContinueButtonText.text = "TODO";
-            Title.text = "TODO";
+            Title.text = LocalisationManager.GetValue(TITLE_LOCALISATION_KEY + GameStateController.CurrentState.ToString().ToLower());
+            ContinueButtonText.text = LocalisationManager.GetValue(ADVANCE_LOCALISATION_KEY + GameStateController.CurrentState.ToString().ToLower());
 
             CanvasFader.ForceShow();
         }
@@ -61,7 +64,8 @@ namespace LastStand
 
         void OnContinueClicked()
         {
-
+            EventSystem.Publish(new AdvanceDayEvent());
+            CanvasFader.FadeOut();
         }
     }
 }

@@ -8,10 +8,9 @@ namespace LastStand
     [ExecuteInEditMode]
     public class CanvasGroupFader : CBGUIComponent
     {
-        private const float FADE_TIME = 0.1f;
-
         public CanvasGroup Group;
         public bool StartFadedOut = true;
+        public float FadeTime = 0.1f;
 
         private void Awake()
         {
@@ -33,13 +32,13 @@ namespace LastStand
         public void FadeIn()
         {
             ToggleInteractability(true);
-            Group.DOFade(1f, FADE_TIME);
+            Group.DOFade(1f, FadeTime);
         }
 
         public void FadeOut()
         {
             ToggleInteractability(false);
-            Group.DOFade(0f, FADE_TIME);
+            Group.DOFade(0f, FadeTime);
         }
 
         void ToggleInteractability(bool interactable)

@@ -9,7 +9,11 @@ namespace LastStand
     {
         public const int MAX_TIREDNESS = 5;
         public const int MAX_HUNGER = 5;
+
         public const int DEFAULT_HEALTH = 3;
+
+        private const int CONSTRUCTION_TIREDNESS_CHANGE = 2;
+        private const int CONSTRUCTION_STRENGTH_CHANGE = 1;
 
         public static readonly int[] SKILL_LEVEL_POINTS_REQUIRED = { 5, 10, 15, 20, 25 };
         public static List<SurvivorModel> AllModels { get; protected set; }
@@ -133,6 +137,12 @@ namespace LastStand
 
         public void CarryOutAssignment()
         {
+            if (AssignedRoom != null && !AssignedRoom.IsBuilt)
+            {
+                CarryOutConstruction();
+                return;
+            }
+
             RoomType currentAssignmentType = RoomType.Empty;
 
             // need to check if the scavenger team is assigned to a building, otherwise survivor is idle
@@ -163,6 +173,16 @@ namespace LastStand
             FitnessSkill = Mathf.Clamp(FitnessSkill + FitnessChange, 0, MAX_SKILL_LEVEL);
             StrengthSkill = Mathf.Clamp(StrengthSkill + StrengthChange, 0, MAX_SKILL_LEVEL);
             ShootingSkill = Mathf.Clamp(ShootingSkill + ShootingChange, 0, MAX_SKILL_LEVEL);
+        }
+
+        void CarryOutConstruction()
+        {
+            AssignedRoom.ContributeTowardsConstruction(this);
+
+            TirednessChange = CONSTRUCTION_TIREDNESS_CHANGE;
+            StrengthChange = CONSTRUCTION_STRENGTH_CHANGE;
+            Tiredness = Mathf.Clamp(Tiredness + Tiredness, 0, MAX_TIREDNESS);
+            StrengthSkill = Mathf.Clamp(StrengthSkill + StrengthChange, 0, MAX_SKILL_LEVEL);
         }
     }
 }

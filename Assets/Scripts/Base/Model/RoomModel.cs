@@ -81,5 +81,24 @@ namespace LastStand
             BuildProgress = 0;
             EventSystem.Publish(new RoomModelUpdatedEvent(this));
         }
+
+        public void ContributeTowardsConstruction(SurvivorModel s)
+        {
+            if (IsBuilt)
+            {
+                return;
+            }
+
+            BuildProgress++;
+            IsBuilt = BuildProgress >= RoomTypeDictionary.RoomBuildStages[RoomType];
+
+            if (IsBuilt)
+            {
+                foreach (SurvivorModel assignee in AssignedSurvivors)
+                {
+                    assignee.AssignRoom(null);
+                }
+            }
+        }
     }
 }
