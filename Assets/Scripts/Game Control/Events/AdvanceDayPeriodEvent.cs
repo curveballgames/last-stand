@@ -2,6 +2,6 @@
 
 namespace LastStand
 {
-    public struct AdvanceDayEvent : IEvent
+    public struct AdvanceDayPeriodEvent : IEvent
     { }
 }

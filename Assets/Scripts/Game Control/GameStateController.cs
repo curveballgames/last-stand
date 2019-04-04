@@ -9,15 +9,16 @@ namespace LastStand
         private void Awake()
         {
             EventSystem.Subscribe<NewGameEvent>(OnNewGame, this);
-            EventSystem.Subscribe<AdvanceDayEvent>(OnAdvanceDay, this);
+            EventSystem.Subscribe<AdvanceDayPeriodEvent>(OnAdvanceDay, this);
         }
 
         void OnNewGame(NewGameEvent e)
         {
             CurrentState = GameState.Morning;
+            EventSystem.Publish(new DayPeriodUpdatedEvent());
         }
 
-        void OnAdvanceDay(AdvanceDayEvent e)
+        void OnAdvanceDay(AdvanceDayPeriodEvent e)
         {
             switch (CurrentState)
             {
@@ -34,6 +35,8 @@ namespace LastStand
                     CurrentState = GameState.Morning;
                     break;
             }
+
+            EventSystem.Publish(new DayPeriodUpdatedEvent());
         }
     }
 }

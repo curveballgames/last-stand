@@ -64,7 +64,7 @@ namespace LastStand
 
         void OnContinueClicked()
         {
-            EventSystem.Publish(new AdvanceDayEvent());
+            EventSystem.Publish(new AdvanceDayPeriodEvent());
             CanvasFader.FadeOut();
         }
     }
