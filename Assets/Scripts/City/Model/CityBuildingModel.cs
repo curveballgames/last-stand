@@ -34,14 +34,14 @@ namespace LastStand
         public bool IsExplored { get => StagesExplored == RequiredExploreStages; }
 
         [SerializeField]
-        private ResourceGenerationStep[] generationSteps;
+        private ResourceBundle[] generationSteps;
 
         public void RandomizeProperties()
         {
-            generationSteps = new ResourceGenerationStep[RequiredExploreStages];
+            generationSteps = new ResourceBundle[RequiredExploreStages];
 
             int food = Random.Range(MinFood, MaxFood + 1);
-            int materials = Random.Range(MaxFood, MaxBuildingMaterials + 1);
+            int materials = Random.Range(MinBuildingMaterials, MaxBuildingMaterials + 1);
 
             do
             {
@@ -52,8 +52,7 @@ namespace LastStand
                     generationSteps[randomIndex].Food++;
                     food--;
                 }
-
-                if (materials > 0)
+                else if (materials > 0)
                 {
                     generationSteps[randomIndex].BuildingMaterials++;
                     materials--;
@@ -100,7 +99,26 @@ namespace LastStand
             return materials;
         }
 
-        public struct ResourceGenerationStep
+        public ResourceBundle Explore(ScavengerTeamModel scavengerTeam)
+        {
+            ResourceBundle resourcesScavenged = new ResourceBundle();
+
+            for (int i = 0; i < scavengerTeam.LinkedRoom.AssignedSurvivors.Count; i++)
+            {
+                ResourceBundle genStep = generationSteps[StagesExplored];
+                resourcesScavenged.BuildingMaterials += genStep.BuildingMaterials;
+                resourcesScavenged.Food += genStep.Food;
+
+                StagesExplored++;
+
+                if (IsExplored)
+                    break;
+            }
+
+            return resourcesScavenged;
+        }
+
+        public struct ResourceBundle
         {
             public int Food;
             public int BuildingMaterials;

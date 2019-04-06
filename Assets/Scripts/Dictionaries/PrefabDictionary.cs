@@ -13,15 +13,20 @@ namespace LastStand
         public CityModel[] Cities;
         public CityBuildingModel[] CityBuildings;
 
+        [Space]
         public RoomBuildButton RoomBuildButtonPrefab;
         public BaseSurvivorAssignIcon SurvivorIconPrefab;
         public RoomAssignmentSlot RoomAssignmentSlotPrefab;
         public RoomAssignmentSlots RoomAssignmentSlotsPrefab;
         public RoomBuildProgressBar RoomBuildBarPrefab;
+        [Space]
         public ScavengerTeamAssignmentIcon ScavengerTeamAssignmentIconPrefab;
         public ScavengerTeamPointer ScavengerTeamAssignmentPointerPrefab;
+        [Space]
         public Image ProgressBarFillPiece;
+        [Space]
         public SurvivorReportPanel SurvivorReportPanelPrefab;
+        public ScavengerReportPanel ScavengerReportPanelPrefab;
 
         private static Dictionary<CityBuildingType, List<CityBuildingModel>> cityBuildingsByType;
 

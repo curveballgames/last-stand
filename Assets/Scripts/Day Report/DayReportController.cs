@@ -62,6 +62,11 @@ namespace LastStand
                 model.CarryOutAssignment();
             }
 
+            foreach (ScavengerTeamModel model in ScavengerTeamController.ScavengerTeams)
+            {
+                model.CarryOutAssignment();
+            }
+
             EventSystem.Publish(new AssignmentConfirmedEvent());
         }
     }

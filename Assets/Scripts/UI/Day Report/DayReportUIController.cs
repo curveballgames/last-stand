@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Curveball;
 using UnityEngine.UI;
 using TMPro;
@@ -14,16 +12,16 @@ namespace LastStand
 
         public CanvasGroupFader CanvasFader;
         public TextMeshProUGUI Title;
-        public Transform SurvivorPanelParent;
+        [Space]
+        public SurvivorReportSection SurvivorSection;
+        public ScavengerReportSection ScavengerSection;
+        public ConstructionReportSection ConstructionSection;
+        [Space]
         public Button ContinueButton;
         public TextMeshProUGUI ContinueButtonText;
 
-        private static List<SurvivorReportPanel> SurvivorPanels;
-
         private void Awake()
         {
-            SurvivorPanels = new List<SurvivorReportPanel>();
-
             EventSystem.Subscribe<ShowReportEvent>(OnShowReport, this);
 
             ContinueButton.onClick.AddListener(OnContinueClicked);
@@ -31,35 +29,13 @@ namespace LastStand
 
         void OnShowReport(ShowReportEvent e)
         {
-            int counter = 0;
-
-            foreach (SurvivorModel model in SurvivorModel.AllModels)
-            {
-                if (SurvivorPanels.Count <= counter)
-                {
-                    CreateNewSurvivorPanel();
-                }
-
-                SurvivorPanels[counter].ConfigureForSurvivor(model);
-                SurvivorPanels[counter].SetActive(true);
-                counter++;
-            }
-
-            for (; counter < SurvivorPanels.Count; counter++)
-            {
-                SurvivorPanels[counter].SetActive(false);
-            }
-
             Title.text = LocalisationManager.GetValue(TITLE_LOCALISATION_KEY + GameStateController.CurrentState.ToString().ToLower());
             ContinueButtonText.text = LocalisationManager.GetValue(ADVANCE_LOCALISATION_KEY + GameStateController.CurrentState.ToString().ToLower());
 
-            CanvasFader.ForceShow();
-        }
+            SurvivorSection.UpdateView();
+            ScavengerSection.UpdateView();
 
-        void CreateNewSurvivorPanel()
-        {
-            GameObject newSurvivorPanel = Instantiate(PrefabDictionary.Singleton.SurvivorReportPanelPrefab.gameObject, SurvivorPanelParent);
-            SurvivorPanels.Add(newSurvivorPanel.GetComponent<SurvivorReportPanel>());
+            CanvasFader.ForceShow();
         }
 
         void OnContinueClicked()

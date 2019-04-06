@@ -94,11 +94,15 @@ namespace LastStand
 
             if (IsBuilt)
             {
-                foreach (SurvivorModel assignee in AssignedSurvivors)
+                HashSet<SurvivorModel> clonedAssignees = new HashSet<SurvivorModel>(AssignedSurvivors);
+
+                foreach (SurvivorModel assignee in clonedAssignees)
                 {
                     assignee.AssignRoom(null);
                 }
             }
+
+            EventSystem.Publish(new RoomModelUpdatedEvent(this));
         }
     }
 }

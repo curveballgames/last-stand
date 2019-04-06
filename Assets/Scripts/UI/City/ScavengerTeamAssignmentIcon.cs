@@ -9,10 +9,6 @@ namespace LastStand
 {
     public class ScavengerTeamAssignmentIcon : CBGGameObject, IPointerEnterHandler, IPointerExitHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
     {
-        public Color AssignedColor;
-        public Color AvailableColor;
-        public Color UnassignedColor;
-
         public RectTransform Draggable;
         public Image AssignmentColorImage;
         public RawImage Headshots;
@@ -51,17 +47,17 @@ namespace LastStand
         {
             if (!Model.HasMembersAssigned())
             {
-                AssignmentColorImage.color = UnassignedColor;
+                AssignmentColorImage.color = ColorDictionary.Singleton.ScavengerTeamUnassignedColor;
             }
             else
             {
                 if (Model.AssignedBuilding == null)
                 {
-                    AssignmentColorImage.color = AvailableColor;
+                    AssignmentColorImage.color = ColorDictionary.Singleton.ScavengerTeamAvailableColor;
                 }
                 else
                 {
-                    AssignmentColorImage.color = AssignedColor;
+                    AssignmentColorImage.color = ColorDictionary.Singleton.ScavengerTeamAssignedColor;
                 }
             }
         }

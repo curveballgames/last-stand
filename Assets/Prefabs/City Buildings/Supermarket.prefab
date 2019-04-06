@@ -55,7 +55,7 @@ MonoBehaviour:
   MaxFood: 20
   MinBuildingMaterials: 3
   MaxBuildingMaterials: 7
-  RequiredExploreStages: 5
+  RequiredExploreStages: 8
   StagesExplored: 0
   DangerLevel: 0
   Location: {x: 0, y: 0, z: 0}

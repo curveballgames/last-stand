@@ -31,6 +31,10 @@
 	"base-ui:to-city": "To City",
 	"base-ui:confirm-assignment": "Confirm Assignment",
 
+	"scavenger-ui:team-name": "Scout Team",
+	"scavenger-ui:unassigned": "Unassigned",
+	"scavenger-ui:none": "None",
+
 	"room-name:empty": "Empty",
 	"room-name:bedroom": "Bedroom",
 	"room-name:scavenger": "Scout Team",

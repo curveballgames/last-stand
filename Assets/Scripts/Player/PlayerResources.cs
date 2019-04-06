@@ -18,7 +18,7 @@ namespace LastStand
         private int food;
 
         public int BuildingMaterials { get => buildingMaterials; }
-        public int Food { get => food; set => food = value; }
+        public int Food { get => food; }
 
         private void Awake()
         {
@@ -52,6 +52,17 @@ namespace LastStand
             {
                 buildingMaterials += RoomTypeDictionary.Costs[e.Model.RoomType];
             }
+
+            EventSystem.Publish(new PlayerResourcesUpdatedEvent());
+        }
+
+        public void AddResources(CityBuildingModel.ResourceBundle resources)
+        {
+            if (resources.Food == 0 && resources.BuildingMaterials == 0)
+                return;
+
+            food += resources.Food;
+            buildingMaterials += resources.BuildingMaterials;
 
             EventSystem.Publish(new PlayerResourcesUpdatedEvent());
         }
