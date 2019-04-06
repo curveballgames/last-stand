@@ -33,7 +33,7 @@
 
 	"scavenger-ui:team-name": "Scout Team",
 	"scavenger-ui:unassigned": "Unassigned",
-	"scavenger-ui:none": "None",
+	"scavenger-ui:none": "-",
 
 	"room-name:empty": "Empty",
 	"room-name:bedroom": "Bedroom",
@@ -50,10 +50,14 @@
 	"build-ui:cancel-cancel": "Continue Building",
 
 	"city-ui:danger": "Danger",
-	"city-ui:danger-none": "None",
+	"city-ui:danger-none": "Negligible",
 	"city-ui:danger-low": "Low",
 	"city-ui:danger-medium": "Risky",
 	"city-ui:danger-high": "Dangerous",
+	"city-ui:resources-none": "-",
+	"city-ui:resources-low": "Scarce",
+	"city-ui:resources-medium": "Well stocked",
+	"city-ui:resources-high": "Bountiful",
 	"city-ui:amount-explored": "Amount Explored",
 	"city-ui:to-base": "To Base",
 

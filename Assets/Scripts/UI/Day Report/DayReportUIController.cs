@@ -12,6 +12,7 @@ namespace LastStand
 
         public CanvasGroupFader CanvasFader;
         public TextMeshProUGUI Title;
+        public ScrollRect ScrollView;
         [Space]
         public SurvivorReportSection SurvivorSection;
         public ScavengerReportSection ScavengerSection;
@@ -34,6 +35,8 @@ namespace LastStand
 
             SurvivorSection.UpdateView();
             ScavengerSection.UpdateView();
+
+            ScrollView.verticalNormalizedPosition = 1f;
 
             CanvasFader.ForceShow();
         }

@@ -13,9 +13,19 @@ namespace LastStand
             new AmountLimit(10, "city-ui:danger-high")
         };
 
+        private static readonly AmountLimit[] RESOURCE_LIMITS =
+        {
+            new AmountLimit(0, "city-ui:resources-none"),
+            new AmountLimit(5, "city-ui:resources-low"),
+            new AmountLimit(10, "city-ui:resources-medium"),
+            new AmountLimit(15, "city-ui:resources-high")
+        };
+
         public TextMeshProUGUI Title;
         public TextMeshProUGUI DangerLabel;
-        public TextMeshProUGUI AmountExploredLabel;
+        public TextMeshProUGUI FoodLabel;
+        public TextMeshProUGUI BuildingResourcesLabel;
+        public ChunkedStatBar ExploredBar;
         public CanvasGroupFader Fader;
 
         private void Awake()
@@ -37,15 +47,31 @@ namespace LastStand
             }
 
             Title.text = model.Name;
-            DangerLabel.text = GetDangerText(model);
-            AmountExploredLabel.text = string.Format("{0}/{1}", model.StagesExplored, model.RequiredExploreStages);
+
+            ConfigureDangerText(model);
+            ConfigureFoodText(model);
+            ConfigureMaterialsText(model);
+
+            ExploredBar.MaxValue = model.RequiredExploreStages;
+            ExploredBar.Value = model.StagesExplored;
+            ExploredBar.ForceUpdate();
 
             Fader.FadeIn();
         }
 
-        string GetDangerText(CityBuildingModel model)
+        void ConfigureDangerText(CityBuildingModel model)
         {
-            return GetLimitString(model.DangerLevel, DANGER_LIMITS);
+            DangerLabel.text = GetLimitString(model.DangerLevel, DANGER_LIMITS);
+        }
+
+        void ConfigureFoodText(CityBuildingModel model)
+        {
+            FoodLabel.text = GetLimitString(model.GetFoodRemaining(), RESOURCE_LIMITS);
+        }
+
+        void ConfigureMaterialsText(CityBuildingModel model)
+        {
+            BuildingResourcesLabel.text = GetLimitString(model.GetBuildingMaterialsRemaining(), RESOURCE_LIMITS);
         }
 
         private string GetLimitString(int limitAmount, AmountLimit[] lookupArray)
