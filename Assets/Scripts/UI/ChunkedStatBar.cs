@@ -7,7 +7,10 @@ namespace LastStand
     public class ChunkedStatBar : Curveball.Strategy.Healthbar
     {
         public Color UnfilledColor;
+        public Color PreviewColor;
+
         public Transform BarFillParent;
+        public int PreviewValue { get; set; }
 
         private List<Image> fillPieces = new List<Image>();
 
@@ -25,19 +28,19 @@ namespace LastStand
 
             for (int i = 0; i < fillPieces.Count; i++)
             {
+                fillPieces[i].gameObject.SetActive(i < MaxValue);
+
                 if (i < Value)
                 {
-                    fillPieces[i].gameObject.SetActive(true);
                     fillPieces[i].color = ColorGradient.Evaluate(0f);
+                }
+                else if (i < MaxValue && i < Value + PreviewValue)
+                {
+                    fillPieces[i].color = PreviewColor;
                 }
                 else if (i < MaxValue)
                 {
-                    fillPieces[i].gameObject.SetActive(true);
                     fillPieces[i].color = UnfilledColor;
-                }
-                else
-                {
-                    fillPieces[i].gameObject.SetActive(false);
                 }
             }
         }

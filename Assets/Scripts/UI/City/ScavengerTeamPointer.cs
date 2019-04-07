@@ -10,6 +10,12 @@ namespace LastStand
 
         public RawImage Headshots;
         public CityBuildingModel BuildingToTrack;
+        public Button UnassignButton;
+
+        private void Awake()
+        {
+            UnassignButton.onClick.AddListener(Unassign);
+        }
 
         private void LateUpdate()
         {
@@ -22,6 +28,19 @@ namespace LastStand
         public void SetHeadshotTexture(RenderTexture texture)
         {
             Headshots.texture = texture;
+        }
+
+        void Unassign()
+        {
+            if (BuildingToTrack == null)
+                return;
+
+            ScavengerTeamModel assignedModel = ScavengerTeamController.GetTeamAssignedToCityBuilding(BuildingToTrack);
+
+            if (assignedModel == null || !assignedModel.HasMembersAssigned())
+                return;
+
+            assignedModel.AssignToBuilding(null);
         }
     }
 }

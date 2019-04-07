@@ -28,9 +28,13 @@ namespace LastStand
         public ChunkedStatBar ExploredBar;
         public CanvasGroupFader Fader;
 
+        private CityBuildingModel currentModel;
+
         private void Awake()
         {
+            EventSystem.Subscribe((NewGameEvent e) => { currentModel = null; }, this);
             EventSystem.Subscribe<CityBuildingHoverEvent>(OnCityBuildingHovered, this);
+            EventSystem.Subscribe<ScavengerTeamAssignedEvent>(OnScavengerTeamAssigned, this);
         }
 
         void OnCityBuildingHovered(CityBuildingHoverEvent e)
@@ -38,8 +42,18 @@ namespace LastStand
             ConfigureForBuilding(e.Building);
         }
 
+        void OnScavengerTeamAssigned(ScavengerTeamAssignedEvent e)
+        {
+            if (e.Model != null && e.Model.AssignedBuilding == currentModel)
+            {
+                ConfigureForBuilding(currentModel);
+            }
+        }
+
         void ConfigureForBuilding(CityBuildingModel model)
         {
+            currentModel = model;
+
             if (model == null)
             {
                 Fader.FadeOut();
@@ -51,17 +65,14 @@ namespace LastStand
             ConfigureDangerText(model);
             ConfigureFoodText(model);
             ConfigureMaterialsText(model);
-
-            ExploredBar.MaxValue = model.RequiredExploreStages;
-            ExploredBar.Value = model.StagesExplored;
-            ExploredBar.ForceUpdate();
+            ConfigureExplorationBar(model);
 
             Fader.FadeIn();
         }
 
         void ConfigureDangerText(CityBuildingModel model)
         {
-            DangerLabel.text = GetLimitString(model.DangerLevel, DANGER_LIMITS);
+            DangerLabel.text = GetLimitString(model.GetDangerLevel(), DANGER_LIMITS);
         }
 
         void ConfigureFoodText(CityBuildingModel model)
@@ -72,6 +83,25 @@ namespace LastStand
         void ConfigureMaterialsText(CityBuildingModel model)
         {
             BuildingResourcesLabel.text = GetLimitString(model.GetBuildingMaterialsRemaining(), RESOURCE_LIMITS);
+        }
+
+        void ConfigureExplorationBar(CityBuildingModel model)
+        {
+            ExploredBar.MaxValue = model.RequiredExploreStages;
+            ExploredBar.Value = model.StagesExplored;
+
+            ScavengerTeamModel assignedModel = ScavengerTeamController.GetTeamAssignedToCityBuilding(model);
+
+            if (assignedModel != null && assignedModel.HasMembersAssigned())
+            {
+                ExploredBar.PreviewValue = assignedModel.LinkedRoom.AssignedSurvivors.Count;
+            }
+            else
+            {
+                ExploredBar.PreviewValue = 0;
+            }
+
+            ExploredBar.ForceUpdate();
         }
 
         private string GetLimitString(int limitAmount, AmountLimit[] lookupArray)

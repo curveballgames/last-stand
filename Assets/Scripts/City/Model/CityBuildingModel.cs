@@ -99,6 +99,27 @@ namespace LastStand
             return materials;
         }
 
+        public int GetDangerLevel()
+        {
+            int dangerLevel = DangerLevel;
+
+            ScavengerTeamModel assignedModel = ScavengerTeamController.GetTeamAssignedToCityBuilding(this);
+
+            if (assignedModel == null || !assignedModel.HasMembersAssigned())
+            {
+                return dangerLevel;
+            }
+
+            HashSet<SurvivorModel> scavengers = assignedModel.LinkedRoom.AssignedSurvivors;
+            foreach (SurvivorModel survivor in scavengers)
+            {
+                dangerLevel -= survivor.GetLevel(survivor.ShootingSkill);
+            }
+
+            dangerLevel = Mathf.Max(dangerLevel, 0);
+            return dangerLevel;
+        }
+
         public ResourceBundle Explore(ScavengerTeamModel scavengerTeam)
         {
             ResourceBundle resourcesScavenged = new ResourceBundle();

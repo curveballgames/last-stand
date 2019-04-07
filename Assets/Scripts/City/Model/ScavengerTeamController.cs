@@ -30,15 +30,20 @@ namespace LastStand
 
         public static bool AreAnyTeamsAssigned(CityBuildingModel cityBuilding)
         {
+            return GetTeamAssignedToCityBuilding(cityBuilding) != null;
+        }
+
+        public static ScavengerTeamModel GetTeamAssignedToCityBuilding(CityBuildingModel model)
+        {
             foreach (ScavengerTeamModel scavengerTeam in ScavengerTeams)
             {
-                if (scavengerTeam.AssignedBuilding == cityBuilding)
+                if (scavengerTeam.AssignedBuilding == model)
                 {
-                    return true;
+                    return scavengerTeam;
                 }
             }
 
-            return false;
+            return null;
         }
     }
 }

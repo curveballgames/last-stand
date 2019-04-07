@@ -64,11 +64,19 @@ namespace LastStand
 
         void UpdatePointer()
         {
+            if (pointer == null)
+                return;
+
             if (Model.HasMembersAssigned() && Model.AssignedBuilding != null)
             {
                 pointer.BuildingToTrack = Model.AssignedBuilding;
                 pointer.SetHeadshotTexture(Headshots.texture as RenderTexture);
                 pointer.SetActive(true);
+            }
+            else
+            {
+                pointer.BuildingToTrack = null;
+                pointer.SetActive(false);
             }
         }
 
