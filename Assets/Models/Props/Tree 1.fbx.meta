@@ -8,23 +8,28 @@ ModelImporter:
     100004: Soil
     100006: //RootNode
     100008: Trunk
+    100010: Wrap
     400000: Leaves
     400002: Planter
     400004: Soil
     400006: //RootNode
     400008: Trunk
+    400010: Wrap
     2300000: Leaves
     2300002: Planter
     2300004: Soil
     2300006: Trunk
+    2300008: Wrap
     3300000: Leaves
     3300002: Planter
     3300004: Soil
     3300006: Trunk
+    3300008: Wrap
     4300000: Leaves
     4300002: Trunk
     4300004: Soil
     4300006: Planter
+    4300008: Wrap
   externalObjects: {}
   materials:
     importMaterials: 0
