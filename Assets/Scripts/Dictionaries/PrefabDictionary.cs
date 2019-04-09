@@ -27,6 +27,7 @@ namespace LastStand
         [Space]
         public SurvivorReportPanel SurvivorReportPanelPrefab;
         public ScavengerReportPanel ScavengerReportPanelPrefab;
+        public ConstructionReportPanel ConstructionReportPanelPrefab;
 
         private static Dictionary<CityBuildingType, List<CityBuildingModel>> cityBuildingsByType;
 

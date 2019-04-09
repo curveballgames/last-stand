@@ -35,6 +35,7 @@ namespace LastStand
 
             SurvivorSection.UpdateView();
             ScavengerSection.UpdateView();
+            ConstructionSection.UpdateView();
 
             ScrollView.verticalNormalizedPosition = 1f;
 
