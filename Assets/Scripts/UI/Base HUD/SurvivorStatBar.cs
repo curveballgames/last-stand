@@ -6,7 +6,7 @@
         
         public SurvivorStatBarStar[] Stars;
 
-        public void ConfigureForModel(SurvivorModel model, int statPoints)
+        public void ConfigureForModel(SurvivorModel model, int statPoints, int previewValue)
         {
             int progress = model.GetPointsTowardsNextLevel(statPoints);
             int required = model.GetTotalPointsNeededForNextLevel(statPoints);
@@ -14,6 +14,7 @@
 
             MaxValue = required;
             Value = progress;
+            PreviewValue = previewValue;
 
             UpdateBar();
 

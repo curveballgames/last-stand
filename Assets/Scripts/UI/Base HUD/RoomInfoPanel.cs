@@ -26,6 +26,7 @@ namespace LastStand
             ReclaimButton.onClick.AddListener(OnReclaimClick);
             EventSystem.Subscribe<RoomHoverEvent>(OnRoomHovered, this);
             EventSystem.Subscribe<RoomSelectEvent>(OnRoomSelectionChanged, this);
+            EventSystem.Subscribe<SurvivorAssignmentUpdatedEvent>(OnSurvivorAssignmentUpdated, this);
         }
 
         void OnRoomHovered(RoomHoverEvent e)
@@ -53,6 +54,14 @@ namespace LastStand
             }
 
             UpdateVisibility();
+        }
+
+        void OnSurvivorAssignmentUpdated(SurvivorAssignmentUpdatedEvent e)
+        {
+            if (linkedModel == null)
+                return;
+
+            ConfigureForModel(linkedModel);
         }
 
         void ConfigureForModel(RoomModel model)
