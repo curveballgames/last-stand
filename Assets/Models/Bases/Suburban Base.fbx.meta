@@ -173,6 +173,10 @@ ModelImporter:
     100334: Grass Padding
     100336: Road
     100338: Sidewalk
+    100340: Porch Roof
+    100342: Roof
+    100344: Roof Pillars
+    100346: Walls To Roof
     400000: Back Room
     400002: Back Room Floor
     400004: Back Room Walls
@@ -343,6 +347,10 @@ ModelImporter:
     400334: Grass Padding
     400336: Road
     400338: Sidewalk
+    400340: Porch Roof
+    400342: Roof
+    400344: Roof Pillars
+    400346: Walls To Roof
     2100000: No Name
     2300000: Back Room Floor
     2300002: Back Room Walls
@@ -504,6 +512,10 @@ ModelImporter:
     2300314: Grass Padding
     2300316: Road
     2300318: Sidewalk
+    2300320: Porch Roof
+    2300322: Roof
+    2300324: Roof Pillars
+    2300326: Walls To Roof
     3300000: Back Room Floor
     3300002: Back Room Walls
     3300004: Bathroom Floor
@@ -664,6 +676,10 @@ ModelImporter:
     3300314: Grass Padding
     3300316: Road
     3300318: Sidewalk
+    3300320: Porch Roof
+    3300322: Roof
+    3300324: Roof Pillars
+    3300326: Walls To Roof
     4300000: Wall Tops
     4300002: Garage Floor
     4300004: Garage Walls
@@ -824,6 +840,10 @@ ModelImporter:
     4300314: Road
     4300316: Sidewalk
     4300318: Grass Padding
+    4300320: Roof
+    4300322: Roof Pillars
+    4300324: Porch Roof
+    4300326: Walls To Roof
     10800000: Sun
     2186277476908879412: ImportLogs
   externalObjects: {}
