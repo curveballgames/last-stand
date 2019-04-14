@@ -60,6 +60,7 @@
 	"city-ui:resources-high": "Bountiful",
 	"city-ui:amount-explored": "Amount Explored",
 	"city-ui:to-base": "To Base",
+	"city-ui:secured": "Secured",
 
 	"report-ui:unassigned-text": "{0}{1}\nIdle survivors will rest and recover tiredness if not assigned.\n\nConfirm assignment?",
 	"report-ui:survivors-unassigned-text": "<color=#ff0000ff>One or more survivors are not assigned to rooms</color>\n",

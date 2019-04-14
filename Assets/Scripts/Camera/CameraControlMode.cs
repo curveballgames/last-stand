@@ -2,6 +2,6 @@
 {
     public enum CameraControlMode
     {
-        Static, BaseView, Transitioning, CityView, CombatView
+        Static, Transitioning, CityView, CombatView
     }
 }

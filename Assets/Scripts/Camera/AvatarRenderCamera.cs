@@ -68,41 +68,5 @@ namespace LastStand
             headshots.Add(model.Name, texture);
             return texture;
         }
-
-        public static RenderTexture RenderScavengerTeam(ScavengerTeamModel model)
-        {
-            RenderTexture texture = new RenderTexture(HEADSHOT_IMAGE_SIZE, HEADSHOT_IMAGE_SIZE, 16);
-            Singleton.RenderCam.targetTexture = texture;
-
-            List<GameObject> heads = new List<GameObject>();
-            int count = 0;
-
-            foreach (SurvivorModel survivor in model.LinkedRoom.AssignedSurvivors)
-            {
-                GameObject head = SurvivorAvatarGenerator.GenerateHeadAvatarForModel(survivor);
-                head.transform.SetParent(Singleton.RenderCam.transform);
-                head.transform.localPosition = HEAD_OFFSETS[count];
-                head.transform.Rotate(0f, 180f, 0f);
-
-                heads.Add(head);
-
-                count++;
-
-                if (count >= HEAD_OFFSETS.Length)
-                    break;
-            }
-
-            Singleton.Light.enabled = true;
-            Singleton.RenderCam.Render();
-            Singleton.RenderCam.targetTexture = null;
-            Singleton.Light.enabled = false;
-
-            foreach (GameObject head in heads)
-            {
-                DestroyImmediate(head);
-            }
-
-            return texture;
-        }
     }
 }

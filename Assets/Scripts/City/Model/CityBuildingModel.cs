@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Curveball;
 
@@ -9,6 +8,10 @@ namespace LastStand
     {
         public const int MIN_DANGER = 3;
         public const int MAX_DANGER = 10;
+
+        public static CityBuildingModel CurrentBase;
+
+        public static CityBuildingStatModifiers ScavengingModifiers = new CityBuildingStatModifiers(1, 1, 1, 1);
 
         public string Name;
         public int Width;
@@ -22,6 +25,12 @@ namespace LastStand
         public int MaxBuildingMaterials;
         public int RequiredExploreStages = 3;
 
+        public bool OccupiableAfterSecuring = true;
+        public CityBuildingStatModifiers StatModifiers;
+
+        [Space]
+        public bool IsCurrentBase;
+
         [HideInInspector]
         public int StagesExplored;
         [HideInInspector]
@@ -31,10 +40,36 @@ namespace LastStand
         [HideInInspector]
         public Quaternion Rotation;
 
+        public List<SurvivorModel> AssignedSurvivors
+        {
+            get
+            {
+                List<SurvivorModel> models = new List<SurvivorModel>();
+
+                foreach (SurvivorModel model in SurvivorModel.AllModels)
+                {
+                    if (model.AssignedBuilding == this)
+                    {
+                        models.Add(model);
+                    }
+                }
+
+                return models;
+            }
+        }
+
         public bool IsExplored { get => StagesExplored == RequiredExploreStages; }
 
         [SerializeField]
         private ResourceBundle[] generationSteps;
+
+        private void Awake()
+        {
+            if (IsCurrentBase)
+            {
+                CurrentBase = this;
+            }
+        }
 
         public void RandomizeProperties()
         {
@@ -63,6 +98,12 @@ namespace LastStand
 
         public void RandomizeDanger()
         {
+            if (IsExplored)
+            {
+                DangerLevel = 0;
+                return;
+            }
+
             DangerLevel = Random.Range(MIN_DANGER, MAX_DANGER);
         }
 
@@ -101,17 +142,14 @@ namespace LastStand
 
         public int GetDangerLevel()
         {
-            int dangerLevel = DangerLevel;
-
-            ScavengerTeamModel assignedModel = ScavengerTeamController.GetTeamAssignedToCityBuilding(this);
-
-            if (assignedModel == null || !assignedModel.HasMembersAssigned())
+            if (IsExplored)
             {
-                return dangerLevel;
+                return 0;
             }
 
-            HashSet<SurvivorModel> scavengers = assignedModel.LinkedRoom.AssignedSurvivors;
-            foreach (SurvivorModel survivor in scavengers)
+            int dangerLevel = DangerLevel;
+            
+            foreach (SurvivorModel survivor in AssignedSurvivors)
             {
                 dangerLevel -= survivor.GetLevel(survivor.ShootingSkill);
             }
@@ -120,11 +158,11 @@ namespace LastStand
             return dangerLevel;
         }
 
-        public ResourceBundle Explore(ScavengerTeamModel scavengerTeam)
+        public ResourceBundle Explore()
         {
             ResourceBundle resourcesScavenged = new ResourceBundle();
 
-            for (int i = 0; i < scavengerTeam.LinkedRoom.AssignedSurvivors.Count; i++)
+            for (int i = 0; i < AssignedSurvivors.Count; i++)
             {
                 ResourceBundle genStep = generationSteps[StagesExplored];
                 resourcesScavenged.BuildingMaterials += genStep.BuildingMaterials;

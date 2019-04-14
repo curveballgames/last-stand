@@ -48,11 +48,10 @@ namespace LastStand
         public static bool SaveGame(int saveFileIndex)
         {
             SaveGameMetadata metadata = new SaveGameMetadata();
-            metadata.BaseName = BaseModel.CurrentBase.Name;
             metadata.SaveTimestamp = System.DateTime.Now.Ticks;
 
             SaveGameData saveData = new SaveGameData();
-            saveData.CurrentBase = BaseModel.CurrentBase;
+            saveData.CurrentBase = null; // TODO
             saveData.Survivors = SurvivorModel.AllModels.ToArray();
 
             try
@@ -84,7 +83,7 @@ namespace LastStand
                 return;
             }
 
-            BaseModel.CurrentBase = saveGame.CurrentBase;
+            //BaseModel.CurrentBase = saveGame.CurrentBase;
             EventSystem.Publish(new ModelsInitialisedEvent());
         }
     }

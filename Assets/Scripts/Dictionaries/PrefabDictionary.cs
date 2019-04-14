@@ -9,45 +9,24 @@ namespace LastStand
     {
         public static PrefabDictionary Singleton;
 
-        public BaseModel[] Bases;
         public CityModel[] Cities;
         public CityBuildingModel[] CityBuildings;
 
         [Space]
-        public RoomBuildButton RoomBuildButtonPrefab;
-        public BaseSurvivorAssignIcon SurvivorIconPrefab;
-        public RoomAssignmentSlot RoomAssignmentSlotPrefab;
-        public RoomAssignmentSlots RoomAssignmentSlotsPrefab;
-        public RoomBuildProgressBar RoomBuildBarPrefab;
+        public SurvivorAssignIcon SurvivorIconPrefab;
+        public SurvivorAssignmentParent SurvivorAssignParentPrefab;
         [Space]
-        public ScavengerTeamAssignmentIcon ScavengerTeamAssignmentIconPrefab;
-        public ScavengerTeamPointer ScavengerTeamAssignmentPointerPrefab;
+        public SurvivorAssignmentPointer ScavengerTeamAssignmentPointerPrefab;
         [Space]
         public Image ProgressBarFillPiece;
         [Space]
         public SurvivorReportPanel SurvivorReportPanelPrefab;
-        public ScavengerReportPanel ScavengerReportPanelPrefab;
-        public ConstructionReportPanel ConstructionReportPanelPrefab;
 
         private static Dictionary<CityBuildingType, List<CityBuildingModel>> cityBuildingsByType;
 
         private void Awake()
         {
             Singleton = this;
-        }
-
-        public static BaseModel GetBaseWithName(string name)
-        {
-            foreach (BaseModel model in Singleton.Bases)
-            {
-                if (model.Name == name)
-                {
-                    return model;
-                }
-            }
-
-            Debug.LogError("Could not find base with name " + name);
-            return null;
         }
 
         public static CityModel GetCityWithName(string name)

@@ -15,7 +15,7 @@ namespace LastStand
         private const int CONSTRUCTION_TIREDNESS_CHANGE = 2;
         private const int CONSTRUCTION_STRENGTH_CHANGE = 1;
 
-        public static readonly int[] SKILL_LEVEL_POINTS_REQUIRED = { 5, 10, 15, 20, 25 };
+        public static readonly int[] SKILL_LEVEL_POINTS_REQUIRED = { 4, 5, 6, 7, 8 };
         public static List<SurvivorModel> AllModels { get; protected set; }
         public static int MAX_SKILL_LEVEL { get => SKILL_LEVEL_POINTS_REQUIRED[SKILL_LEVEL_POINTS_REQUIRED.Length - 1]; }
 
@@ -45,8 +45,8 @@ namespace LastStand
         public int HairStyle;
         public int HairColour;
 
-        public RoomModel AssignedRoom { get; private set; }
-        public int? AssignedRoomGUID;
+        public CityBuildingModel AssignedBuilding { get; private set; }
+        public int? AssignedBuildingGUID;
 
         public static void Initialise()
         {
@@ -87,13 +87,13 @@ namespace LastStand
             HairColour = Random.Range(0, SurvivorAvatarGenerator.NumHairColours);
         }
 
-        public void AssignRoom(RoomModel model)
+        public void AssignToBuilding(CityBuildingModel model)
         {
-            AssignedRoom = model;
+            AssignedBuilding = model;
 
             if (model == null)
-                AssignedRoomGUID = null;
-            else AssignedRoomGUID = model.GetInstanceID();
+                AssignedBuildingGUID = null;
+            else AssignedBuildingGUID = model.GetInstanceID();
 
             EventSystem.Publish(new SurvivorAssignmentUpdatedEvent(this, model, model != null));
         }
@@ -137,52 +137,42 @@ namespace LastStand
 
         public void CarryOutAssignment()
         {
-            if (AssignedRoom != null && !AssignedRoom.IsBuilt)
-            {
-                CarryOutConstruction();
-                return;
-            }
+            // TODO
 
-            RoomType currentAssignmentType = RoomType.Empty;
+            //if (AssignedBuilding != null && !AssignedBuilding.IsBuilt)
+            //{
+            //    CarryOutConstruction();
+            //    return;
+            //}
 
-            // need to check if the scavenger team is assigned to a building, otherwise survivor is idle
-            if (AssignedRoom != null && AssignedRoom.RoomType == RoomType.Scavenger)
-            {
-                foreach (ScavengerTeamModel model in ScavengerTeamController.ScavengerTeams)
-                {
-                    if (model.LinkedRoom == AssignedRoom && model.AssignedBuilding != null)
-                    {
-                        currentAssignmentType = RoomType.Scavenger;
-                    }
-                }
-            }
-            else if (AssignedRoom != null)
-            {
-                currentAssignmentType = AssignedRoom.RoomType;
-            }
+            //RoomType currentAssignmentType = RoomType.Empty;
+            
+            //if (AssignedBuilding != null && AssignedBuilding.RoomType == RoomType.Scavenger)
+            //{
+            //    foreach (ScavengerTeamModel model in ScavengerTeamController.ScavengerTeams)
+            //    {
+            //        if (model.LinkedRoom == AssignedBuilding && model.AssignedBuilding != null)
+            //        {
+            //            currentAssignmentType = RoomType.Scavenger;
+            //        }
+            //    }
+            //}
+            //else if (AssignedBuilding != null)
+            //{
+            //    currentAssignmentType = AssignedBuilding.RoomType;
+            //}
 
-            RoomStatModifiers statMods = RoomTypeDictionary.StatModifiers[currentAssignmentType];
+            //RoomStatModifiers statMods = RoomTypeDictionary.StatModifiers[currentAssignmentType];
+            
+            //TirednessChange = statMods.TirednessChange;
+            //FitnessChange = statMods.FitnessChange;
+            //ShootingChange = statMods.ShootingChange;
+            //StrengthChange = statMods.StrengthChange;
 
-            // TODO: clamp if at max values
-            TirednessChange = statMods.TirednessChange;
-            FitnessChange = statMods.FitnessChange;
-            ShootingChange = statMods.ShootingChange;
-            StrengthChange = statMods.StrengthChange;
-
-            Tiredness = Mathf.Clamp(Tiredness + Tiredness, 0, MAX_TIREDNESS);
-            FitnessSkill = Mathf.Clamp(FitnessSkill + FitnessChange, 0, MAX_SKILL_LEVEL);
-            StrengthSkill = Mathf.Clamp(StrengthSkill + StrengthChange, 0, MAX_SKILL_LEVEL);
-            ShootingSkill = Mathf.Clamp(ShootingSkill + ShootingChange, 0, MAX_SKILL_LEVEL);
-        }
-
-        void CarryOutConstruction()
-        {
-            AssignedRoom.ContributeTowardsConstruction(this);
-
-            TirednessChange = CONSTRUCTION_TIREDNESS_CHANGE;
-            StrengthChange = CONSTRUCTION_STRENGTH_CHANGE;
-            Tiredness = Mathf.Clamp(Tiredness + Tiredness, 0, MAX_TIREDNESS);
-            StrengthSkill = Mathf.Clamp(StrengthSkill + StrengthChange, 0, MAX_SKILL_LEVEL);
+            //Tiredness = Mathf.Clamp(Tiredness + Tiredness, 0, MAX_TIREDNESS);
+            //FitnessSkill = Mathf.Clamp(FitnessSkill + FitnessChange, 0, MAX_SKILL_LEVEL);
+            //StrengthSkill = Mathf.Clamp(StrengthSkill + StrengthChange, 0, MAX_SKILL_LEVEL);
+            //ShootingSkill = Mathf.Clamp(ShootingSkill + ShootingChange, 0, MAX_SKILL_LEVEL);
         }
     }
 }

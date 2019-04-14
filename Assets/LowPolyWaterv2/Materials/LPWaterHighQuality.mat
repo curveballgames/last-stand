@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: LPWaterHighQuality
   m_Shader: {fileID: 4800000, guid: 8165be4dd0b12774d80426d906df9c38, type: 3}
-  m_ShaderKeywords: LPW_SHADOWS WATER_REFLECTIVE _EMISSION _LIGHTABS_ON _SHADING_FLAT
-    _WAVES_HIGHQUALITY _ZWRITE_ON
+  m_ShaderKeywords: LPW_SHADOWS _EMISSION _LIGHTABS_ON _SHADING_FLAT _WAVES_HIGHQUALITY
+    _ZWRITE_ON
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -53,7 +53,7 @@ Material:
     - _Distort: 0
     - _Distortion: 1
     - _EdgeBlend: 0
-    - _EnableShadows: 0
+    - _EnableShadows: 1
     - _FoamScale: 20
     - _FoamSpeed: 0.3
     - _FoamSpread: 1
@@ -68,16 +68,16 @@ Material:
     - _PointLights: 0
     - _RHeight: 0.05
     - _RHeight_: 0.2
-    - _RSpeed: 0.1
-    - _RSpeed_: 0.4
+    - _RSpeed: 0.5
+    - _RSpeed_: 2
     - _Reflection: 0.65
     - _Refraction: 2
     - _Scale: 1
     - _Scale_: 4
     - _Shading: 0
     - _Shadow: 0.5
-    - _ShoreDistance: 0.5
-    - _ShoreIntensity: 1
+    - _ShoreDistance: 0.3
+    - _ShoreIntensity: 0.5
     - _Specular: 31
     - _Speed: 2
     - _Speed_: 8

@@ -20,18 +20,9 @@ namespace LastStand
             bool scavengerTeamsUnassigned = false;
             bool survivorsUnassigned = false;
 
-            foreach (ScavengerTeamModel model in ScavengerTeamController.ScavengerTeams)
-            {
-                if (model.HasMembersAssigned() && model.AssignedBuilding == null)
-                {
-                    scavengerTeamsUnassigned = true;
-                    break;
-                }
-            }
-
             foreach (SurvivorModel model in SurvivorModel.AllModels)
             {
-                if (model.AssignedRoom == null)
+                if (model.AssignedBuilding == null)
                 {
                     survivorsUnassigned = true;
                     break;
@@ -58,11 +49,6 @@ namespace LastStand
         void OnModalOk()
         {
             foreach (SurvivorModel model in SurvivorModel.AllModels)
-            {
-                model.CarryOutAssignment();
-            }
-
-            foreach (ScavengerTeamModel model in ScavengerTeamController.ScavengerTeams)
             {
                 model.CarryOutAssignment();
             }

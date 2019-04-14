@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cba662704bd70c49b5cca44fc00fa50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AcceptedTypes: 00000000
-  Width: 4
-  Height: 4
+  AcceptedTypes: 04000000
+  Width: 3
+  Height: 3
 --- !u!1 &2253081475520321153
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,8 +439,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AcceptedTypes: 01000000
-  Width: 4
-  Height: 4
+  Width: 3
+  Height: 3
 --- !u!1 &8410338930787235750
 GameObject:
   m_ObjectHideFlags: 0
@@ -4065,6 +4065,11 @@ PrefabInstance:
     - target: {fileID: 114000013230019050, guid: 7a8a5bb6f2e71b143aff5818ec77dbcd,
         type: 3}
       propertyPath: noise
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013230019050, guid: 7a8a5bb6f2e71b143aff5818ec77dbcd,
+        type: 3}
+      propertyPath: enableReflection
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

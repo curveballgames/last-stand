@@ -4,8 +4,6 @@ namespace LastStand
 {
     public class NewGameInitialiser : CBGGameObject
     {
-        private static readonly string STARTING_BASE_NAME = "Suburban Base";
-
         private void Awake()
         {
             EventSystem.Subscribe<NewGameEvent>(OnNewGame, this);
@@ -14,13 +12,16 @@ namespace LastStand
 
         private void OnNewGame(NewGameEvent e)
         {
-            BaseModel.CurrentBase = PrefabDictionary.GetBaseWithName(STARTING_BASE_NAME);
             CityModel.CurrentCity = PrefabDictionary.GetRandomStartCity();
+            // TODO: setup base
 
             SurvivorModel.Initialise();
             SurvivorGenerator.GenerateInitialSurvivors();
 
-            EventSystem.Publish(new ModelsInitialisedEvent(false));
+            Timer.CreateTimer(gameObject, 0.05f, () =>
+            {
+                EventSystem.Publish(new ModelsInitialisedEvent(false));
+            });
         }
     }
 }

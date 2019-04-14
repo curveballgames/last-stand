@@ -9,12 +9,12 @@ namespace LastStand
 
         public static void GenerateInitialSurvivors()
         {
+            GenerateHeroicSurvivorModel();
+
             for (int i = 0; i < INITIAL_SURVIVORS - 1; i++)
             {
                 GenerateSurvivorModel();
             }
-
-            GenerateHeroicSurvivorModel();
         }
 
         public static void GenerateSurvivorModel()
@@ -28,8 +28,8 @@ namespace LastStand
             model.Name = SurvivorNameGenerator.GenerateName(model.IsMale);
         }
 
-        private const int HEROIC_SURVIVOR_STAT_MIN = 10;
-        private const int HEROIC_SURVIVOR_STAT_MAX = 30;
+        private const int HEROIC_SURVIVOR_STAT_MIN = 13;
+        private const int HEROIC_SURVIVOR_STAT_MAX = 22;
 
         public static void GenerateHeroicSurvivorModel()
         {

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Curveball;
 
 namespace LastStand
@@ -15,8 +13,6 @@ namespace LastStand
         {
             EventSystem.Subscribe<ModelsInitialisedEvent>(OnModelsInitialised, this);
             EventSystem.Subscribe<ShowDayOverviewEvent>(OnShowDayOverview, this);
-
-            CityRoot.gameObject.SetActive(false);
         }
 
         void OnModelsInitialised(ModelsInitialisedEvent e)
@@ -38,6 +34,11 @@ namespace LastStand
             }
 
             CityModel.CurrentCity = cityGameObject.GetComponent<CityModel>();
+
+            Timer.CreateTimer(gameObject, 0.05f, () =>
+            {
+                EventSystem.Publish(new ViewInitialisedEvent());
+            });
         }
 
         void OnShowDayOverview(ShowDayOverviewEvent e)

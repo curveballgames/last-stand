@@ -177,6 +177,9 @@ ModelImporter:
     100342: Roof
     100344: Roof Pillars
     100346: Walls To Roof
+    100348: Hedge Top
+    100350: Hedges
+    100352: Roof Supports
     400000: Back Room
     400002: Back Room Floor
     400004: Back Room Walls
@@ -351,6 +354,9 @@ ModelImporter:
     400342: Roof
     400344: Roof Pillars
     400346: Walls To Roof
+    400348: Hedge Top
+    400350: Hedges
+    400352: Roof Supports
     2100000: No Name
     2300000: Back Room Floor
     2300002: Back Room Walls
@@ -516,6 +522,9 @@ ModelImporter:
     2300322: Roof
     2300324: Roof Pillars
     2300326: Walls To Roof
+    2300328: Hedge Top
+    2300330: Hedges
+    2300332: Roof Supports
     3300000: Back Room Floor
     3300002: Back Room Walls
     3300004: Bathroom Floor
@@ -680,6 +689,9 @@ ModelImporter:
     3300322: Roof
     3300324: Roof Pillars
     3300326: Walls To Roof
+    3300328: Hedge Top
+    3300330: Hedges
+    3300332: Roof Supports
     4300000: Wall Tops
     4300002: Garage Floor
     4300004: Garage Walls
@@ -844,6 +856,9 @@ ModelImporter:
     4300322: Roof Pillars
     4300324: Porch Roof
     4300326: Walls To Roof
+    4300328: Hedges
+    4300330: Hedge Top
+    4300332: Roof Supports
     10800000: Sun
     2186277476908879412: ImportLogs
   externalObjects: {}

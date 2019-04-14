@@ -51,7 +51,7 @@ namespace LastStand
                 dragDelayTimer = Timer.CreateTimer(gameObject, DRAG_DELAY, null, null, false, false);
             }
 
-            Anchor.position = BaseModel.CurrentBase.Center;
+            Anchor.position = Vector3.zero;
 
             yaw = yawLerp = 180f;
             pitch = pitchLerp = Mathf.Lerp(MinPitch, MaxPitch, 0.5f);

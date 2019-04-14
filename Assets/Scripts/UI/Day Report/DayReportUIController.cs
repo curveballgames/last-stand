@@ -15,8 +15,6 @@ namespace LastStand
         public ScrollRect ScrollView;
         [Space]
         public SurvivorReportSection SurvivorSection;
-        public ScavengerReportSection ScavengerSection;
-        public ConstructionReportSection ConstructionSection;
         [Space]
         public Button ContinueButton;
         public TextMeshProUGUI ContinueButtonText;
@@ -34,8 +32,6 @@ namespace LastStand
             ContinueButtonText.text = LocalisationManager.GetValue(ADVANCE_LOCALISATION_KEY + GameStateController.CurrentState.ToString().ToLower());
 
             SurvivorSection.UpdateView();
-            ScavengerSection.UpdateView();
-            ConstructionSection.UpdateView();
 
             ScrollView.verticalNormalizedPosition = 1f;
 

@@ -1,5 +1,6 @@
 ﻿using Curveball;
 using TMPro;
+using UnityEngine;
 
 namespace LastStand
 {
@@ -25,6 +26,7 @@ namespace LastStand
         public TextMeshProUGUI DangerLabel;
         public TextMeshProUGUI FoodLabel;
         public TextMeshProUGUI BuildingResourcesLabel;
+        public TextMeshProUGUI SecuredText;
         public ChunkedStatBar ExploredBar;
         public CanvasGroupFader Fader;
 
@@ -34,7 +36,7 @@ namespace LastStand
         {
             EventSystem.Subscribe((NewGameEvent e) => { currentModel = null; }, this);
             EventSystem.Subscribe<CityBuildingHoverEvent>(OnCityBuildingHovered, this);
-            EventSystem.Subscribe<ScavengerTeamAssignedEvent>(OnScavengerTeamAssigned, this);
+            EventSystem.Subscribe<SurvivorAssignmentUpdatedEvent>(OnSurvivorAssignmentUpdated, this);
         }
 
         void OnCityBuildingHovered(CityBuildingHoverEvent e)
@@ -42,9 +44,9 @@ namespace LastStand
             ConfigureForBuilding(e.Building);
         }
 
-        void OnScavengerTeamAssigned(ScavengerTeamAssignedEvent e)
+        void OnSurvivorAssignmentUpdated(SurvivorAssignmentUpdatedEvent e)
         {
-            if (e.Model != null && e.Model.AssignedBuilding == currentModel)
+            if (e.CityBuilding != null && e.CityBuilding == currentModel)
             {
                 ConfigureForBuilding(currentModel);
             }
@@ -72,6 +74,12 @@ namespace LastStand
 
         void ConfigureDangerText(CityBuildingModel model)
         {
+            if (model.IsExplored)
+            {
+                DangerLabel.text = "-";
+                return;
+            }
+
             DangerLabel.text = GetLimitString(model.GetDangerLevel(), DANGER_LIMITS);
         }
 
@@ -87,21 +95,30 @@ namespace LastStand
 
         void ConfigureExplorationBar(CityBuildingModel model)
         {
-            ExploredBar.MaxValue = model.RequiredExploreStages;
-            ExploredBar.Value = model.StagesExplored;
-
-            ScavengerTeamModel assignedModel = ScavengerTeamController.GetTeamAssignedToCityBuilding(model);
-
-            if (assignedModel != null && assignedModel.HasMembersAssigned())
+            if (model.IsExplored)
             {
-                ExploredBar.PreviewValue = assignedModel.LinkedRoom.AssignedSurvivors.Count;
+                ExploredBar.MaxValue = Mathf.Max(model.RequiredExploreStages, 1);
+                ExploredBar.Value = Mathf.Max(model.StagesExplored, 1);
             }
             else
             {
-                ExploredBar.PreviewValue = 0;
+                ExploredBar.MaxValue = model.RequiredExploreStages;
+                ExploredBar.Value = model.StagesExplored;
+
+                if (model.AssignedSurvivors.Count > 0)
+                {
+                    ExploredBar.PreviewValue = model.AssignedSurvivors.Count;
+                }
+                else
+                {
+                    ExploredBar.PreviewValue = 0;
+                }
             }
 
+
             ExploredBar.ForceUpdate();
+
+            SecuredText.gameObject.SetActive(model.IsExplored);
         }
 
         private string GetLimitString(int limitAmount, AmountLimit[] lookupArray)

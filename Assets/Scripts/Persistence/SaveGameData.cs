@@ -5,7 +5,7 @@ namespace LastStand
     [System.Serializable]
     public class SaveGameData
     {
-        public BaseModel CurrentBase;
+        public CityBuildingModel CurrentBase;
         public SurvivorModel[] Survivors;
 
         public string ToJSON()

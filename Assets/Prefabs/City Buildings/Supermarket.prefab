@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Supermarket
-  Width: 4
-  Height: 4
+  Width: 3
+  Height: 3
   BuildingType: 1
   MinFood: 12
   MaxFood: 20
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6374dced4612641bc82a1e8caa8892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LinkedModel: {fileID: 0}
+  LinkedModel: {fileID: 4006691806293177830}
   Outline: {fileID: 7542567168239593090}
 --- !u!1 &4556304475003911682
 GameObject:

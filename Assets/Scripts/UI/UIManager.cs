@@ -8,23 +8,17 @@ namespace LastStand
         public static UIManager Singleton;
 
         public GameObject MainMenuRoot;
-        public GameObject BaseHUD;
         public GameObject CityHUD;
-
-        public Transform BuildButtonParent;
-        public Transform RoomAssignmentSlotsParent;
-        public Transform RoomProgressBarParent;
-        public Transform ScavengerTeamPointers;
+        public Transform SurvivorAssignParent;
 
         private void Awake()
         {
             Singleton = this;
 
             EventSystem.Subscribe<StartNewGameFadeEvent>(OnNewGameFadeStart, this);
-            EventSystem.Subscribe<NewGameEvent>(OnNewGame, this);
             EventSystem.Subscribe<ShowDayOverviewEvent>(OnShowDayOverview, this);
-
-            BaseHUD.SetActive(false);
+            EventSystem.Subscribe<ViewInitialisedEvent>(OnViewInitialised, this);
+            
             CityHUD.SetActive(false);
         }
 
@@ -33,26 +27,15 @@ namespace LastStand
             MenuSystem.CloseActiveMenu(false);
         }
 
-        private void OnNewGame(NewGameEvent e)
+        private void OnViewInitialised(ViewInitialisedEvent e)
         {
             MainMenuRoot.SetActive(false);
-            CityHUD.SetActive(false);
-            BaseHUD.SetActive(true);
+            CityHUD.SetActive(true);
         }
 
         void OnShowDayOverview(ShowDayOverviewEvent e)
         {
-            if (e.Type == DayOverviewType.Base)
-            {
-
-                BaseHUD.SetActive(true);
-                CityHUD.SetActive(false);
-            }
-            else
-            {
-                BaseHUD.SetActive(false);
-                CityHUD.SetActive(true);
-            }
+            CityHUD.SetActive(true);
         }
     }
 }

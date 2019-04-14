@@ -5,13 +5,13 @@ namespace LastStand
     public struct SurvivorAssignmentUpdatedEvent : IEvent
     {
         public SurvivorModel SurvivorModel;
-        public RoomModel RoomModel;
+        public CityBuildingModel CityBuilding;
         public bool Added;
 
-        public SurvivorAssignmentUpdatedEvent(SurvivorModel survivorModel, RoomModel roomModel, bool added)
+        public SurvivorAssignmentUpdatedEvent(SurvivorModel survivorModel, CityBuildingModel cityBuilding, bool added)
         {
             SurvivorModel = survivorModel;
-            RoomModel = roomModel;
+            CityBuilding = cityBuilding;
             Added = added;
         }
     }

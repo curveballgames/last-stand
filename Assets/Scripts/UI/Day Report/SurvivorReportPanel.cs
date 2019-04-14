@@ -32,7 +32,7 @@ namespace LastStand
         {
             SurvivorName.text = s.Name;
             SurvivorHeadshot.texture = AvatarRenderCamera.RenderHeadshot(s);
-            IconBackground.color = SurvivorAvatarGenerator.GetColorForRoom(s.AssignedRoom);
+            //IconBackground.color = SurvivorAvatarGenerator.GetColorForRoom(s.AssignedBuilding); // TODO
 
             ConfigureStat(ref ShootingStatChange, s.ShootingChange, false);
             ConfigureStat(ref FitnessStatChange, s.FitnessChange, false);

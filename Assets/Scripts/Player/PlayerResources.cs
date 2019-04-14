@@ -23,36 +23,14 @@ namespace LastStand
         private void Awake()
         {
             Singleton = this;
-
-            EventSystem.Subscribe<StartRoomConstructionEvent>(OnConstructionStarted, this);
+            
             EventSystem.Subscribe<NewGameEvent>(OnNewGame, this);
-            EventSystem.Subscribe<RoomConstructionCancelledEvent>(OnConstructionCancelled, this);
-        }
-
-        void OnConstructionStarted(StartRoomConstructionEvent e)
-        {
-            buildingMaterials -= RoomTypeDictionary.Costs[e.TypeToBuild];
-            EventSystem.Publish(new PlayerResourcesUpdatedEvent());
         }
 
         void OnNewGame(NewGameEvent e)
         {
             buildingMaterials = STARTING_MATERIALS;
             food = STARTING_FOOD;
-            EventSystem.Publish(new PlayerResourcesUpdatedEvent());
-        }
-
-        void OnConstructionCancelled(RoomConstructionCancelledEvent e)
-        {
-            if (e.Model.IsBuilt)
-            {
-                buildingMaterials += Mathf.CeilToInt(RoomTypeDictionary.Costs[e.Model.RoomType] * MATERIAL_REFUND_MULTIPLIER);
-            }
-            else
-            {
-                buildingMaterials += RoomTypeDictionary.Costs[e.Model.RoomType];
-            }
-
             EventSystem.Publish(new PlayerResourcesUpdatedEvent());
         }
 

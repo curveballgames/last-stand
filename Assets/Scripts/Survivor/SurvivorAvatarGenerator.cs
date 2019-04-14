@@ -19,7 +19,6 @@ namespace LastStand
         public GameObject SurvivorHeadPrefab;
         public Color UnassignedColor;
         public Color BuilderColor;
-        public RoomAssignmentColor[] AssignmentColors;
 
         private void Awake()
         {
@@ -40,25 +39,6 @@ namespace LastStand
             return root;
         }
 
-        public static Color GetColorForRoom(RoomModel room)
-        {
-            if (room == null)
-                return Singleton.UnassignedColor;
-
-            if (!room.IsBuilt)
-                return Singleton.BuilderColor;
-
-            foreach (RoomAssignmentColor rac in Singleton.AssignmentColors)
-            {
-                if (rac.RoomType == room.RoomType)
-                {
-                    return rac.Color;
-                }
-            }
-
-            return Singleton.UnassignedColor;
-        }
-
         public static Color GetUnassignedColor()
         {
             return Singleton.UnassignedColor;
@@ -67,13 +47,6 @@ namespace LastStand
         public static Color GetBuilderColor()
         {
             return Singleton.BuilderColor;
-        }
-
-        [System.Serializable]
-        public class RoomAssignmentColor
-        {
-            public RoomType RoomType;
-            public Color Color;
         }
     }
 }
