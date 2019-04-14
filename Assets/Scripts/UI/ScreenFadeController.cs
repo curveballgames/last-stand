@@ -24,7 +24,6 @@ namespace LastStand
             EventSystem.Subscribe<ViewInitialisedEvent>(OnViewInitialised, this);
             EventSystem.Subscribe<SwitchDayOverviewEvent>(OnSwitchDayOverview, this);
             EventSystem.Subscribe<ShowDayOverviewEvent>(OnShowDayOverview, this);
-            EventSystem.Subscribe<AssignmentConfirmedEvent>(OnAssignmentConfirmed, this);
 
             Hide();
         }
@@ -53,15 +52,6 @@ namespace LastStand
         void OnShowDayOverview(ShowDayOverviewEvent e)
         {
             FadeToTransparent();
-        }
-
-        void OnAssignmentConfirmed(AssignmentConfirmedEvent e)
-        {
-            FadeToOpaque(() =>
-            {
-                EventSystem.Publish(new ShowReportEvent());
-                FadeToTransparent();
-            });
         }
 
         void FadeToOpaque(UnityAction onCompleteCallback = null)

@@ -18,7 +18,7 @@ namespace LastStand
             EventSystem.Subscribe<StartNewGameFadeEvent>(OnNewGameFadeStart, this);
             EventSystem.Subscribe<ShowDayOverviewEvent>(OnShowDayOverview, this);
             EventSystem.Subscribe<ViewInitialisedEvent>(OnViewInitialised, this);
-            
+
             CityHUD.SetActive(false);
         }
 

@@ -6,7 +6,8 @@ namespace LastStand
 {
     public class TrackballCameraController : CBGGameObject
     {
-        private const float ANIMATION_LERP_SPEED = 7.5f;
+        protected const float ANIMATION_LERP_SPEED = 7.5f;
+        protected const float DRAG_DELAY = 0.1f;
 
         public Transform Anchor;
         public float MoveSpeed;
@@ -32,28 +33,25 @@ namespace LastStand
         [Space]
         public PostProcessProfile PostProcessingBehaviour;
 
-        private Timer dragDelayTimer;
-        private const float DRAG_DELAY = 0.1f;
+        protected Timer dragDelayTimer;
 
-        private float zoomRadius;
-        private float zoomLerp;
+        protected float zoomRadius;
+        protected float zoomLerp;
 
-        private Vector3 targetPos;
+        protected Vector3 targetPos;
 
-        private float yawLerp;
-        private float yaw;
+        protected float yawLerp;
+        protected float yaw;
 
-        private float pitchLerp;
-        private float pitch;
+        protected float pitchLerp;
+        protected float pitch;
 
-        private Transform animationTarget;
+        protected Transform animationTarget;
 
-        private void Awake()
-        {
-            EventSystem.Subscribe<ZoomToTargetEvent>(OnZoomToTarget, this);
-        }
+        protected float HorizontalMovementAxis { get => Input.GetAxis("Horizontal"); }
+        protected float VerticalMovementAxis { get => Input.GetAxis("Vertical"); }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             if (dragDelayTimer == null)
             {
@@ -69,7 +67,7 @@ namespace LastStand
             UpdateLocalPosition(true);
         }
 
-        private void LateUpdate()
+        protected virtual void LateUpdate()
         {
             UpdateCameraZoom();
             UpdateCameraRotation();
@@ -77,7 +75,7 @@ namespace LastStand
             UpdateCameraPosition();
         }
 
-        private void UpdateLocalPosition(bool immediate)
+        protected virtual void UpdateLocalPosition(bool immediate)
         {
             transform.localPosition = Vector3.zero;
             transform.forward = Vector3.forward;
@@ -86,21 +84,20 @@ namespace LastStand
             transform.localPosition -= transform.forward * zoomLerp;
         }
 
-        void UpdateCameraPosition()
+        protected virtual void UpdateCameraPosition()
         {
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
-            float horizontalMagnitude = Mathf.Abs(horizontal);
-            float verticalMagnitude = Mathf.Abs(vertical);
-            float magnitude = horizontalMagnitude + verticalMagnitude;
-
-            if (Mathf.Approximately(magnitude, 0f))
+            if (animationTarget != null)
             {
                 MoveTowardsAnimationTarget();
                 return;
             }
 
-            animationTarget = null;
+            float horizontal = HorizontalMovementAxis;
+            float vertical = VerticalMovementAxis;
+            float horizontalMagnitude = Mathf.Abs(horizontal);
+            float verticalMagnitude = Mathf.Abs(vertical);
+            float magnitude = horizontalMagnitude + verticalMagnitude;
+
             Vector2 magnitudeVector = new Vector2(horizontalMagnitude, verticalMagnitude);
             if (magnitudeVector.magnitude > 1f)
             {
@@ -127,7 +124,7 @@ namespace LastStand
             Anchor.position = Vector3.Lerp(Anchor.position, moveTo, Time.deltaTime * MoveSpeed);
         }
 
-        void MoveTowardsAnimationTarget()
+        protected virtual void MoveTowardsAnimationTarget()
         {
             if (animationTarget == null)
                 return;
@@ -143,7 +140,7 @@ namespace LastStand
             }
         }
 
-        void UpdateCameraZoom()
+        protected virtual void UpdateCameraZoom()
         {
             if (!Mathf.Approximately(Input.GetAxis("Zoom"), 0f))
             {
@@ -155,7 +152,7 @@ namespace LastStand
             PostProcessingBehaviour.GetSetting<DepthOfField>().focusDistance.value = zoomLerp;
         }
 
-        void UpdateCameraRotation()
+        protected virtual void UpdateCameraRotation()
         {
             if (Input.GetButton("Trackball Button"))
             {
@@ -182,15 +179,6 @@ namespace LastStand
             float lerpSpeed = Time.deltaTime * RotationLerpSpeed;
             yawLerp = Mathf.Lerp(yawLerp, yaw, lerpSpeed);
             pitchLerp = Mathf.Lerp(pitchLerp, pitch, lerpSpeed);
-        }
-
-        void OnZoomToTarget(ZoomToTargetEvent e)
-        {
-            if (e.Survivor != null)
-            {
-                CityBuildingModel target = e.Survivor.AssignedBuilding != null ? e.Survivor.AssignedBuilding : CityBuildingModel.CurrentBase;
-                animationTarget = target.transform;
-            }
         }
     }
 }

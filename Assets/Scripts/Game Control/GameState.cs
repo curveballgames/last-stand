@@ -2,6 +2,6 @@
 {
     public enum GameState
     {
-        Morning, Afternoon, Evening, Night
+        Morning, MorningReport, Afternoon, AfternoonReport, Evening, Night
     }
 }

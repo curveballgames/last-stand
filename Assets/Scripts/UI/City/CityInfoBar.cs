@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace LastStand
 {
-    public class BaseInfoBar : CBGUIComponent
+    public class CityInfoBar : CBGUIComponent
     {
         private static readonly string DAY_STRING_FORMAT = "{0} {1}";
         private static readonly string DAY_LOCALISATION_KEY = "general-ui:day";
@@ -20,6 +20,8 @@ namespace LastStand
         private void Awake()
         {
             EventSystem.Subscribe<PlayerResourcesUpdatedEvent>(OnResourcesUpdated, this);
+            EventSystem.Subscribe<DayPeriodUpdatedEvent>(OnDayPeriodAdvanced, this);
+
             ConfirmAssignmentButton.onClick.AddListener(OnConfirmClick);
         }
 
@@ -44,7 +46,16 @@ namespace LastStand
 
         void OnConfirmClick()
         {
+            ConfirmAssignmentButton.interactable = false;
             EventSystem.Publish(new ConfirmAssignmentEvent());
+        }
+
+        void OnDayPeriodAdvanced(DayPeriodUpdatedEvent e)
+        {
+            if (GameStateController.CurrentState == GameState.Morning || GameStateController.CurrentState == GameState.Afternoon)
+            {
+                ConfirmAssignmentButton.interactable = true;
+            }
         }
     }
 }

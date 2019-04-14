@@ -49,6 +49,9 @@ namespace LastStand
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            if (!GameStateController.IsInDayManagementState())
+                return;
+
             Curveball.EventSystem.Publish(new SurvivorIconHoveredEvent(this));
         }
 
@@ -62,6 +65,9 @@ namespace LastStand
 
         public void OnBeginDrag(PointerEventData eventData)
         {
+            if (!GameStateController.IsInDayManagementState())
+                return;
+
             if (Input.GetMouseButton(0))
             {
                 dragging = true;

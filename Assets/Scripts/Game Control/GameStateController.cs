@@ -10,6 +10,7 @@ namespace LastStand
         {
             EventSystem.Subscribe<NewGameEvent>(OnNewGame, this);
             EventSystem.Subscribe<AdvanceDayPeriodEvent>(OnAdvanceDay, this);
+            EventSystem.Subscribe<AssignmentConfirmedEvent>(OnAssignmentConfirmed, this);
         }
 
         void OnNewGame(NewGameEvent e)
@@ -37,6 +38,19 @@ namespace LastStand
             }
 
             EventSystem.Publish(new DayPeriodUpdatedEvent());
+        }
+
+        void OnAssignmentConfirmed(AssignmentConfirmedEvent e)
+        {
+            if (CurrentState == GameState.Morning)
+                CurrentState = GameState.MorningReport;
+            else if (CurrentState == GameState.Afternoon)
+                CurrentState = GameState.AfternoonReport;
+        }
+
+        public static bool IsInDayManagementState()
+        {
+            return CurrentState == GameState.Afternoon || CurrentState == GameState.Morning;
         }
     }
 }
