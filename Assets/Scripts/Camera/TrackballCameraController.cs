@@ -6,6 +6,8 @@ namespace LastStand
 {
     public class TrackballCameraController : CBGGameObject
     {
+        private const float ANIMATION_LERP_SPEED = 7.5f;
+
         public Transform Anchor;
         public float MoveSpeed;
         public Vector3 BoundsCenter;
@@ -43,6 +45,13 @@ namespace LastStand
 
         private float pitchLerp;
         private float pitch;
+
+        private Transform animationTarget;
+
+        private void Awake()
+        {
+            EventSystem.Subscribe<ZoomToTargetEvent>(OnZoomToTarget, this);
+        }
 
         private void OnEnable()
         {
@@ -85,11 +94,13 @@ namespace LastStand
             float verticalMagnitude = Mathf.Abs(vertical);
             float magnitude = horizontalMagnitude + verticalMagnitude;
 
-            if (magnitude == 0f)
+            if (Mathf.Approximately(magnitude, 0f))
             {
+                MoveTowardsAnimationTarget();
                 return;
             }
 
+            animationTarget = null;
             Vector2 magnitudeVector = new Vector2(horizontalMagnitude, verticalMagnitude);
             if (magnitudeVector.magnitude > 1f)
             {
@@ -114,6 +125,22 @@ namespace LastStand
             moveTo.y = 0f;
 
             Anchor.position = Vector3.Lerp(Anchor.position, moveTo, Time.deltaTime * MoveSpeed);
+        }
+
+        void MoveTowardsAnimationTarget()
+        {
+            if (animationTarget == null)
+                return;
+
+            Vector3 moveTo = animationTarget.position;
+            moveTo.y = Anchor.position.y;
+
+            Anchor.position = Vector3.Lerp(Anchor.position, moveTo, Time.deltaTime * ANIMATION_LERP_SPEED);
+
+            if (Mathf.Approximately(0f, Vector3.Distance(moveTo, Anchor.position)))
+            {
+                animationTarget = null;
+            }
         }
 
         void UpdateCameraZoom()
@@ -155,6 +182,15 @@ namespace LastStand
             float lerpSpeed = Time.deltaTime * RotationLerpSpeed;
             yawLerp = Mathf.Lerp(yawLerp, yaw, lerpSpeed);
             pitchLerp = Mathf.Lerp(pitchLerp, pitch, lerpSpeed);
+        }
+
+        void OnZoomToTarget(ZoomToTargetEvent e)
+        {
+            if (e.Survivor != null)
+            {
+                CityBuildingModel target = e.Survivor.AssignedBuilding != null ? e.Survivor.AssignedBuilding : CityBuildingModel.CurrentBase;
+                animationTarget = target.transform;
+            }
         }
     }
 }

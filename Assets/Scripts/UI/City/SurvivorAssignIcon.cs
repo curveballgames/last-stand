@@ -79,7 +79,13 @@ namespace LastStand
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            // TODO: bring up detailed survivor info
+            if (eventData.dragging)
+                return;
+
+            if (eventData.button == PointerEventData.InputButton.Right)
+            {
+                Curveball.EventSystem.Publish(new ZoomToTargetEvent(Model));
+            }
         }
 
         void DropOnBuilding()
